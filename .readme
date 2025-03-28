@@ -1,0 +1,3 @@
+The service is running on the gigantc.com server.
+
+We're using 'systemctl start baseball-watcher' to keep it going full time and posting directly to the "MLB CAPTAIN LEAGUE" discord server.
