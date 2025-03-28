@@ -23,7 +23,8 @@ const getTodayPattern = () => {
   const month = today.getMonth() + 1;
   const day = today.getDate();
   const datePattern = `${month}/${day}`;
-  return new RegExp(`^[A-Z][a-z]+ ${datePattern}`);
+  // Matches one or more capitalized words followed by today's date
+  return new RegExp(`^([A-Z][a-z]+\\s?)+${datePattern}`);
 }
 
 
