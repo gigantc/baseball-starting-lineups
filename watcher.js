@@ -59,6 +59,29 @@ const getTodayPattern = () => {
   return new RegExp(`^([A-Z][a-z]+\\s?)+${datePattern}`);
 };
 
+// Formats the lineup with numbered batting order
+const formatLineup = (text) => {
+  const lines = text.split('\n').filter((line) => line.trim() !== '');
+  const teamLine = lines[0];
+  const playerLines = lines.slice(1, 10); // First 9 players
+  const pitcherLine = lines.find((line) => line.toLowerCase().includes('sp'));
+
+  const formattedPlayers = playerLines.map((line, index) => {
+    // Splits player name and position
+    const parts = line.split(' ');
+    const position = parts.pop();
+    const name = parts.join(' ');
+    return `${index + 1}. ${name} - ${position}`;
+  });
+
+  let formatted = `${teamLine}\n\n${formattedPlayers.join('\n')}`;
+  if (pitcherLine) {
+    formatted += `\n\n${pitcherLine}`;
+  }
+
+  return formatted;
+};
+
 
 
 //////////////////////////////////////////
@@ -79,36 +102,51 @@ const init = async () => {
   }
 };
 
-// Polls the Bluesky feed and processes posts
+
+
+
+// Grabs the Bluesky feed and processes posts
 const pollFeed = async () => {
   try {
+
+    // Fetches the latest posts from the target Bluesky account
     const feed = await agent.api.app.bsky.feed.getAuthorFeed({
       actor: 'fantasymlbnews.bsky.social',
       limit: 10,
     });
 
     for (const post of feed.data.feed) {
+      // Converts post text to lowercase for keyword matching
       const text = post.post.record.text.toLowerCase();
       const cid = post.post.cid;
+      
+      // Checks if post matches today's date lineup pattern
       const todayPattern = getTodayPattern();
       const isLineupPost = todayPattern.test(post.post.record.text);
+
+      // Checks if post contains any extra keywords
       const isKeywordPost = extraKeywords.some((word) => text.includes(word));
 
+      // Extracts team name from first line if it matches known teams so we can bold it
       const firstLine = post.post.record.text.split('\n')[0];
       const teamName = teamNames.find((name) => firstLine.startsWith(name));
 
       let formattedText = post.post.record.text;
       if (teamName) {
-        formattedText = post.post.record.text.replace(teamName, `**${teamName}**`);
+        // Formats the lineup with numbered batting order and bold team name
+        formattedText = formatLineup(post.post.record.text).replace(teamName, `**${teamName}**`);
       }
 
+      // If post matches criteria and hasn't been processed yet
       if ((isLineupPost || isKeywordPost) && !seenPosts.has(cid)) {
         const alertType = isLineupPost ? '⚾️ New Lineup Released' : '🚨 Game Update 🚨';
-        const message = `${alertType}:\n${formattedText}\n----------------------\n`;
+        const message = `${alertType}:\n${formattedText}\n----------------------\n\n`;
 
+        // Adds post to seenPosts and saves to disk
         seenPosts.add(cid);
         saveSeenPosts(seenPosts);
 
+        // Sends to Discord if in production, logs to console if local
         if (isProduction) {
           if (process.env.DISCORD_WEBHOOK_URL) {
             await fetch(process.env.DISCORD_WEBHOOK_URL, {
