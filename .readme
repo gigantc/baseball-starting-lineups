@@ -1,3 +1,23 @@
 The service is running on the gigantc.com server.
 
 We're using 'systemctl start baseball-watcher' to keep it going full time and posting directly to the "MLB CAPTAIN LEAGUE" discord server.
+
+To start the service manually(but this should auto-start with the server):
+sudo systemctl start baseball-watcher
+
+To stop the service:
+sudo systemctl stop baseball-watcher
+
+To restart the service:
+sudo systemctl restart baseball-watcher
+
+To check the service status:
+sudo systemctl status baseball-watcher
+
+To view live logs:
+journalctl -u baseball-watcher -f
+
+Disable it from starting on boot:
+sudo systemctl disable baseball-watcher
+and then
+sudo systemctl stop baseball-watcher

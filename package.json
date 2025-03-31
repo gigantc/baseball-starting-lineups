@@ -14,5 +14,11 @@
     "dotenv": "^16.4.7",
     "node-fetch": "^3.3.2"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "scripts": {
+    "start": "node watcher.js"
+  },
+  "env": {
+    "ENVIRONMENT": "local"
+  }
 }
