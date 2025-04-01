@@ -9,7 +9,8 @@ import { AtpAgent } from '@atproto/api';
 //////////////////////////////////////////
 // Constants
 const isProduction = process.env.ENVIRONMENT === 'production';
-const POLL_INTERVAL = 60000; // Poll every 60 seconds
+ // Poll every 60 seconds
+const POLL_INTERVAL = 60000;
 const SEEN_POSTS_FILE = './seen-posts.json';
 
 // Maps team abbreviations to full team names
@@ -101,7 +102,7 @@ const formatLineup = (text) => {
   const formattedPlayers = playerLines.map((line, index) => {
     // Extracts player name and position
     const parts = line.split(',');
-    const name = parts[0].split('. ')[1].trim();
+    const name = parts[0].replace(/^\d+\.\s*/, '').trim();
     const position = parts[1] ? parts[1].trim() : '';
     return `${index + 1}. ${name} - ${position}`;
   });
