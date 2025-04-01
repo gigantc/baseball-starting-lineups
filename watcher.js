@@ -41,16 +41,17 @@ const loadSeenPosts = () => {
   }
 };
 
-// Saves seen post IDs to disk (limits to last 200 posts)
+// Saves seen post IDs to disk (limits to last 100 posts)
 const saveSeenPosts = (set) => {
-  const maxPosts = 200;
+  const maxPosts = 100;
   const postsArray = Array.from(set);
   const limitedPosts = postsArray.slice(-maxPosts);
   const json = { posts: limitedPosts };
   fs.writeFileSync(SEEN_POSTS_FILE, JSON.stringify(json, null, 2));
 };
 
-// Builds a regex pattern to match today's date lineup posts
+
+// Builds a pattern to match today's date lineup posts
 const getTodayPattern = () => {
   const today = new Date();
   const month = today.getMonth() + 1;
@@ -59,11 +60,13 @@ const getTodayPattern = () => {
   return new RegExp(`^([A-Z][a-z]+\\s?)+${datePattern}`);
 };
 
+
 // Formats the lineup with numbered batting order
 const formatLineup = (text) => {
   const lines = text.split('\n').filter((line) => line.trim() !== '');
   const teamLine = lines[0];
-  const playerLines = lines.slice(1, 10); // First 9 players
+  // First 9 players
+  const playerLines = lines.slice(1, 10);
   const pitcherLine = lines.find((line) => line.toLowerCase().includes('sp'));
 
   const formattedPlayers = playerLines.map((line, index) => {
@@ -133,20 +136,24 @@ const pollFeed = async () => {
 
       let formattedText = post.post.record.text;
       if (teamName) {
-        // Formats the lineup with numbered batting order and bold team name
-        formattedText = formatLineup(post.post.record.text).replace(teamName, `**${teamName}**`);
+        // Formats the lineup with numbered batting order
+        // **TEAM** makes this bold in Discord
+        formattedText = formatLineup(post.post.record.text).replace(teamName, `**${teamName}**:`);
       }
 
       // If post matches criteria and hasn't been processed yet
       if ((isLineupPost || isKeywordPost) && !seenPosts.has(cid)) {
-        const alertType = isLineupPost ? '⚾️ New Lineup Released' : '🚨 Game Update 🚨';
-        const message = `${alertType}:\n${formattedText}\n----------------------\n\n`;
+        
+        const alertType = isLineupPost ? '⚾️ New Lineup: ' : '🚨 Game Update 🚨\n\n';
+        const message = `${alertType}${formattedText}\n----------------------\n\n`;
 
         // Adds post to seenPosts and saves to disk
         seenPosts.add(cid);
         saveSeenPosts(seenPosts);
 
-        // Sends to Discord if in production, logs to console if local
+        // Sends to Discord if in production, 
+        // logs to console if local
+        // set in .env
         if (isProduction) {
           if (process.env.DISCORD_WEBHOOK_URL) {
             await fetch(process.env.DISCORD_WEBHOOK_URL, {
