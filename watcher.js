@@ -12,14 +12,39 @@ const isProduction = process.env.ENVIRONMENT === 'production';
 const POLL_INTERVAL = 60000; // Poll every 60 seconds
 const SEEN_POSTS_FILE = './seen-posts.json';
 
-const teamNames = [
-  'Blue Jays', 'Yankees', 'Red Sox', 'Orioles', 'Rays',
-  'White Sox', 'Guardians', 'Tigers', 'Royals', 'Twins',
-  'Astros', 'Mariners', 'Rangers', 'Angels', 'Athletics',
-  'Braves', 'Marlins', 'Mets', 'Phillies', 'Nationals',
-  'Cubs', 'Reds', 'Brewers', 'Pirates', 'Cardinals',
-  'Diamondbacks', 'Rockies', 'Dodgers', 'Padres', 'Giants'
-];
+// Maps team abbreviations to full team names
+const teamAbbreviations = {
+  ARI: 'Diamondbacks',
+  ATL: 'Braves',
+  BAL: 'Orioles',
+  BOS: 'Red Sox',
+  CHC: 'Cubs',
+  CIN: 'Reds',
+  CLE: 'Guardians',
+  COL: 'Rockies',
+  CHW: 'White Sox',
+  DET: 'Tigers',
+  HOU: 'Astros',
+  KCR: 'Royals',
+  LAA: 'Angels',
+  LAD: 'Dodgers',
+  MIA: 'Marlins',
+  MIL: 'Brewers',
+  MIN: 'Twins',
+  NYM: 'Mets',
+  NYY: 'Yankees',
+  OAK: 'Athletics',
+  PHI: 'Phillies',
+  PIT: 'Pirates',
+  SDP: 'Padres',
+  SEA: 'Mariners',
+  SFG: 'Giants',
+  STL: 'Cardinals',
+  TBR: 'Rays',
+  TEX: 'Rangers',
+  TOR: 'Blue Jays',
+  WSH: 'Nationals',
+};
 
 //post can come through looking like this that are not lineups
 const extraKeywords = ['game alert', 'lineup alert'];
@@ -41,9 +66,9 @@ const loadSeenPosts = () => {
   }
 };
 
-// Saves seen post IDs to disk (limits to last 100 posts)
+// Saves seen post IDs to disk (limits to last 50 posts)
 const saveSeenPosts = (set) => {
-  const maxPosts = 100;
+  const maxPosts = 50;
   const postsArray = Array.from(set);
   const limitedPosts = postsArray.slice(-maxPosts);
   const json = { posts: limitedPosts };
@@ -51,38 +76,74 @@ const saveSeenPosts = (set) => {
 };
 
 
-// Builds a pattern to match today's date lineup posts
-const getTodayPattern = () => {
-  const today = new Date();
-  const month = today.getMonth() + 1;
-  const day = today.getDate();
-  const datePattern = `${month}/${day}`;
-  return new RegExp(`^([A-Z][a-z]+\\s?)+${datePattern}`);
+// Extracts and formats lineup header to "**Team**: M/D"
+const getFormattedHeader = (headerLine) => {
+  const headerMatch = headerLine.match(
+    /([A-Z]{2,3}) lineup vs\. ([A-Z]{2,3})[:,]?\s*,?\s?(\d{1,2})-(\d{2})/i
+  );
+  if (!headerMatch) return null;
+
+  const [, abbrev, , month, day] = headerMatch;
+  const teamName = teamAbbreviations[abbrev.toUpperCase()] || abbrev.toUpperCase();
+  return `**${teamName}**: ${month}/${day}`;
 };
 
 
 // Formats the lineup with numbered batting order
 const formatLineup = (text) => {
   const lines = text.split('\n').filter((line) => line.trim() !== '');
-  const teamLine = lines[0];
-  // First 9 players
+
+  // Extract player lines (first 9 lines)
   const playerLines = lines.slice(1, 10);
-  const pitcherLine = lines.find((line) => line.toLowerCase().includes('sp'));
+  const pitcherLine = lines.find((line) => line.toLowerCase().startsWith('sp:'));
+  const startTimeLine = lines.find((line) => line.toLowerCase().startsWith('start time:'));
 
   const formattedPlayers = playerLines.map((line, index) => {
-    // Splits player name and position
-    const parts = line.split(' ');
-    const position = parts.pop();
-    const name = parts.join(' ');
+    // Extracts player name and position
+    const parts = line.split(',');
+    const name = parts[0].split('. ')[1].trim();
+    const position = parts[1] ? parts[1].trim() : '';
     return `${index + 1}. ${name} - ${position}`;
   });
 
-  let formatted = `${teamLine}\n\n${formattedPlayers.join('\n')}`;
+  let formatted = `${formattedPlayers.join('\n')}\n\n`;
   if (pitcherLine) {
-    formatted += `\n\n${pitcherLine}`;
+    formatted += `${pitcherLine}\n\n`;
+  }
+  if (startTimeLine) {
+    formatted += `${startTimeLine}`;
   }
 
   return formatted;
+};
+
+
+
+// Formats the game start time to include ET and PT
+const formatGameTime = (text) => {
+  const lines = text.split('\n').filter((line) => line.trim() !== '');
+  const startTimeLine = lines.find((line) => line.toLowerCase().trim().startsWith('start time:'))
+  
+  if (startTimeLine) {
+    const timeMatch = startTimeLine.match(/start time:\s*(\d{1,2}):(\d{2})\s*([ap]m)/i);
+    if (timeMatch) {
+      let [ , hour, minute, ampm ] = timeMatch;
+      hour = parseInt(hour);
+      
+      // Convert to Pacific Time
+      let pacificHour = hour - 3;
+      if (pacificHour <= 0) {
+        pacificHour += 12;
+        ampm = ampm.toLowerCase() === 'am' ? 'pm' : 'am';
+      }
+      
+      const easternTime = `${hour}:${minute}${ampm.toLowerCase()}`;
+      const pacificTime = `${pacificHour}:${minute}${ampm.toLowerCase()}`;
+      
+      return `Game Time: ${easternTime} ET, ${pacificTime} PT`;
+    }
+  }
+  return '';
 };
 
 
@@ -114,38 +175,31 @@ const pollFeed = async () => {
 
     // Fetches the latest posts from the target Bluesky account
     const feed = await agent.api.app.bsky.feed.getAuthorFeed({
-      actor: 'fantasymlbnews.bsky.social',
+      actor: 'lineupbot.bsky.social',
       limit: 10,
     });
 
     for (const post of feed.data.feed) {
       // Converts post text to lowercase for keyword matching
-      const text = post.post.record.text.toLowerCase();
+      const text = post.post.record.text;
       const cid = post.post.cid;
       
-      // Checks if post matches today's date lineup pattern
-      const todayPattern = getTodayPattern();
-      const isLineupPost = todayPattern.test(post.post.record.text);
+      //let's get the post header 
+      const headerLine = post.post.record.text.split('\n')[0];
+      const lineupHeader = getFormattedHeader(headerLine);
 
-      // Checks if post contains any extra keywords
-      const isKeywordPost = extraKeywords.some((word) => text.includes(word));
+      //let's format the starting lineup
+      const lineupBody = formatLineup(text);
 
-      // Extracts team name from first line if it matches known teams so we can bold it
-      const firstLine = post.post.record.text.split('\n')[0];
-      const teamName = teamNames.find((name) => firstLine.startsWith(name));
+      //let's format the game time
+      const lineupTime = formatGameTime(text);
 
-      let formattedText = post.post.record.text;
-      if (teamName) {
-        // Formats the lineup with numbered batting order
-        // **TEAM** makes this bold in Discord
-        formattedText = formatLineup(post.post.record.text).replace(teamName, `**${teamName}**:`);
-      }
 
       // If post matches criteria and hasn't been processed yet
-      if ((isLineupPost || isKeywordPost) && !seenPosts.has(cid)) {
+      if (!seenPosts.has(cid)) {
         
-        const alertType = isLineupPost ? '⚾️ New Lineup: ' : '🚨 Game Update 🚨\n\n';
-        const message = `${alertType}${formattedText}\n----------------------\n\n`;
+        // const alertType = isLineupPost ? '⚾️ New Lineup: ' : '🚨 Game Update 🚨\n\n';
+        const message = `⚾️ New Lineup:\n${lineupHeader}\n\n${lineupBody}${lineupTime}\n\n----------------------\n\n`;
 
         // Adds post to seenPosts and saves to disk
         seenPosts.add(cid);

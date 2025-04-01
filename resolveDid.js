@@ -1,6 +1,9 @@
 import { AtpAgent } from '@atproto/api';
 
 const handle = 'fantasymlbnews.bsky.social';
+//did: did:plc:hew2wmghmlzbeeqfwjfidv7j
+//const handle = 'lineupbot.bsky.social';
+// did: did:plc:d4r7rc7hj4fbkseqyzunyopn
 
 const agent = new AtpAgent({ service: 'https://bsky.social' });
 
