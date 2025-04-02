@@ -34,7 +34,7 @@ const teamAbbreviations = {
   MIN: 'Twins',
   NYM: 'Mets',
   NYY: 'Yankees',
-  OAK: 'Athletics',
+  Athletics: 'Athletics',
   PHI: 'Phillies',
   PIT: 'Pirates',
   SDP: 'Padres',
@@ -79,14 +79,30 @@ const saveSeenPosts = (set) => {
 
 // Extracts and formats lineup header to "**Team**: M/D"
 const getFormattedHeader = (headerLine) => {
-  const headerMatch = headerLine.match(
-    /([A-Z]{2,3}) lineup vs\. ([A-Z]{2,3})[:,]?\s*,?\s?(\d{1,2})-(\d{2})/i
-  );
-  if (!headerMatch) return null;
+  const entries = Object.entries(teamAbbreviations);
 
-  const [, abbrev, , month, day] = headerMatch;
-  const teamName = teamAbbreviations[abbrev.toUpperCase()] || abbrev.toUpperCase();
-  return `**${teamName}**: ${month}/${day}`;
+  let matchedName = null;
+
+  for (const [key, value] of entries) {
+    if (headerLine.toLowerCase().startsWith(key.toLowerCase())) {
+      matchedName = value;
+      break;
+    }
+    if (headerLine.toLowerCase().startsWith(value.toLowerCase())) {
+      matchedName = value;
+      break;
+    }
+  }
+
+  if (matchedName) {
+    const dateMatch = headerLine.match(/(\d{1,2})-(\d{2})/);
+    if (dateMatch) {
+      const [, month, day] = dateMatch;
+      return `**${matchedName}**: ${month}/${day}`;
+    }
+  }
+
+  return null;
 };
 
 
