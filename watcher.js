@@ -1,4 +1,5 @@
 import dotenv from 'dotenv';
+import { DateTime } from 'luxon';
 dotenv.config();
 import fetch from 'node-fetch';
 import fs from 'fs';
@@ -9,11 +10,16 @@ import { AtpAgent } from '@atproto/api';
 //////////////////////////////////////////
 // Constants
 const isProduction = process.env.ENVIRONMENT === 'production';
- // Poll every 60 seconds
-const POLL_INTERVAL = 60000;
+// Poll every 60 seconds
+const POLL_LINEUP_INTERVAL = 60000;
+const POLL_ALERTS_INTERVAL = 240000;
 const SEEN_POSTS_FILE = './seen-posts.json';
 
+//we only want alert posts that start with this, so we'll filter them out
+const alertKeywords = ['game alert', 'lineup alert'];
+
 // Maps team abbreviations to full team names
+// Athletics is an exception because they don't have a home 
 const teamAbbreviations = {
   ARI: 'Diamondbacks',
   ATL: 'Braves',
@@ -46,9 +52,6 @@ const teamAbbreviations = {
   TOR: 'Blue Jays',
   WSH: 'Nationals',
 };
-
-//post can come through looking like this that are not lineups
-const extraKeywords = ['game alert', 'lineup alert'];
 
 
 
@@ -106,6 +109,26 @@ const getFormattedHeader = (headerLine) => {
 };
 
 
+
+// Extracts opponent team name from header line
+const getOpponent = (headerLine) => {
+  const entries = Object.entries(teamAbbreviations);
+  
+  for (const [key, value] of entries) {
+    const regex = new RegExp(`vs\\.\\s*${key}[:,]?`, 'i');
+    if (regex.test(headerLine)) {
+      return value;
+    }
+    const regexFull = new RegExp(`vs\\.\\s*${value}[:,]?`, 'i');
+    if (regexFull.test(headerLine)) {
+      return value;
+    }
+  }
+
+  return null;
+};
+
+
 // Formats the lineup with numbered batting order
 const formatLineup = (text) => {
   const lines = text.split('\n').filter((line) => line.trim() !== '');
@@ -137,27 +160,34 @@ const formatLineup = (text) => {
 
 
 // Formats the game start time to include ET and PT
+// uses luxon
 const formatGameTime = (text) => {
   const lines = text.split('\n').filter((line) => line.trim() !== '');
-  const startTimeLine = lines.find((line) => line.toLowerCase().trim().startsWith('start time:'))
-  
+  const startTimeLine = lines.find((line) =>
+    line.toLowerCase().trim().startsWith('start time:')
+  );
+
   if (startTimeLine) {
     const timeMatch = startTimeLine.match(/start time:\s*(\d{1,2}):(\d{2})\s*([ap]m)/i);
     if (timeMatch) {
-      let [ , hour, minute, ampm ] = timeMatch;
+      let [, hour, minute, ampm] = timeMatch;
       hour = parseInt(hour);
-      
-      // Convert to Pacific Time
-      let pacificHour = hour - 3;
-      if (pacificHour <= 0) {
-        pacificHour += 12;
-        ampm = ampm.toLowerCase() === 'am' ? 'pm' : 'am';
-      }
-      
-      const easternTime = `${hour}:${minute}${ampm.toLowerCase()}`;
-      const pacificTime = `${pacificHour}:${minute}${ampm.toLowerCase()}`;
-      
-      return `Game Time: ${easternTime} ET, ${pacificTime} PT`;
+      minute = parseInt(minute);
+      ampm = ampm.toLowerCase();
+
+      const eastern = DateTime.fromObject(
+        {
+          hour: ampm === 'pm' && hour !== 12 ? hour + 12 : hour,
+          minute: minute,
+        },
+        { zone: 'America/New_York' }
+      );
+
+      const pacific = eastern.setZone('America/Los_Angeles');
+
+      const format = (dt) => dt.toFormat('h:mma').toLowerCase();
+
+      return `Game Time: ${format(eastern)} ET, ${format(pacific)} PT`;
     }
   }
   return '';
@@ -177,9 +207,27 @@ const init = async () => {
       identifier: process.env.BSKY_IDENTIFIER,
       password: process.env.BSKY_APP_PASSWORD,
     });
-    await pollFeed();
+    await pollLineupFeed();
+    await pollGameAlerts();
   } catch (error) {
     console.error('Error logging in to Bluesky:', error);
+  }
+};
+
+// Post the final message to Discord
+const postToDiscord = async (message) => {
+  if (isProduction) {
+    if (process.env.DISCORD_WEBHOOK_URL) {
+      await fetch(process.env.DISCORD_WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ content: message }),
+      });
+    } else {
+      console.error('DISCORD_WEBHOOK_URL is not defined.');
+    }
+  } else {
+    console.log(message);
   }
 };
 
@@ -187,7 +235,8 @@ const init = async () => {
 
 
 // Grabs the Bluesky feed and processes posts
-const pollFeed = async () => {
+// this is for LINEUP DATA
+const pollLineupFeed = async () => {
   try {
 
     // Fetches the latest posts from the target Bluesky account
@@ -211,33 +260,22 @@ const pollFeed = async () => {
       //let's format the game time
       const lineupTime = formatGameTime(text);
 
+      //and finally the opponent
+      const lineupOpponent = getOpponent(headerLine);
+
 
       // If post matches criteria and hasn't been processed yet
-      if (!seenPosts.has(cid)) {
+      //also filters out anything that isn't a lineup in case this user posts something different.
+      if (lineupHeader && !seenPosts.has(cid)) {
         
-        // const alertType = isLineupPost ? '⚾️ New Lineup: ' : '🚨 Game Update 🚨\n\n';
-        const message = `⚾️ New Lineup:\n${lineupHeader}\n\n${lineupBody}${lineupTime}\n\n----------------------\n\n`;
+        const message = `⚾️ New Lineup:\n\n${lineupHeader}\n\n${lineupBody}${lineupTime}\nOpponent: ${lineupOpponent}\n\n----------------------\n\n`;
 
         // Adds post to seenPosts and saves to disk
         seenPosts.add(cid);
         saveSeenPosts(seenPosts);
 
-        // Sends to Discord if in production, 
-        // logs to console if local
-        // set in .env
-        if (isProduction) {
-          if (process.env.DISCORD_WEBHOOK_URL) {
-            await fetch(process.env.DISCORD_WEBHOOK_URL, {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ content: message }),
-            });
-          } else {
-            console.error('DISCORD_WEBHOOK_URL is not defined.');
-          }
-        } else {
-          console.log(message);
-        }
+       // Sends to Discord if in production, logs to console if local
+        await postToDiscord(message);
       }
     }
   } catch (error) {
@@ -245,7 +283,52 @@ const pollFeed = async () => {
   }
 
   // Schedule the next feed poll after delay
-  setTimeout(pollFeed, POLL_INTERVAL);
+  setTimeout(pollLineupFeed, POLL_LINEUP_INTERVAL);
 };
+
+
+
+// Grabs the Bluesky feed and processes posts
+// this is for LINEUP DATA
+const pollGameAlerts = async () => {
+  try {
+    // Fetches the latest posts from the game alerts Bluesky account
+    const feed = await agent.api.app.bsky.feed.getAuthorFeed({
+      actor: 'fantasymlbnews.bsky.social',
+      limit: 10,
+    });
+
+    for (const post of feed.data.feed) {
+      // Converts post text to lowercase for keyword matching
+      const text = post.post.record.text.toLowerCase();
+      const cid = post.post.cid;
+
+      // Checks if post contains any alert keywords
+      const isAlertPost = alertKeywords.some((word) => text.includes(word));
+
+      // If post matches alert criteria and hasn't been processed yet
+      if (isAlertPost && !seenPosts.has(cid)) {
+        const message = `🚨 Game Update 🚨\n\n${post.post.record.text}\n\n----------------------\n\n`;
+
+        // Adds post to seenPosts and saves to disk
+        seenPosts.add(cid);
+        saveSeenPosts(seenPosts);
+
+        // Sends to Discord if in production, logs to console if local
+        await postToDiscord(message);
+      }
+    }
+  } catch (error) {
+    console.error('Error fetching game alerts feed:', error);
+  }
+
+  // Schedule the next game alerts feed poll after delay (4 minutes)
+  setTimeout(pollGameAlerts, POLL_ALERTS_INTERVAL);
+};
+
+
+
+
+
 
 init();

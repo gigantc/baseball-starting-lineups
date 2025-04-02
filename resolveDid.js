@@ -15,5 +15,3 @@ async function resolveDid(handle) {
     console.error('Error resolving DID:', error);
   }
 }
-
-resolveDid(handle);
