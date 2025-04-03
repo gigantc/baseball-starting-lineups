@@ -10,13 +10,33 @@ import { AtpAgent } from '@atproto/api';
 //////////////////////////////////////////
 // Constants
 const isProduction = process.env.ENVIRONMENT === 'production';
-// Poll every 60 seconds
+
+//second to minutes for reference
+// min      seconds
+// 1        60000
+// 2        120000
+// 3        180000
+// 4        240000
+// 5        300000
+// 6        360000
+// 7        420000
+// 8        480000
+// 9        540000
+// 10       600000
+
+// Poll every 2 mintes
 const POLL_LINEUP_INTERVAL = 60000;
-const POLL_ALERTS_INTERVAL = 240000;
+// Poll every 5 minutes
+const POLL_ALERTS_INTERVAL = 300000;
+
+//the seen posts file
 const SEEN_POSTS_FILE = './seen-posts.json';
 
 //we only want alert posts that start with this, so we'll filter them out
 const alertKeywords = ['game alert', 'lineup alert'];
+
+//watching keywords to potentailly add news later
+const newsKeywords = ['Hyde', 'Passan', 'Feinsand', 'Rosenthal', 'Weyrich', 'Murray', 'Francona', 'Roberts', 'Friedman', 'per', 'Boone', 'Espada', 'McCullough'];
 
 // Maps team abbreviations to full team names
 // Athletics is an exception because they don't have a home 
@@ -187,7 +207,7 @@ const formatGameTime = (text) => {
 
       const format = (dt) => dt.toFormat('h:mma').toLowerCase();
 
-      return `Game Time: ${format(eastern)} ET, ${format(pacific)} PT`;
+      return `Game Time: ${format(eastern)} ET  |  ${format(pacific)} PT`;
     }
   }
   return '';
@@ -276,6 +296,10 @@ const pollLineupFeed = async () => {
 
        // Sends to Discord if in production, logs to console if local
         await postToDiscord(message);
+
+        // stop after first new alert
+        // the next one will auto queue
+        break; 
       }
     }
   } catch (error) {
@@ -323,6 +347,10 @@ const pollGameAlerts = async () => {
 
         // Sends to Discord if in production, logs to console if local
         await postToDiscord(message);
+
+        // stop after first new alert
+        // the next one will auto queue
+        break; 
       }
     }
   } catch (error) {
