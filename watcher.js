@@ -295,7 +295,7 @@ const pollGameAlerts = async () => {
     // Fetches the latest posts from the game alerts Bluesky account
     const feed = await agent.api.app.bsky.feed.getAuthorFeed({
       actor: 'fantasymlbnews.bsky.social',
-      limit: 10,
+      limit: 20,
     });
 
     for (const post of feed.data.feed) {
@@ -306,9 +306,16 @@ const pollGameAlerts = async () => {
       // Checks if post contains any alert keywords
       const isAlertPost = alertKeywords.some((word) => text.includes(word));
 
+      //set the text in the Alert heading
+      const matchedKeyword = alertKeywords.find((word) => text.includes(word));
+      const alertType = matchedKeyword === 'lineup alert' ? 'Lineup Alert' : 'Game Alert';
+
+      //cleans the text so we don't repeat “game alert:” or “lineup alert:”
+      const cleanedText = post.post.record.text.replace(new RegExp(`${matchedKeyword}:?\\s*`, 'i'), '').trim();
+
       // If post matches alert criteria and hasn't been processed yet
       if (isAlertPost && !seenPosts.has(cid)) {
-        const message = `🚨 Game Update 🚨\n\n${post.post.record.text}\n\n----------------------\n\n`;
+        const message = `🚨 ${alertType} 🚨\n\n${cleanedText}\n\n----------------------\n\n`;
 
         // Adds post to seenPosts and saves to disk
         seenPosts.add(cid);
