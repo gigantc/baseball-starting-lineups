@@ -33,7 +33,7 @@ const POLL_ALERTS_INTERVAL = 300000;
 const SEEN_POSTS_FILE = './seen-posts.json';
 
 //we only want alert posts that start with this, so we'll filter them out
-const alertKeywords = ['game alert', 'lineup alert'];
+const alertKeywords = ['game alert', 'lineup alert', 'postponed', 'weather', 'scratched'];
 
 //watching keywords to potentailly add news later
 const newsKeywords = ['Hyde', 'Passan', 'Feinsand', 'Rosenthal', 'Weyrich', 'Murray', 'Francona', 'Roberts', 'Friedman', 'per', 'Boone', 'Espada', 'McCullough'];
@@ -332,10 +332,20 @@ const pollGameAlerts = async () => {
 
       //set the text in the Alert heading
       const matchedKeyword = alertKeywords.find((word) => text.includes(word));
-      const alertType = matchedKeyword === 'lineup alert' ? 'Lineup Alert' : 'Game Alert';
+
+      let alertType = matchedKeyword === 'lineup alert' ? 'Lineup Alert' : 'Game Alert';
+      // additional alert types
+      if (matchedKeyword == 'postponed' || 'weather'){
+        alertType = 'Game Alert'
+      }
+      if (matchedKeyword == 'scratched'){
+        alertType = 'Lineup Alert'
+      }
 
       //cleans the text so we don't repeat “game alert:” or “lineup alert:”
-      const cleanedText = post.post.record.text.replace(new RegExp(`${matchedKeyword}:?\\s*`, 'i'), '').trim();
+      const cleanedText = ['game alert', 'lineup alert'].includes(matchedKeyword)
+  ? post.post.record.text.replace(new RegExp(`${matchedKeyword}:?\\s*`, 'i'), '').trim()
+  : post.post.record.text;
 
       // If post matches alert criteria and hasn't been processed yet
       if (isAlertPost && !seenPosts.has(cid)) {
