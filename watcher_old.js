@@ -6,9 +6,6 @@ import fs from 'fs';
 import { AtpAgent } from '@atproto/api';
 
 
-import { teamAbbreviations } from './utils/teamMap.js';
-
-
 
 //////////////////////////////////////////
 // Constants
@@ -40,6 +37,41 @@ const alertKeywords = ['game alert', 'lineup alert', 'postponed', 'weather', 'sc
 
 //watching keywords to potentailly add news later
 const newsKeywords = ['Hyde', 'Passan', 'Feinsand', 'Rosenthal', 'Weyrich', 'Murray', 'Francona', 'Roberts', 'Friedman', 'per', 'Boone', 'Espada', 'McCullough'];
+
+// Maps team abbreviations to full team names
+// Athletics is an exception because they don't have a home 
+const teamAbbreviations = {
+  ARI: 'Diamondbacks',
+  ATL: 'Braves',
+  BAL: 'Orioles',
+  BOS: 'Red Sox',
+  CHC: 'Cubs',
+  CIN: 'Reds',
+  CLE: 'Guardians',
+  COL: 'Rockies',
+  CHW: 'White Sox',
+  DET: 'Tigers',
+  HOU: 'Astros',
+  KCR: 'Royals',
+  LAA: 'Angels',
+  LAD: 'Dodgers',
+  MIA: 'Marlins',
+  MIL: 'Brewers',
+  MIN: 'Twins',
+  NYM: 'Mets',
+  NYY: 'Yankees',
+  Athletics: 'Athletics',
+  PHI: 'Phillies',
+  PIT: 'Pirates',
+  SDP: 'Padres',
+  SEA: 'Mariners',
+  SFG: 'Giants',
+  STL: 'Cardinals',
+  TBR: 'Rays',
+  TEX: 'Rangers',
+  TOR: 'Blue Jays',
+  WSH: 'Nationals',
+};
 
 
 
@@ -218,6 +250,8 @@ const postToDiscord = async (message) => {
     console.log(message);
   }
 };
+
+
 
 
 // Grabs the Bluesky feed and processes posts
