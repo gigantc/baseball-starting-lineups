@@ -1,0 +1,74 @@
+[
+  {
+    "homeTeam": "Philadelphia Phillies",
+    "awayTeam": "San Diego Padres",
+    "venue": "Citizens Bank Park",
+    "city": "Philadelphia",
+    "state": "PA",
+    "gamePk": 777306,
+    "gameTime": "Game Time: 6:35pm ET  |  3:35pm PT"
+  },
+  {
+    "homeTeam": "Pittsburgh Pirates",
+    "awayTeam": "St. Louis Cardinals",
+    "venue": "PNC Park",
+    "city": "Pittsburgh",
+    "state": "PA",
+    "gamePk": 777299,
+    "gameTime": "Game Time: 6:40pm ET  |  3:40pm PT"
+  },
+  {
+    "homeTeam": "Toronto Blue Jays",
+    "awayTeam": "New York Yankees",
+    "venue": "Rogers Centre",
+    "city": "Toronto",
+    "state": "ON",
+    "gamePk": 777295,
+    "gameTime": "Game Time: 7:07pm ET  |  4:07pm PT"
+  },
+  {
+    "homeTeam": "Boston Red Sox",
+    "awayTeam": "Cincinnati Reds",
+    "venue": "Fenway Park",
+    "city": "Boston",
+    "state": "MA",
+    "gamePk": 777300,
+    "gameTime": "Game Time: 7:10pm ET  |  4:10pm PT"
+  },
+  {
+    "homeTeam": "Tampa Bay Rays",
+    "awayTeam": "Athletics",
+    "venue": "George M. Steinbrenner Field",
+    "city": "Tampa",
+    "state": "FL",
+    "gamePk": 777296,
+    "gameTime": "Game Time: 7:35pm ET  |  4:35pm PT"
+  },
+  {
+    "homeTeam": "Texas Rangers",
+    "awayTeam": "Baltimore Orioles",
+    "venue": "Globe Life Field",
+    "city": "Arlington",
+    "state": "TX",
+    "gamePk": 777292,
+    "gameTime": "Game Time: 8:05pm ET  |  5:05pm PT"
+  },
+  {
+    "homeTeam": "Seattle Mariners",
+    "awayTeam": "Kansas City Royals",
+    "venue": "T-Mobile Park",
+    "city": "Seattle",
+    "state": "WA",
+    "gamePk": 777297,
+    "gameTime": "Game Time: 9:40pm ET  |  6:40pm PT"
+  },
+  {
+    "homeTeam": "Arizona Diamondbacks",
+    "awayTeam": "San Francisco Giants",
+    "venue": "Chase Field",
+    "city": "Phoenix",
+    "state": "AZ",
+    "gamePk": 777291,
+    "gameTime": "Game Time: 9:40pm ET  |  6:40pm PT"
+  }
+]

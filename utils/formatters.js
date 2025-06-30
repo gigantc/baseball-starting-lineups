@@ -89,38 +89,13 @@ export const formatLineup = (text) => {
 
 
 
-
-
 // Formats the game start time to include ET and PT
 // uses luxon
-export const formatGameTime = (text) => {
-  const lines = text.split('\n').filter((line) => line.trim() !== '');
-  const startTimeLine = lines.find((line) =>
-    line.toLowerCase().trim().startsWith('start time:')
-  );
+export const formatGameTime = (isoString) => {
+  const eastern = DateTime.fromISO(isoString, { zone: 'America/New_York' });
+  const pacific = eastern.setZone('America/Los_Angeles');
 
-  if (startTimeLine) {
-    const timeMatch = startTimeLine.match(/start time:\s*(\d{1,2}):(\d{2})\s*([ap]m)/i);
-    if (timeMatch) {
-      let [, hour, minute, ampm] = timeMatch;
-      hour = parseInt(hour);
-      minute = parseInt(minute);
-      ampm = ampm.toLowerCase();
+  const format = (dt) => dt.toFormat('h:mma').toLowerCase();
 
-      const eastern = DateTime.fromObject(
-        {
-          hour: ampm === 'pm' && hour !== 12 ? hour + 12 : hour,
-          minute: minute,
-        },
-        { zone: 'America/New_York' }
-      );
-
-      const pacific = eastern.setZone('America/Los_Angeles');
-
-      const format = (dt) => dt.toFormat('h:mma').toLowerCase();
-
-      return `Game Time: ${format(eastern)} ET  |  ${format(pacific)} PT`;
-    }
-  }
-  return '';
+  return `Game Time: ${format(eastern)} ET  |  ${format(pacific)} PT`;
 };
