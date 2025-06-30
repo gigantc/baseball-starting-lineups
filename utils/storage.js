@@ -1,6 +1,16 @@
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const SEEN_POSTS_FILE = path.resolve(__dirname, '../seen-posts.json');
+
+
+
 //////////////////////////////////////////
 // Used to save/load game and post data
-
 
 
 
