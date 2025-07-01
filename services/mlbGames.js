@@ -144,7 +144,7 @@ const postLineups = async (game, lineup, teamType) => {
 
 
   //format message
-  const lineupHeader = `**${teamName}**: ${DateTime.fromISO(game.gameDate).toFormat('M/d')}`;
+  const lineupHeader = `**${teamName}**: ${DateTime.fromISO(game.gameDate, { zone: 'America/New_York' }).toFormat('M/d')}`;
 
   const lineupBody = lineup.map(p => `${p.order}. ${p.name} - ${p.position}`).join('\n');
 
