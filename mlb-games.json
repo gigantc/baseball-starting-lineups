@@ -106,26 +106,8 @@
     "city": "Toronto",
     "state": "ON",
     "gamePk": 777283,
-    "gameTime": "3:07pm ET | 12:07pm PT",
+    "gameTime": "3:07pm ET, 12:07pm PT",
     "gameDate": "2025-07-01T15:07:00-04:00"
-  },
-  {
-    "home": "Philadelphia Phillies",
-    "homePitcher": "Cristopher Sánchez",
-    "homePitcherHand": "L",
-    "homePosted": false,
-    "homeLineup": [],
-    "away": "San Diego Padres",
-    "awayPitcher": "Nick Pivetta",
-    "awayPitcherHand": "R",
-    "awayPosted": false,
-    "awayLineup": [],
-    "venue": "Citizens Bank Park",
-    "city": "Philadelphia",
-    "state": "PA",
-    "gamePk": 777290,
-    "gameTime": "6:35pm ET | 3:35pm PT",
-    "gameDate": "2025-07-01T18:35:00-04:00"
   },
   {
     "home": "Pittsburgh Pirates",
@@ -234,7 +216,7 @@
     "city": "Pittsburgh",
     "state": "PA",
     "gamePk": 777288,
-    "gameTime": "6:40pm ET | 3:40pm PT",
+    "gameTime": "6:40pm ET, 3:40pm PT",
     "gameDate": "2025-07-01T18:40:00-04:00"
   },
   {
@@ -344,26 +326,8 @@
     "city": "Miami",
     "state": "FL",
     "gamePk": 777293,
-    "gameTime": "6:40pm ET | 3:40pm PT",
+    "gameTime": "6:40pm ET, 3:40pm PT",
     "gameDate": "2025-07-01T18:40:00-04:00"
-  },
-  {
-    "home": "Washington Nationals",
-    "homePitcher": "Trevor Williams",
-    "homePitcherHand": "R",
-    "homePosted": false,
-    "homeLineup": [],
-    "away": "Detroit Tigers",
-    "awayPitcher": "Jack Flaherty",
-    "awayPitcherHand": "R",
-    "awayPosted": false,
-    "awayLineup": [],
-    "venue": "Nationals Park",
-    "city": "Washington",
-    "state": "DC",
-    "gamePk": 777284,
-    "gameTime": "6:45pm ET | 3:45pm PT",
-    "gameDate": "2025-07-01T18:45:00-04:00"
   },
   {
     "home": "Tampa Bay Rays",
@@ -429,13 +393,13 @@
       },
       {
         "order": 2,
-        "name": "Jacob Wilson",
-        "position": "SS"
+        "name": "Brent Rooker",
+        "position": "DH"
       },
       {
         "order": 3,
-        "name": "Brent Rooker",
-        "position": "DH"
+        "name": "Shea Langeliers",
+        "position": "C"
       },
       {
         "order": 4,
@@ -444,35 +408,35 @@
       },
       {
         "order": 5,
-        "name": "Shea Langeliers",
-        "position": "C"
-      },
-      {
-        "order": 6,
         "name": "Max Muncy",
         "position": "3B"
       },
       {
-        "order": 7,
+        "order": 6,
         "name": "Luis Urías",
         "position": "2B"
       },
       {
-        "order": 8,
+        "order": 7,
         "name": "Colby Thomas",
         "position": "LF"
       },
       {
-        "order": 9,
+        "order": 8,
         "name": "Denzel Clarke",
         "position": "CF"
+      },
+      {
+        "order": 9,
+        "name": "Max Schuemann",
+        "position": "SS"
       }
     ],
     "venue": "George M. Steinbrenner Field",
     "city": "Tampa",
     "state": "FL",
     "gamePk": 777286,
-    "gameTime": "7:05pm ET | 4:05pm PT",
+    "gameTime": "7:05pm ET, 4:05pm PT",
     "gameDate": "2025-07-01T19:05:00-04:00"
   },
   {
@@ -582,7 +546,7 @@
     "city": "Boston",
     "state": "MA",
     "gamePk": 777294,
-    "gameTime": "7:10pm ET | 4:10pm PT",
+    "gameTime": "7:10pm ET, 4:10pm PT",
     "gameDate": "2025-07-01T19:10:00-04:00"
   },
   {
@@ -646,7 +610,7 @@
     "city": "Flushing",
     "state": "NY",
     "gamePk": 777289,
-    "gameTime": "7:10pm ET | 4:10pm PT",
+    "gameTime": "7:10pm ET, 4:10pm PT",
     "gameDate": "2025-07-01T19:10:00-04:00"
   },
   {
@@ -756,7 +720,7 @@
     "city": "Atlanta",
     "state": "GA",
     "gamePk": 777298,
-    "gameTime": "7:15pm ET | 4:15pm PT",
+    "gameTime": "7:15pm ET, 4:15pm PT",
     "gameDate": "2025-07-01T19:15:00-04:00"
   },
   {
@@ -866,7 +830,7 @@
     "city": "Chicago",
     "state": "IL",
     "gamePk": 777287,
-    "gameTime": "8:05pm ET | 5:05pm PT",
+    "gameTime": "8:05pm ET, 5:05pm PT",
     "gameDate": "2025-07-01T20:05:00-04:00"
   },
   {
@@ -930,7 +894,7 @@
     "city": "Arlington",
     "state": "TX",
     "gamePk": 777282,
-    "gameTime": "8:05pm ET | 5:05pm PT",
+    "gameTime": "8:05pm ET, 5:05pm PT",
     "gameDate": "2025-07-01T20:05:00-04:00"
   },
   {
@@ -994,15 +958,61 @@
     "city": "Denver",
     "state": "CO",
     "gamePk": 777285,
-    "gameTime": "8:40pm ET | 5:40pm PT",
+    "gameTime": "8:40pm ET, 5:40pm PT",
     "gameDate": "2025-07-01T20:40:00-04:00"
   },
   {
     "home": "Seattle Mariners",
     "homePitcher": "Emerson Hancock",
     "homePitcherHand": "R",
-    "homePosted": false,
-    "homeLineup": [],
+    "homePosted": true,
+    "homeLineup": [
+      {
+        "order": 1,
+        "name": "J.P. Crawford",
+        "position": "SS"
+      },
+      {
+        "order": 2,
+        "name": "Julio Rodríguez",
+        "position": "CF"
+      },
+      {
+        "order": 3,
+        "name": "Cal Raleigh",
+        "position": "C"
+      },
+      {
+        "order": 4,
+        "name": "Jorge Polanco",
+        "position": "DH"
+      },
+      {
+        "order": 5,
+        "name": "Randy Arozarena",
+        "position": "LF"
+      },
+      {
+        "order": 6,
+        "name": "Luke Raley",
+        "position": "1B"
+      },
+      {
+        "order": 7,
+        "name": "Dominic Canzone",
+        "position": "RF"
+      },
+      {
+        "order": 8,
+        "name": "Ben Williamson",
+        "position": "3B"
+      },
+      {
+        "order": 9,
+        "name": "Cole Young",
+        "position": "2B"
+      }
+    ],
     "away": "Kansas City Royals",
     "awayPitcher": "Michael Lorenzen",
     "awayPitcherHand": "R",
@@ -1012,7 +1022,7 @@
     "city": "Seattle",
     "state": "WA",
     "gamePk": 777281,
-    "gameTime": "9:40pm ET | 6:40pm PT",
+    "gameTime": "9:40pm ET, 6:40pm PT",
     "gameDate": "2025-07-01T21:40:00-04:00"
   },
   {
@@ -1076,7 +1086,7 @@
     "city": "Phoenix",
     "state": "AZ",
     "gamePk": 777278,
-    "gameTime": "9:40pm ET | 6:40pm PT",
+    "gameTime": "9:40pm ET, 6:40pm PT",
     "gameDate": "2025-07-01T21:40:00-04:00"
   },
   {
@@ -1094,7 +1104,43 @@
     "city": "Los Angeles",
     "state": "CA",
     "gamePk": 777280,
-    "gameTime": "10:10pm ET | 7:10pm PT",
+    "gameTime": "10:10pm ET, 7:10pm PT",
     "gameDate": "2025-07-01T22:10:00-04:00"
+  },
+  {
+    "home": "Philadelphia Phillies",
+    "homePitcher": "Cristopher Sánchez",
+    "homePitcherHand": "L",
+    "homePosted": false,
+    "homeLineup": [],
+    "away": "San Diego Padres",
+    "awayPitcher": "Nick Pivetta",
+    "awayPitcherHand": "R",
+    "awayPosted": false,
+    "awayLineup": [],
+    "venue": "Citizens Bank Park",
+    "city": "Philadelphia",
+    "state": "PA",
+    "gamePk": 777290,
+    "gameTime": "6:35pm ET, 3:35pm PT",
+    "gameDate": "2025-07-01T18:35:00-04:00"
+  },
+  {
+    "home": "Washington Nationals",
+    "homePitcher": "Trevor Williams",
+    "homePitcherHand": "R",
+    "homePosted": false,
+    "homeLineup": [],
+    "away": "Detroit Tigers",
+    "awayPitcher": "Jack Flaherty",
+    "awayPitcherHand": "R",
+    "awayPosted": false,
+    "awayLineup": [],
+    "venue": "Nationals Park",
+    "city": "Washington",
+    "state": "DC",
+    "gamePk": 777284,
+    "gameTime": "6:45pm ET, 3:45pm PT",
+    "gameDate": "2025-07-01T18:45:00-04:00"
   }
 ]

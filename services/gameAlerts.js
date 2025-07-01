@@ -22,8 +22,12 @@ const alertKeywords = ['game alert', 'lineup alert', 'postponed', 'weather', 'sc
 const newsKeywords = ['Hyde', 'Passan', 'Feinsand', 'Rosenthal', 'Weyrich', 'Murray', 'Francona', 'Roberts', 'Friedman', 'per', 'Boone', 'Espada', 'McCullough', 'Nightengale', 'Heyman', 'Rome', 'Anthopoulos', 'Lovullo'];
 
 
+
+
 // Grabs the Bluesky feed and processes posts
 // this is for REALTIME GAME ALERTS
+
+// TODO: This all seems janky as fuck, but it works. I'll keep it for now.
 export const pollGameAlerts = async () => {
   try {
     // Fetches the latest posts from the game alerts Bluesky account
@@ -38,22 +42,37 @@ export const pollGameAlerts = async () => {
       const cid = post.post.cid;
 
       // Checks if post contains any alert keywords
-      const isAlertPost = alertKeywords.some((word) => text.includes(word));
+      const isAlertPost = alertKeywords.some((word) => text.includes(word)) || newsKeywords.some((word) => text.includes(word));
 
       //set the text in the Alert heading
-      const matchedKeyword = alertKeywords.find((word) => text.includes(word));
+      let matchedKeyword = alertKeywords.find((word) => text.includes(word));
+      let isNews = false;
+      if (!matchedKeyword) {
+        matchedKeyword = newsKeywords.find((word) => text.includes(word));
+        isNews = true;
+      }
 
-      let alertType = matchedKeyword === 'lineup alert' ? 'Lineup Alert' : 'Game Alert';
-      // additional alert types
-      if (matchedKeyword == 'postponed' || 'weather'){
-        alertType = 'Game Alert'
+      //using switch because it's awesome
+      switch (true) {
+        case isNews:
+          alertType = 'News Alert';
+          break;
+        case matchedKeyword === 'lineup alert':
+          alertType = 'Lineup Alert';
+          break;
+        case ['postponed', 'weather'].includes(matchedKeyword):
+          alertType = 'Game Alert';
+          break;
+        case ['scratched', 'status alert', 'optioned', 'designated', 'recalled'].includes(matchedKeyword):
+          alertType = 'Status Alert';
+          break;
+        case ['10-day il', 'activated', 'x-rays', 'left game', '7-day il', '15-day il'].includes(matchedKeyword):
+          alertType = 'Injury Alert';
+          break;
+        default:
+          alertType = 'Game Alert';
       }
-      if (matchedKeyword == 'scratched' || 'Status alert' || 'optioned' || 'designated' || 'recalled'){
-        alertType = 'Staus Alert'
-      }
-      if (matchedKeyword == '10-day IL' || 'activated' || 'X-rays' || 'left game' || '7-day IL' || '15-day IL'){
-        alertType = 'Injury Alert'
-      }
+
 
       //cleans the text so we don't repeat “game alert:” or “lineup alert:”
       const cleanedText = ['game alert', 'lineup alert'].includes(matchedKeyword)
