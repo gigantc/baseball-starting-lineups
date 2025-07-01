@@ -91,11 +91,12 @@ export const formatLineup = (text) => {
 
 // Formats the game start time to include ET and PT
 // uses luxon
+// return looks like this: Game Time: 10:10pm ET  |  7:10pm PT
 export const formatGameTime = (isoString) => {
   const eastern = DateTime.fromISO(isoString, { zone: 'America/New_York' });
   const pacific = eastern.setZone('America/Los_Angeles');
 
   const format = (dt) => dt.toFormat('h:mma').toLowerCase();
 
-  return `Game Time: ${format(eastern)} ET  |  ${format(pacific)} PT`;
+  return `${format(eastern)} ET | ${format(pacific)} PT`;
 };

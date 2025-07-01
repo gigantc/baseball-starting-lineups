@@ -6,26 +6,13 @@ import { postToDiscord } from '../services/postToDiscord.js';
 import { loadSeenPosts, saveSeenPosts } from '../utils/storage.js';
 const seenPosts = loadSeenPosts();
 
+
+
 const agent = new AtpAgent({ service: 'https://bsky.social' });
 await agent.login({
   identifier: process.env.BSKY_IDENTIFIER,
   password: process.env.BSKY_APP_PASSWORD,
 });
-
-// Poll every 5 minutes
-//second to minutes for reference
-// min      seconds
-// 1        60000
-// 2        120000
-// 3        180000
-// 4        240000
-// 5        300000
-// 6        360000
-// 7        420000
-// 8        480000
-// 9        540000
-// 10       600000
-const POLL_ALERTS_INTERVAL = 300000;
 
 
 //we only want alert posts that start with this, so we'll filter them out
@@ -89,7 +76,4 @@ export const pollGameAlerts = async () => {
   } catch (error) {
     console.error('Error fetching game alerts feed:', error);
   }
-
-  // Schedule the next game alerts feed poll after delay (4 minutes)
-  setTimeout(pollGameAlerts, POLL_ALERTS_INTERVAL);
 };
