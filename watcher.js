@@ -23,7 +23,7 @@ import { fetchMLBGames, pollLineups } from './services/mlbGames.js';
 // 9        540000
 // 10       600000
 
-const POLL_ALERTS_INTERVAL = 600000;
+const POLL_ALERTS_INTERVAL = 300000;
 const POLL_LINEUPS_INTERVAL = 180000;
 
 const scheduleLineupPolling = () => {
