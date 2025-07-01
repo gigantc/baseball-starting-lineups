@@ -1,239 +1,19 @@
 [
   {
-    "home": "Philadelphia Phillies",
-    "homePitcher": "Zack Wheeler",
-    "homePitcherHand": "R",
-    "homePosted": true,
-    "homeLineup": [
-      {
-        "order": 1,
-        "name": "Trea Turner",
-        "position": "SS"
-      },
-      {
-        "order": 2,
-        "name": "Kyle Schwarber",
-        "position": "DH"
-      },
-      {
-        "order": 3,
-        "name": "Bryce Harper",
-        "position": "1B"
-      },
-      {
-        "order": 4,
-        "name": "Alec Bohm",
-        "position": "3B"
-      },
-      {
-        "order": 5,
-        "name": "Nick Castellanos",
-        "position": "RF"
-      },
-      {
-        "order": 6,
-        "name": "Max Kepler",
-        "position": "LF"
-      },
-      {
-        "order": 7,
-        "name": "J.T. Realmuto",
-        "position": "C"
-      },
-      {
-        "order": 8,
-        "name": "Bryson Stott",
-        "position": "2B"
-      },
-      {
-        "order": 9,
-        "name": "Brandon Marsh",
-        "position": "CF"
-      }
-    ],
-    "away": "San Diego Padres",
-    "awayPitcher": "Matt Waldron",
-    "awayPitcherHand": "R",
-    "awayPosted": true,
-    "awayLineup": [
-      {
-        "order": 1,
-        "name": "Luis Arraez",
-        "position": "1B"
-      },
-      {
-        "order": 2,
-        "name": "Manny Machado",
-        "position": "3B"
-      },
-      {
-        "order": 3,
-        "name": "Jackson Merrill",
-        "position": "CF"
-      },
-      {
-        "order": 4,
-        "name": "Fernando Tatis Jr.",
-        "position": "RF"
-      },
-      {
-        "order": 5,
-        "name": "Gavin Sheets",
-        "position": "DH"
-      },
-      {
-        "order": 6,
-        "name": "Xander Bogaerts",
-        "position": "SS"
-      },
-      {
-        "order": 7,
-        "name": "Jake Cronenworth",
-        "position": "2B"
-      },
-      {
-        "order": 8,
-        "name": "Bryce Johnson",
-        "position": "LF"
-      },
-      {
-        "order": 9,
-        "name": "Elias Díaz",
-        "position": "C"
-      }
-    ],
-    "venue": "Citizens Bank Park",
-    "city": "Philadelphia",
-    "state": "PA",
-    "gamePk": 777306,
-    "gameTime": "6:35pm ET | 3:35pm PT",
-    "gameDate": "2025-06-30T18:35:00-04:00"
-  },
-  {
-    "home": "Pittsburgh Pirates",
-    "homePitcher": "Andrew Heaney",
-    "homePitcherHand": "L",
-    "homePosted": true,
-    "homeLineup": [
-      {
-        "order": 1,
-        "name": "Spencer Horwitz",
-        "position": "1B"
-      },
-      {
-        "order": 2,
-        "name": "Andrew McCutchen",
-        "position": "DH"
-      },
-      {
-        "order": 3,
-        "name": "Bryan Reynolds",
-        "position": "RF"
-      },
-      {
-        "order": 4,
-        "name": "Nick Gonzales",
-        "position": "2B"
-      },
-      {
-        "order": 5,
-        "name": "Oneil Cruz",
-        "position": "CF"
-      },
-      {
-        "order": 6,
-        "name": "Ke'Bryan Hayes",
-        "position": "3B"
-      },
-      {
-        "order": 7,
-        "name": "Tommy Pham",
-        "position": "LF"
-      },
-      {
-        "order": 8,
-        "name": "Joey Bart",
-        "position": "C"
-      },
-      {
-        "order": 9,
-        "name": "Isiah Kiner-Falefa",
-        "position": "SS"
-      }
-    ],
-    "away": "St. Louis Cardinals",
-    "awayPitcher": "Erick Fedde",
-    "awayPitcherHand": "R",
-    "awayPosted": true,
-    "awayLineup": [
-      {
-        "order": 1,
-        "name": "José Fermín",
-        "position": "LF"
-      },
-      {
-        "order": 2,
-        "name": "Garrett Hampson",
-        "position": "SS"
-      },
-      {
-        "order": 3,
-        "name": "Alec Burleson",
-        "position": "RF"
-      },
-      {
-        "order": 4,
-        "name": "Yohel Pozo",
-        "position": "1B"
-      },
-      {
-        "order": 5,
-        "name": "Nolan Arenado",
-        "position": "DH"
-      },
-      {
-        "order": 6,
-        "name": "Nolan Gorman",
-        "position": "3B"
-      },
-      {
-        "order": 7,
-        "name": "Thomas Saggese",
-        "position": "2B"
-      },
-      {
-        "order": 8,
-        "name": "Pedro Pagés",
-        "position": "C"
-      },
-      {
-        "order": 9,
-        "name": "Victor Scott II",
-        "position": "CF"
-      }
-    ],
-    "venue": "PNC Park",
-    "city": "Pittsburgh",
-    "state": "PA",
-    "gamePk": 777299,
-    "gameTime": "6:40pm ET | 3:40pm PT",
-    "gameDate": "2025-06-30T18:40:00-04:00"
-  },
-  {
     "home": "Toronto Blue Jays",
-    "homePitcher": "Max Scherzer",
+    "homePitcher": "Kevin Gausman",
     "homePitcherHand": "R",
     "homePosted": true,
     "homeLineup": [
       {
         "order": 1,
         "name": "Ernie Clement",
-        "position": "SS"
+        "position": "3B"
       },
       {
         "order": 2,
-        "name": "Andrés Giménez",
-        "position": "2B"
+        "name": "George Springer",
+        "position": "RF"
       },
       {
         "order": 3,
@@ -243,43 +23,43 @@
       {
         "order": 4,
         "name": "Alejandro Kirk",
-        "position": "C"
+        "position": "DH"
       },
       {
         "order": 5,
-        "name": "Addison Barger",
-        "position": "3B"
-      },
-      {
-        "order": 6,
         "name": "Davis Schneider",
         "position": "LF"
       },
       {
-        "order": 7,
+        "order": 6,
         "name": "Myles Straw",
         "position": "CF"
       },
       {
+        "order": 7,
+        "name": "Andrés Giménez",
+        "position": "2B"
+      },
+      {
         "order": 8,
-        "name": "Nathan Lukes",
-        "position": "RF"
+        "name": "Tyler Heineman",
+        "position": "C"
       },
       {
         "order": 9,
-        "name": "Will Wagner",
-        "position": "DH"
+        "name": "Leo Jiménez",
+        "position": "SS"
       }
     ],
     "away": "New York Yankees",
-    "awayPitcher": "Carlos Rodón",
+    "awayPitcher": "Max Fried",
     "awayPitcherHand": "L",
     "awayPosted": true,
     "awayLineup": [
       {
         "order": 1,
-        "name": "Jasson Domínguez",
-        "position": "LF"
+        "name": "Paul Goldschmidt",
+        "position": "1B"
       },
       {
         "order": 2,
@@ -298,13 +78,13 @@
       },
       {
         "order": 5,
-        "name": "Oswald Peraza",
+        "name": "Giancarlo Stanton",
         "position": "DH"
       },
       {
         "order": 6,
-        "name": "Ben Rice",
-        "position": "1B"
+        "name": "Jasson Domínguez",
+        "position": "LF"
       },
       {
         "order": 7,
@@ -325,558 +105,260 @@
     "venue": "Rogers Centre",
     "city": "Toronto",
     "state": "ON",
-    "gamePk": 777295,
-    "gameTime": "7:07pm ET | 4:07pm PT",
-    "gameDate": "2025-06-30T19:07:00-04:00"
+    "gamePk": 777283,
+    "gameTime": "3:07pm ET | 12:07pm PT",
+    "gameDate": "2025-07-01T15:07:00-04:00"
   },
   {
-    "home": "Boston Red Sox",
-    "homePitcher": "Garrett Crochet",
+    "home": "Philadelphia Phillies",
+    "homePitcher": "Cristopher Sánchez",
     "homePitcherHand": "L",
-    "homePosted": true,
-    "homeLineup": [
-      {
-        "order": 1,
-        "name": "Jarren Duran",
-        "position": "LF"
-      },
-      {
-        "order": 2,
-        "name": "Roman Anthony",
-        "position": "DH"
-      },
-      {
-        "order": 3,
-        "name": "Abraham Toro",
-        "position": "1B"
-      },
-      {
-        "order": 4,
-        "name": "Carlos Narváez",
-        "position": "C"
-      },
-      {
-        "order": 5,
-        "name": "Wilyer Abreu",
-        "position": "RF"
-      },
-      {
-        "order": 6,
-        "name": "Trevor Story",
-        "position": "SS"
-      },
-      {
-        "order": 7,
-        "name": "Marcelo Mayer",
-        "position": "3B"
-      },
-      {
-        "order": 8,
-        "name": "David Hamilton",
-        "position": "2B"
-      },
-      {
-        "order": 9,
-        "name": "Ceddanne Rafaela",
-        "position": "CF"
-      }
-    ],
-    "away": "Cincinnati Reds",
-    "awayPitcher": "Chase Burns",
+    "homePosted": false,
+    "homeLineup": [],
+    "away": "San Diego Padres",
+    "awayPitcher": "Nick Pivetta",
     "awayPitcherHand": "R",
-    "awayPosted": true,
-    "awayLineup": [
-      {
-        "order": 1,
-        "name": "TJ Friedl",
-        "position": "CF"
-      },
-      {
-        "order": 2,
-        "name": "Matt McLain",
-        "position": "2B"
-      },
-      {
-        "order": 3,
-        "name": "Elly De La Cruz",
-        "position": "SS"
-      },
-      {
-        "order": 4,
-        "name": "Austin Hays",
-        "position": "DH"
-      },
-      {
-        "order": 5,
-        "name": "Spencer Steer",
-        "position": "LF"
-      },
-      {
-        "order": 6,
-        "name": "Tyler Stephenson",
-        "position": "C"
-      },
-      {
-        "order": 7,
-        "name": "Rece Hinds",
-        "position": "RF"
-      },
-      {
-        "order": 8,
-        "name": "Christian Encarnacion-Strand",
-        "position": "1B"
-      },
-      {
-        "order": 9,
-        "name": "Santiago Espinal",
-        "position": "3B"
-      }
-    ],
-    "venue": "Fenway Park",
-    "city": "Boston",
-    "state": "MA",
-    "gamePk": 777300,
-    "gameTime": "7:10pm ET | 4:10pm PT",
-    "gameDate": "2025-06-30T19:10:00-04:00"
+    "awayPosted": false,
+    "awayLineup": [],
+    "venue": "Citizens Bank Park",
+    "city": "Philadelphia",
+    "state": "PA",
+    "gamePk": 777290,
+    "gameTime": "6:35pm ET | 3:35pm PT",
+    "gameDate": "2025-07-01T18:35:00-04:00"
+  },
+  {
+    "home": "Pittsburgh Pirates",
+    "homePitcher": "Paul Skenes",
+    "homePitcherHand": "R",
+    "homePosted": false,
+    "homeLineup": [],
+    "away": "St. Louis Cardinals",
+    "awayPitcher": "Andre Pallante",
+    "awayPitcherHand": "R",
+    "awayPosted": false,
+    "awayLineup": [],
+    "venue": "PNC Park",
+    "city": "Pittsburgh",
+    "state": "PA",
+    "gamePk": 777288,
+    "gameTime": "6:40pm ET | 3:40pm PT",
+    "gameDate": "2025-07-01T18:40:00-04:00"
+  },
+  {
+    "home": "Miami Marlins",
+    "homePitcher": "Edward Cabrera",
+    "homePitcherHand": "R",
+    "homePosted": false,
+    "homeLineup": [],
+    "away": "Minnesota Twins",
+    "awayPitcher": "Joe Ryan",
+    "awayPitcherHand": "R",
+    "awayPosted": false,
+    "awayLineup": [],
+    "venue": "loanDepot park",
+    "city": "Miami",
+    "state": "FL",
+    "gamePk": 777293,
+    "gameTime": "6:40pm ET | 3:40pm PT",
+    "gameDate": "2025-07-01T18:40:00-04:00"
+  },
+  {
+    "home": "Washington Nationals",
+    "homePitcher": "Trevor Williams",
+    "homePitcherHand": "R",
+    "homePosted": false,
+    "homeLineup": [],
+    "away": "Detroit Tigers",
+    "awayPitcher": "Jack Flaherty",
+    "awayPitcherHand": "R",
+    "awayPosted": false,
+    "awayLineup": [],
+    "venue": "Nationals Park",
+    "city": "Washington",
+    "state": "DC",
+    "gamePk": 777284,
+    "gameTime": "6:45pm ET | 3:45pm PT",
+    "gameDate": "2025-07-01T18:45:00-04:00"
   },
   {
     "home": "Tampa Bay Rays",
-    "homePitcher": "Drew Rasmussen",
+    "homePitcher": "Shane Baz",
     "homePitcherHand": "R",
-    "homePosted": true,
-    "homeLineup": [
-      {
-        "order": 1,
-        "name": "Chandler Simpson",
-        "position": "DH"
-      },
-      {
-        "order": 2,
-        "name": "Brandon Lowe",
-        "position": "2B"
-      },
-      {
-        "order": 3,
-        "name": "Junior Caminero",
-        "position": "3B"
-      },
-      {
-        "order": 4,
-        "name": "Josh Lowe",
-        "position": "RF"
-      },
-      {
-        "order": 5,
-        "name": "Jake Mangum",
-        "position": "CF"
-      },
-      {
-        "order": 6,
-        "name": "Jonathan Aranda",
-        "position": "1B"
-      },
-      {
-        "order": 7,
-        "name": "José Caballero",
-        "position": "LF"
-      },
-      {
-        "order": 8,
-        "name": "Danny Jansen",
-        "position": "C"
-      },
-      {
-        "order": 9,
-        "name": "Taylor Walls",
-        "position": "SS"
-      }
-    ],
+    "homePosted": false,
+    "homeLineup": [],
     "away": "Athletics",
-    "awayPitcher": "Jacob Lopez",
+    "awayPitcher": "Jeffrey Springs",
     "awayPitcherHand": "L",
-    "awayPosted": true,
-    "awayLineup": [
-      {
-        "order": 1,
-        "name": "Lawrence Butler",
-        "position": "RF"
-      },
-      {
-        "order": 2,
-        "name": "Jacob Wilson",
-        "position": "SS"
-      },
-      {
-        "order": 3,
-        "name": "Brent Rooker",
-        "position": "DH"
-      },
-      {
-        "order": 4,
-        "name": "Nick Kurtz",
-        "position": "1B"
-      },
-      {
-        "order": 5,
-        "name": "Shea Langeliers",
-        "position": "C"
-      },
-      {
-        "order": 6,
-        "name": "Colby Thomas",
-        "position": "LF"
-      },
-      {
-        "order": 7,
-        "name": "Max Muncy",
-        "position": "3B"
-      },
-      {
-        "order": 8,
-        "name": "Max Schuemann",
-        "position": "2B"
-      },
-      {
-        "order": 9,
-        "name": "Denzel Clarke",
-        "position": "CF"
-      }
-    ],
+    "awayPosted": false,
+    "awayLineup": [],
     "venue": "George M. Steinbrenner Field",
     "city": "Tampa",
     "state": "FL",
-    "gamePk": 777296,
-    "gameTime": "7:35pm ET | 4:35pm PT",
-    "gameDate": "2025-06-30T19:35:00-04:00"
+    "gamePk": 777286,
+    "gameTime": "7:05pm ET | 4:05pm PT",
+    "gameDate": "2025-07-01T19:05:00-04:00"
+  },
+  {
+    "home": "Boston Red Sox",
+    "homePitcher": "Richard Fitts",
+    "homePitcherHand": "R",
+    "homePosted": false,
+    "homeLineup": [],
+    "away": "Cincinnati Reds",
+    "awayPitcher": "Brady Singer",
+    "awayPitcherHand": "R",
+    "awayPosted": false,
+    "awayLineup": [],
+    "venue": "Fenway Park",
+    "city": "Boston",
+    "state": "MA",
+    "gamePk": 777294,
+    "gameTime": "7:10pm ET | 4:10pm PT",
+    "gameDate": "2025-07-01T19:10:00-04:00"
+  },
+  {
+    "home": "New York Mets",
+    "homePitcher": "Clay Holmes",
+    "homePitcherHand": "R",
+    "homePosted": false,
+    "homeLineup": [],
+    "away": "Milwaukee Brewers",
+    "awayPitcher": "Freddy Peralta",
+    "awayPitcherHand": "R",
+    "awayPosted": false,
+    "awayLineup": [],
+    "venue": "Citi Field",
+    "city": "Flushing",
+    "state": "NY",
+    "gamePk": 777289,
+    "gameTime": "7:10pm ET | 4:10pm PT",
+    "gameDate": "2025-07-01T19:10:00-04:00"
+  },
+  {
+    "home": "Atlanta Braves",
+    "homePitcher": "Grant Holmes",
+    "homePitcherHand": "R",
+    "homePosted": false,
+    "homeLineup": [],
+    "away": "Los Angeles Angels",
+    "awayPitcher": "Tyler Anderson",
+    "awayPitcherHand": "L",
+    "awayPosted": false,
+    "awayLineup": [],
+    "venue": "Truist Park",
+    "city": "Atlanta",
+    "state": "GA",
+    "gamePk": 777298,
+    "gameTime": "7:15pm ET | 4:15pm PT",
+    "gameDate": "2025-07-01T19:15:00-04:00"
+  },
+  {
+    "home": "Chicago Cubs",
+    "homePitcher": "Matthew Boyd",
+    "homePitcherHand": "L",
+    "homePosted": false,
+    "homeLineup": [],
+    "away": "Cleveland Guardians",
+    "awayPitcher": "Gavin Williams",
+    "awayPitcherHand": "R",
+    "awayPosted": false,
+    "awayLineup": [],
+    "venue": "Wrigley Field",
+    "city": "Chicago",
+    "state": "IL",
+    "gamePk": 777287,
+    "gameTime": "8:05pm ET | 5:05pm PT",
+    "gameDate": "2025-07-01T20:05:00-04:00"
   },
   {
     "home": "Texas Rangers",
-    "homePitcher": "Patrick Corbin",
-    "homePitcherHand": "L",
-    "homePosted": true,
-    "homeLineup": [
-      {
-        "order": 1,
-        "name": "Sam Haggerty",
-        "position": "CF"
-      },
-      {
-        "order": 2,
-        "name": "Corey Seager",
-        "position": "SS"
-      },
-      {
-        "order": 3,
-        "name": "Marcus Semien",
-        "position": "2B"
-      },
-      {
-        "order": 4,
-        "name": "Adolis García",
-        "position": "RF"
-      },
-      {
-        "order": 5,
-        "name": "Jonah Heim",
-        "position": "C"
-      },
-      {
-        "order": 6,
-        "name": "Josh Smith",
-        "position": "1B"
-      },
-      {
-        "order": 7,
-        "name": "Josh Jung",
-        "position": "3B"
-      },
-      {
-        "order": 8,
-        "name": "Jack Leiter",
-        "position": "PH"
-      },
-      {
-        "order": 9,
-        "name": "Alejandro Osuna",
-        "position": "LF"
-      }
-    ],
+    "homePitcher": "Jacob deGrom",
+    "homePitcherHand": "R",
+    "homePosted": false,
+    "homeLineup": [],
     "away": "Baltimore Orioles",
-    "awayPitcher": "Trevor Rogers",
-    "awayPitcherHand": "L",
-    "awayPosted": true,
-    "awayLineup": [
-      {
-        "order": 1,
-        "name": "Jackson Holliday",
-        "position": "2B"
-      },
-      {
-        "order": 2,
-        "name": "Ramón Laureano",
-        "position": "RF"
-      },
-      {
-        "order": 3,
-        "name": "Gunnar Henderson",
-        "position": "SS"
-      },
-      {
-        "order": 4,
-        "name": "Gary Sánchez",
-        "position": "C"
-      },
-      {
-        "order": 5,
-        "name": "Ramón Urías",
-        "position": "3B"
-      },
-      {
-        "order": 6,
-        "name": "Colton Cowser",
-        "position": "LF"
-      },
-      {
-        "order": 7,
-        "name": "Ryan O'Hearn",
-        "position": "1B"
-      },
-      {
-        "order": 8,
-        "name": "Cedric Mullins",
-        "position": "CF"
-      },
-      {
-        "order": 9,
-        "name": "Andrew Kittredge",
-        "position": "P"
-      }
-    ],
+    "awayPitcher": "Brandon Young",
+    "awayPitcherHand": "R",
+    "awayPosted": false,
+    "awayLineup": [],
     "venue": "Globe Life Field",
     "city": "Arlington",
     "state": "TX",
-    "gamePk": 777292,
+    "gamePk": 777282,
     "gameTime": "8:05pm ET | 5:05pm PT",
-    "gameDate": "2025-06-30T20:05:00-04:00"
+    "gameDate": "2025-07-01T20:05:00-04:00"
+  },
+  {
+    "home": "Colorado Rockies",
+    "homePitcher": "Chase Dollander",
+    "homePitcherHand": "R",
+    "homePosted": false,
+    "homeLineup": [],
+    "away": "Houston Astros",
+    "awayPitcher": "Colton Gordon",
+    "awayPitcherHand": "L",
+    "awayPosted": false,
+    "awayLineup": [],
+    "venue": "Coors Field",
+    "city": "Denver",
+    "state": "CO",
+    "gamePk": 777285,
+    "gameTime": "8:40pm ET | 5:40pm PT",
+    "gameDate": "2025-07-01T20:40:00-04:00"
   },
   {
     "home": "Seattle Mariners",
-    "homePitcher": "George Kirby",
+    "homePitcher": "Emerson Hancock",
     "homePitcherHand": "R",
-    "homePosted": true,
-    "homeLineup": [
-      {
-        "order": 1,
-        "name": "J.P. Crawford",
-        "position": "SS"
-      },
-      {
-        "order": 2,
-        "name": "Julio Rodríguez",
-        "position": "CF"
-      },
-      {
-        "order": 3,
-        "name": "Cal Raleigh",
-        "position": "C"
-      },
-      {
-        "order": 4,
-        "name": "Randy Arozarena",
-        "position": "LF"
-      },
-      {
-        "order": 5,
-        "name": "Dominic Canzone",
-        "position": "RF"
-      },
-      {
-        "order": 6,
-        "name": "Donovan Solano",
-        "position": "1B"
-      },
-      {
-        "order": 7,
-        "name": "Mitch Garver",
-        "position": "DH"
-      },
-      {
-        "order": 8,
-        "name": "Miles Mastrobuoni",
-        "position": "3B"
-      },
-      {
-        "order": 9,
-        "name": "Cole Young",
-        "position": "2B"
-      }
-    ],
+    "homePosted": false,
+    "homeLineup": [],
     "away": "Kansas City Royals",
-    "awayPitcher": "Michael Wacha",
+    "awayPitcher": "Michael Lorenzen",
     "awayPitcherHand": "R",
-    "awayPosted": true,
-    "awayLineup": [
-      {
-        "order": 1,
-        "name": "Jonathan India",
-        "position": "2B"
-      },
-      {
-        "order": 2,
-        "name": "Bobby Witt Jr.",
-        "position": "SS"
-      },
-      {
-        "order": 3,
-        "name": "Maikel Garcia",
-        "position": "3B"
-      },
-      {
-        "order": 4,
-        "name": "Vinnie Pasquantino",
-        "position": "1B"
-      },
-      {
-        "order": 5,
-        "name": "Salvador Perez",
-        "position": "C"
-      },
-      {
-        "order": 6,
-        "name": "Jac Caglianone",
-        "position": "DH"
-      },
-      {
-        "order": 7,
-        "name": "Drew Waters",
-        "position": "LF"
-      },
-      {
-        "order": 8,
-        "name": "John Rave",
-        "position": "RF"
-      },
-      {
-        "order": 9,
-        "name": "Kyle Isbel",
-        "position": "CF"
-      }
-    ],
+    "awayPosted": false,
+    "awayLineup": [],
     "venue": "T-Mobile Park",
     "city": "Seattle",
     "state": "WA",
-    "gamePk": 777297,
+    "gamePk": 777281,
     "gameTime": "9:40pm ET | 6:40pm PT",
-    "gameDate": "2025-06-30T21:40:00-04:00"
+    "gameDate": "2025-07-01T21:40:00-04:00"
   },
   {
     "home": "Arizona Diamondbacks",
-    "homePitcher": "Ryne Nelson",
+    "homePitcher": "Zac Gallen",
     "homePitcherHand": "R",
-    "homePosted": true,
-    "homeLineup": [
-      {
-        "order": 1,
-        "name": "Geraldo Perdomo",
-        "position": "SS"
-      },
-      {
-        "order": 2,
-        "name": "Ketel Marte",
-        "position": "2B"
-      },
-      {
-        "order": 3,
-        "name": "Pavin Smith",
-        "position": "1B"
-      },
-      {
-        "order": 4,
-        "name": "Eugenio Suárez",
-        "position": "3B"
-      },
-      {
-        "order": 5,
-        "name": "Lourdes Gurriel Jr.",
-        "position": "DH"
-      },
-      {
-        "order": 6,
-        "name": "Jake McCarthy",
-        "position": "RF"
-      },
-      {
-        "order": 7,
-        "name": "Tim Tawa",
-        "position": "LF"
-      },
-      {
-        "order": 8,
-        "name": "Alek Thomas",
-        "position": "CF"
-      },
-      {
-        "order": 9,
-        "name": "Jose Herrera",
-        "position": "C"
-      }
-    ],
+    "homePosted": false,
+    "homeLineup": [],
     "away": "San Francisco Giants",
-    "awayPitcher": "Logan Webb",
+    "awayPitcher": "Hayden Birdsong",
     "awayPitcherHand": "R",
-    "awayPosted": true,
-    "awayLineup": [
-      {
-        "order": 1,
-        "name": "Brett Wisely",
-        "position": "3B"
-      },
-      {
-        "order": 2,
-        "name": "Rafael Devers",
-        "position": "DH"
-      },
-      {
-        "order": 3,
-        "name": "Heliot Ramos",
-        "position": "LF"
-      },
-      {
-        "order": 4,
-        "name": "Dominic Smith",
-        "position": "1B"
-      },
-      {
-        "order": 5,
-        "name": "Willy Adames",
-        "position": "SS"
-      },
-      {
-        "order": 6,
-        "name": "Jung Hoo Lee",
-        "position": "CF"
-      },
-      {
-        "order": 7,
-        "name": "Tyler Fitzgerald",
-        "position": "2B"
-      },
-      {
-        "order": 8,
-        "name": "Patrick Bailey",
-        "position": "C"
-      },
-      {
-        "order": 9,
-        "name": "Daniel Johnson",
-        "position": "RF"
-      }
-    ],
+    "awayPosted": false,
+    "awayLineup": [],
     "venue": "Chase Field",
     "city": "Phoenix",
     "state": "AZ",
-    "gamePk": 777291,
+    "gamePk": 777278,
     "gameTime": "9:40pm ET | 6:40pm PT",
-    "gameDate": "2025-06-30T21:40:00-04:00"
+    "gameDate": "2025-07-01T21:40:00-04:00"
+  },
+  {
+    "home": "Los Angeles Dodgers",
+    "homePitcher": "Yoshinobu Yamamoto",
+    "homePitcherHand": "R",
+    "homePosted": false,
+    "homeLineup": [],
+    "away": "Chicago White Sox",
+    "awayPitcher": "Shane Smith",
+    "awayPitcherHand": "R",
+    "awayPosted": false,
+    "awayLineup": [],
+    "venue": "Dodger Stadium",
+    "city": "Los Angeles",
+    "state": "CA",
+    "gamePk": 777280,
+    "gameTime": "10:10pm ET | 7:10pm PT",
+    "gameDate": "2025-07-01T22:10:00-04:00"
   }
 ]

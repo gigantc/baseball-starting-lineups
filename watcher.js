@@ -70,10 +70,7 @@ const DAILY_FETCH_MINUTE = 30;
 const scheduleDailyFetch = () => {
   
   //run right away if we are on dev
-  const isProduction = process.env.ENVIRONMENT === 'production';
-  if (!isProduction) {
-    fetchMLBGames();
-  }
+  fetchMLBGames();
 
   const now = DateTime.local();
 

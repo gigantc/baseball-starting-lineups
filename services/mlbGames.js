@@ -175,7 +175,7 @@ const postLineups = async (game, lineup, teamType) => {
 
   const lineupLocation = `**Location**: ${game.venue}, ${game.city}, ${game.state}`;
 
-  const message = `⚾️ Lineup ⚾️\n\n${lineupHeader}\n\n${lineupBody}\n\n${lineupPitcher}\n\n${lineupTime}\n${lineupOpponent}\n${lineupLocation}\n\n----------------------\n\n`;
+  const message = `\n\n⚾️ Lineup ⚾️\n\n${lineupHeader}\n\n${lineupBody}\n\n${lineupPitcher}\n\n${lineupTime}\n${lineupOpponent}\n${lineupLocation}\n\n----------------------\n\n`;
 
   //send it to Discord
   await postToDiscord(message);
