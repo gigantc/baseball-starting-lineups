@@ -60,31 +60,21 @@ export const getOpponent = (headerLine) => {
 
 
 // Formats the lineup with numbered batting order
-export const formatLineup = (text) => {
-  const lines = text.split('\n').filter((line) => line.trim() !== '');
+export const buildLineup = (teamData, playersData) => {
+  const battingOrder = teamData?.battingOrder;
 
-  // Extract player lines (first 9 lines)
-  const playerLines = lines.slice(1, 10);
-  const pitcherLine = lines.find((line) => line.toLowerCase().startsWith('sp:'));
-  const startTimeLine = lines.find((line) => line.toLowerCase().startsWith('start time:'));
-
-  const formattedPlayers = playerLines.map((line, index) => {
-    // Extracts player name and position
-    const parts = line.split(',');
-    const name = parts[0].replace(/^\d+\.\s*/, '').trim();
-    const position = parts[1] ? parts[1].trim() : '';
-    return `${index + 1}. ${name} - ${position}`;
-  });
-
-  let formatted = `${formattedPlayers.join('\n')}\n\n`;
-  if (pitcherLine) {
-    formatted += `${pitcherLine}\n\n`;
-  }
-  if (startTimeLine) {
-    formatted += `${startTimeLine}`;
+  if (battingOrder && battingOrder.length > 0) {
+    return battingOrder.map((playerId, idx) => {
+      const player = playersData[`ID${playerId}`];
+      return {
+        order: idx + 1,
+        name: player?.person?.fullName,
+        position: player?.position?.abbreviation,
+      };
+    });
   }
 
-  return formatted;
+  return null;
 };
 
 
@@ -98,5 +88,5 @@ export const formatGameTime = (isoString) => {
 
   const format = (dt) => dt.toFormat('h:mma').toLowerCase();
 
-  return `${format(eastern)} ET | ${format(pacific)} PT`;
+  return `${format(eastern)} ET, ${format(pacific)} PT`;
 };

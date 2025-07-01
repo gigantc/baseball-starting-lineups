@@ -131,13 +131,105 @@
     "home": "Pittsburgh Pirates",
     "homePitcher": "Paul Skenes",
     "homePitcherHand": "R",
-    "homePosted": false,
-    "homeLineup": [],
+    "homePosted": true,
+    "homeLineup": [
+      {
+        "order": 1,
+        "name": "Spencer Horwitz",
+        "position": "1B"
+      },
+      {
+        "order": 2,
+        "name": "Andrew McCutchen",
+        "position": "DH"
+      },
+      {
+        "order": 3,
+        "name": "Bryan Reynolds",
+        "position": "RF"
+      },
+      {
+        "order": 4,
+        "name": "Nick Gonzales",
+        "position": "2B"
+      },
+      {
+        "order": 5,
+        "name": "Oneil Cruz",
+        "position": "CF"
+      },
+      {
+        "order": 6,
+        "name": "Ke'Bryan Hayes",
+        "position": "3B"
+      },
+      {
+        "order": 7,
+        "name": "Tommy Pham",
+        "position": "LF"
+      },
+      {
+        "order": 8,
+        "name": "Henry Davis",
+        "position": "C"
+      },
+      {
+        "order": 9,
+        "name": "Isiah Kiner-Falefa",
+        "position": "SS"
+      }
+    ],
     "away": "St. Louis Cardinals",
     "awayPitcher": "Andre Pallante",
     "awayPitcherHand": "R",
-    "awayPosted": false,
-    "awayLineup": [],
+    "awayPosted": true,
+    "awayLineup": [
+      {
+        "order": 1,
+        "name": "Brendan Donovan",
+        "position": "2B"
+      },
+      {
+        "order": 2,
+        "name": "Masyn Winn",
+        "position": "SS"
+      },
+      {
+        "order": 3,
+        "name": "Alec Burleson",
+        "position": "RF"
+      },
+      {
+        "order": 4,
+        "name": "Willson Contreras",
+        "position": "1B"
+      },
+      {
+        "order": 5,
+        "name": "Nolan Gorman",
+        "position": "3B"
+      },
+      {
+        "order": 6,
+        "name": "José Fermín",
+        "position": "DH"
+      },
+      {
+        "order": 7,
+        "name": "Lars Nootbaar",
+        "position": "LF"
+      },
+      {
+        "order": 8,
+        "name": "Pedro Pagés",
+        "position": "C"
+      },
+      {
+        "order": 9,
+        "name": "Victor Scott II",
+        "position": "CF"
+      }
+    ],
     "venue": "PNC Park",
     "city": "Pittsburgh",
     "state": "PA",
@@ -149,13 +241,105 @@
     "home": "Miami Marlins",
     "homePitcher": "Edward Cabrera",
     "homePitcherHand": "R",
-    "homePosted": false,
-    "homeLineup": [],
+    "homePosted": true,
+    "homeLineup": [
+      {
+        "order": 1,
+        "name": "Xavier Edwards",
+        "position": "2B"
+      },
+      {
+        "order": 2,
+        "name": "Jesús Sánchez",
+        "position": "RF"
+      },
+      {
+        "order": 3,
+        "name": "Otto Lopez",
+        "position": "SS"
+      },
+      {
+        "order": 4,
+        "name": "Agustín Ramírez",
+        "position": "C"
+      },
+      {
+        "order": 5,
+        "name": "Kyle Stowers",
+        "position": "LF"
+      },
+      {
+        "order": 6,
+        "name": "Heriberto Hernandez",
+        "position": "DH"
+      },
+      {
+        "order": 7,
+        "name": "Liam Hicks",
+        "position": "1B"
+      },
+      {
+        "order": 8,
+        "name": "Connor Norby",
+        "position": "3B"
+      },
+      {
+        "order": 9,
+        "name": "Dane Myers",
+        "position": "CF"
+      }
+    ],
     "away": "Minnesota Twins",
     "awayPitcher": "Joe Ryan",
     "awayPitcherHand": "R",
-    "awayPosted": false,
-    "awayLineup": [],
+    "awayPosted": true,
+    "awayLineup": [
+      {
+        "order": 1,
+        "name": "Byron Buxton",
+        "position": "CF"
+      },
+      {
+        "order": 2,
+        "name": "Trevor Larnach",
+        "position": "DH"
+      },
+      {
+        "order": 3,
+        "name": "Willi Castro",
+        "position": "LF"
+      },
+      {
+        "order": 4,
+        "name": "Carlos Correa",
+        "position": "SS"
+      },
+      {
+        "order": 5,
+        "name": "Matt Wallner",
+        "position": "RF"
+      },
+      {
+        "order": 6,
+        "name": "Brooks Lee",
+        "position": "2B"
+      },
+      {
+        "order": 7,
+        "name": "Ty France",
+        "position": "1B"
+      },
+      {
+        "order": 8,
+        "name": "Royce Lewis",
+        "position": "3B"
+      },
+      {
+        "order": 9,
+        "name": "Christian Vázquez",
+        "position": "C"
+      }
+    ],
     "venue": "loanDepot park",
     "city": "Miami",
     "state": "FL",
@@ -185,13 +369,105 @@
     "home": "Tampa Bay Rays",
     "homePitcher": "Shane Baz",
     "homePitcherHand": "R",
-    "homePosted": false,
-    "homeLineup": [],
+    "homePosted": true,
+    "homeLineup": [
+      {
+        "order": 1,
+        "name": "Yandy Díaz",
+        "position": "DH"
+      },
+      {
+        "order": 2,
+        "name": "Curtis Mead",
+        "position": "1B"
+      },
+      {
+        "order": 3,
+        "name": "Brandon Lowe",
+        "position": "2B"
+      },
+      {
+        "order": 4,
+        "name": "Junior Caminero",
+        "position": "3B"
+      },
+      {
+        "order": 5,
+        "name": "Christopher Morel",
+        "position": "LF"
+      },
+      {
+        "order": 6,
+        "name": "Josh Lowe",
+        "position": "RF"
+      },
+      {
+        "order": 7,
+        "name": "José Caballero",
+        "position": "SS"
+      },
+      {
+        "order": 8,
+        "name": "Danny Jansen",
+        "position": "C"
+      },
+      {
+        "order": 9,
+        "name": "Chandler Simpson",
+        "position": "CF"
+      }
+    ],
     "away": "Athletics",
     "awayPitcher": "Jeffrey Springs",
     "awayPitcherHand": "L",
-    "awayPosted": false,
-    "awayLineup": [],
+    "awayPosted": true,
+    "awayLineup": [
+      {
+        "order": 1,
+        "name": "Lawrence Butler",
+        "position": "RF"
+      },
+      {
+        "order": 2,
+        "name": "Jacob Wilson",
+        "position": "SS"
+      },
+      {
+        "order": 3,
+        "name": "Brent Rooker",
+        "position": "DH"
+      },
+      {
+        "order": 4,
+        "name": "Nick Kurtz",
+        "position": "1B"
+      },
+      {
+        "order": 5,
+        "name": "Shea Langeliers",
+        "position": "C"
+      },
+      {
+        "order": 6,
+        "name": "Max Muncy",
+        "position": "3B"
+      },
+      {
+        "order": 7,
+        "name": "Luis Urías",
+        "position": "2B"
+      },
+      {
+        "order": 8,
+        "name": "Colby Thomas",
+        "position": "LF"
+      },
+      {
+        "order": 9,
+        "name": "Denzel Clarke",
+        "position": "CF"
+      }
+    ],
     "venue": "George M. Steinbrenner Field",
     "city": "Tampa",
     "state": "FL",
@@ -203,13 +479,105 @@
     "home": "Boston Red Sox",
     "homePitcher": "Richard Fitts",
     "homePitcherHand": "R",
-    "homePosted": false,
-    "homeLineup": [],
+    "homePosted": true,
+    "homeLineup": [
+      {
+        "order": 1,
+        "name": "Jarren Duran",
+        "position": "LF"
+      },
+      {
+        "order": 2,
+        "name": "Roman Anthony",
+        "position": "DH"
+      },
+      {
+        "order": 3,
+        "name": "Abraham Toro",
+        "position": "1B"
+      },
+      {
+        "order": 4,
+        "name": "Carlos Narváez",
+        "position": "C"
+      },
+      {
+        "order": 5,
+        "name": "Wilyer Abreu",
+        "position": "RF"
+      },
+      {
+        "order": 6,
+        "name": "Trevor Story",
+        "position": "SS"
+      },
+      {
+        "order": 7,
+        "name": "Marcelo Mayer",
+        "position": "3B"
+      },
+      {
+        "order": 8,
+        "name": "David Hamilton",
+        "position": "2B"
+      },
+      {
+        "order": 9,
+        "name": "Ceddanne Rafaela",
+        "position": "CF"
+      }
+    ],
     "away": "Cincinnati Reds",
     "awayPitcher": "Brady Singer",
     "awayPitcherHand": "R",
-    "awayPosted": false,
-    "awayLineup": [],
+    "awayPosted": true,
+    "awayLineup": [
+      {
+        "order": 1,
+        "name": "TJ Friedl",
+        "position": "CF"
+      },
+      {
+        "order": 2,
+        "name": "Matt McLain",
+        "position": "2B"
+      },
+      {
+        "order": 3,
+        "name": "Elly De La Cruz",
+        "position": "SS"
+      },
+      {
+        "order": 4,
+        "name": "Austin Hays",
+        "position": "DH"
+      },
+      {
+        "order": 5,
+        "name": "Gavin Lux",
+        "position": "LF"
+      },
+      {
+        "order": 6,
+        "name": "Spencer Steer",
+        "position": "1B"
+      },
+      {
+        "order": 7,
+        "name": "Jose Trevino",
+        "position": "C"
+      },
+      {
+        "order": 8,
+        "name": "Will Benson",
+        "position": "RF"
+      },
+      {
+        "order": 9,
+        "name": "Christian Encarnacion-Strand",
+        "position": "3B"
+      }
+    ],
     "venue": "Fenway Park",
     "city": "Boston",
     "state": "MA",
@@ -221,8 +589,54 @@
     "home": "New York Mets",
     "homePitcher": "Clay Holmes",
     "homePitcherHand": "R",
-    "homePosted": false,
-    "homeLineup": [],
+    "homePosted": true,
+    "homeLineup": [
+      {
+        "order": 1,
+        "name": "Francisco Lindor",
+        "position": "SS"
+      },
+      {
+        "order": 2,
+        "name": "Starling Marte",
+        "position": "DH"
+      },
+      {
+        "order": 3,
+        "name": "Juan Soto",
+        "position": "RF"
+      },
+      {
+        "order": 4,
+        "name": "Pete Alonso",
+        "position": "1B"
+      },
+      {
+        "order": 5,
+        "name": "Brandon Nimmo",
+        "position": "LF"
+      },
+      {
+        "order": 6,
+        "name": "Mark Vientos",
+        "position": "3B"
+      },
+      {
+        "order": 7,
+        "name": "Jeff McNeil",
+        "position": "CF"
+      },
+      {
+        "order": 8,
+        "name": "Luis Torrens",
+        "position": "C"
+      },
+      {
+        "order": 9,
+        "name": "Brett Baty",
+        "position": "2B"
+      }
+    ],
     "away": "Milwaukee Brewers",
     "awayPitcher": "Freddy Peralta",
     "awayPitcherHand": "R",
@@ -239,13 +653,105 @@
     "home": "Atlanta Braves",
     "homePitcher": "Grant Holmes",
     "homePitcherHand": "R",
-    "homePosted": false,
-    "homeLineup": [],
+    "homePosted": true,
+    "homeLineup": [
+      {
+        "order": 1,
+        "name": "Ronald Acuña Jr.",
+        "position": "RF"
+      },
+      {
+        "order": 2,
+        "name": "Matt Olson",
+        "position": "1B"
+      },
+      {
+        "order": 3,
+        "name": "Marcell Ozuna",
+        "position": "DH"
+      },
+      {
+        "order": 4,
+        "name": "Austin Riley",
+        "position": "3B"
+      },
+      {
+        "order": 5,
+        "name": "Drake Baldwin",
+        "position": "C"
+      },
+      {
+        "order": 6,
+        "name": "Ozzie Albies",
+        "position": "2B"
+      },
+      {
+        "order": 7,
+        "name": "Alex Verdugo",
+        "position": "LF"
+      },
+      {
+        "order": 8,
+        "name": "Michael Harris II",
+        "position": "CF"
+      },
+      {
+        "order": 9,
+        "name": "Nick Allen",
+        "position": "SS"
+      }
+    ],
     "away": "Los Angeles Angels",
     "awayPitcher": "Tyler Anderson",
     "awayPitcherHand": "L",
-    "awayPosted": false,
-    "awayLineup": [],
+    "awayPosted": true,
+    "awayLineup": [
+      {
+        "order": 1,
+        "name": "Zach Neto",
+        "position": "SS"
+      },
+      {
+        "order": 2,
+        "name": "Nolan Schanuel",
+        "position": "1B"
+      },
+      {
+        "order": 3,
+        "name": "Mike Trout",
+        "position": "DH"
+      },
+      {
+        "order": 4,
+        "name": "Taylor Ward",
+        "position": "LF"
+      },
+      {
+        "order": 5,
+        "name": "Jo Adell",
+        "position": "CF"
+      },
+      {
+        "order": 6,
+        "name": "Jorge Soler",
+        "position": "RF"
+      },
+      {
+        "order": 7,
+        "name": "Logan O'Hoppe",
+        "position": "C"
+      },
+      {
+        "order": 8,
+        "name": "Luis Rengifo",
+        "position": "3B"
+      },
+      {
+        "order": 9,
+        "name": "Christian Moore",
+        "position": "2B"
+      }
+    ],
     "venue": "Truist Park",
     "city": "Atlanta",
     "state": "GA",
@@ -257,13 +763,105 @@
     "home": "Chicago Cubs",
     "homePitcher": "Matthew Boyd",
     "homePitcherHand": "L",
-    "homePosted": false,
-    "homeLineup": [],
+    "homePosted": true,
+    "homeLineup": [
+      {
+        "order": 1,
+        "name": "Ian Happ",
+        "position": "LF"
+      },
+      {
+        "order": 2,
+        "name": "Kyle Tucker",
+        "position": "RF"
+      },
+      {
+        "order": 3,
+        "name": "Seiya Suzuki",
+        "position": "DH"
+      },
+      {
+        "order": 4,
+        "name": "Pete Crow-Armstrong",
+        "position": "CF"
+      },
+      {
+        "order": 5,
+        "name": "Dansby Swanson",
+        "position": "SS"
+      },
+      {
+        "order": 6,
+        "name": "Michael Busch",
+        "position": "1B"
+      },
+      {
+        "order": 7,
+        "name": "Carson Kelly",
+        "position": "C"
+      },
+      {
+        "order": 8,
+        "name": "Nico Hoerner",
+        "position": "2B"
+      },
+      {
+        "order": 9,
+        "name": "Matt Shaw",
+        "position": "3B"
+      }
+    ],
     "away": "Cleveland Guardians",
     "awayPitcher": "Gavin Williams",
     "awayPitcherHand": "R",
-    "awayPosted": false,
-    "awayLineup": [],
+    "awayPosted": true,
+    "awayLineup": [
+      {
+        "order": 1,
+        "name": "Steven Kwan",
+        "position": "LF"
+      },
+      {
+        "order": 2,
+        "name": "David Fry",
+        "position": "DH"
+      },
+      {
+        "order": 3,
+        "name": "José Ramírez",
+        "position": "3B"
+      },
+      {
+        "order": 4,
+        "name": "Carlos Santana",
+        "position": "1B"
+      },
+      {
+        "order": 5,
+        "name": "Lane Thomas",
+        "position": "CF"
+      },
+      {
+        "order": 6,
+        "name": "Nolan Jones",
+        "position": "RF"
+      },
+      {
+        "order": 7,
+        "name": "Angel Martínez",
+        "position": "2B"
+      },
+      {
+        "order": 8,
+        "name": "Bo Naylor",
+        "position": "C"
+      },
+      {
+        "order": 9,
+        "name": "Brayan Rocchio",
+        "position": "SS"
+      }
+    ],
     "venue": "Wrigley Field",
     "city": "Chicago",
     "state": "IL",
@@ -280,8 +878,54 @@
     "away": "Baltimore Orioles",
     "awayPitcher": "Brandon Young",
     "awayPitcherHand": "R",
-    "awayPosted": false,
-    "awayLineup": [],
+    "awayPosted": true,
+    "awayLineup": [
+      {
+        "order": 1,
+        "name": "Jackson Holliday",
+        "position": "2B"
+      },
+      {
+        "order": 2,
+        "name": "Ramón Laureano",
+        "position": "DH"
+      },
+      {
+        "order": 3,
+        "name": "Gunnar Henderson",
+        "position": "SS"
+      },
+      {
+        "order": 4,
+        "name": "Ryan O'Hearn",
+        "position": "1B"
+      },
+      {
+        "order": 5,
+        "name": "Gary Sánchez",
+        "position": "C"
+      },
+      {
+        "order": 6,
+        "name": "Colton Cowser",
+        "position": "LF"
+      },
+      {
+        "order": 7,
+        "name": "Ramón Urías",
+        "position": "3B"
+      },
+      {
+        "order": 8,
+        "name": "Cedric Mullins",
+        "position": "CF"
+      },
+      {
+        "order": 9,
+        "name": "Dylan Carlson",
+        "position": "RF"
+      }
+    ],
     "venue": "Globe Life Field",
     "city": "Arlington",
     "state": "TX",
@@ -293,8 +937,54 @@
     "home": "Colorado Rockies",
     "homePitcher": "Chase Dollander",
     "homePitcherHand": "R",
-    "homePosted": false,
-    "homeLineup": [],
+    "homePosted": true,
+    "homeLineup": [
+      {
+        "order": 1,
+        "name": "Tyler Freeman",
+        "position": "RF"
+      },
+      {
+        "order": 2,
+        "name": "Hunter Goodman",
+        "position": "C"
+      },
+      {
+        "order": 3,
+        "name": "Jordan Beck",
+        "position": "LF"
+      },
+      {
+        "order": 4,
+        "name": "Thairo Estrada",
+        "position": "2B"
+      },
+      {
+        "order": 5,
+        "name": "Brenton Doyle",
+        "position": "CF"
+      },
+      {
+        "order": 6,
+        "name": "Kyle Farmer",
+        "position": "DH"
+      },
+      {
+        "order": 7,
+        "name": "Michael Toglia",
+        "position": "1B"
+      },
+      {
+        "order": 8,
+        "name": "Orlando Arcia",
+        "position": "3B"
+      },
+      {
+        "order": 9,
+        "name": "Ryan Ritter",
+        "position": "SS"
+      }
+    ],
     "away": "Houston Astros",
     "awayPitcher": "Colton Gordon",
     "awayPitcherHand": "L",
@@ -329,8 +1019,54 @@
     "home": "Arizona Diamondbacks",
     "homePitcher": "Zac Gallen",
     "homePitcherHand": "R",
-    "homePosted": false,
-    "homeLineup": [],
+    "homePosted": true,
+    "homeLineup": [
+      {
+        "order": 1,
+        "name": "Geraldo Perdomo",
+        "position": "SS"
+      },
+      {
+        "order": 2,
+        "name": "Ketel Marte",
+        "position": "2B"
+      },
+      {
+        "order": 3,
+        "name": "Pavin Smith",
+        "position": "1B"
+      },
+      {
+        "order": 4,
+        "name": "Josh Naylor",
+        "position": "DH"
+      },
+      {
+        "order": 5,
+        "name": "Eugenio Suárez",
+        "position": "3B"
+      },
+      {
+        "order": 6,
+        "name": "Lourdes Gurriel Jr.",
+        "position": "LF"
+      },
+      {
+        "order": 7,
+        "name": "Jake McCarthy",
+        "position": "RF"
+      },
+      {
+        "order": 8,
+        "name": "James McCann",
+        "position": "C"
+      },
+      {
+        "order": 9,
+        "name": "Alek Thomas",
+        "position": "CF"
+      }
+    ],
     "away": "San Francisco Giants",
     "awayPitcher": "Hayden Birdsong",
     "awayPitcherHand": "R",

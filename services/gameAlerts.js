@@ -16,10 +16,10 @@ await agent.login({
 
 
 //we only want alert posts that start with this, so we'll filter them out
-const alertKeywords = ['game alert', 'lineup alert', 'postponed', 'weather', 'scratched'];
+const alertKeywords = ['game alert', 'lineup alert', 'postponed', 'weather', 'scratched', '7-day il', '10-day il', '15-day il', 'activated', 'status alert', 'x-rays', 'left game', 'optioned', 'designated', 'recalled'];
 
 //watching keywords to potentailly add news later
-const newsKeywords = ['Hyde', 'Passan', 'Feinsand', 'Rosenthal', 'Weyrich', 'Murray', 'Francona', 'Roberts', 'Friedman', 'per', 'Boone', 'Espada', 'McCullough'];
+const newsKeywords = ['Hyde', 'Passan', 'Feinsand', 'Rosenthal', 'Weyrich', 'Murray', 'Francona', 'Roberts', 'Friedman', 'per', 'Boone', 'Espada', 'McCullough', 'Nightengale', 'Heyman', 'Rome', 'Anthopoulos', 'Lovullo'];
 
 
 // Grabs the Bluesky feed and processes posts
@@ -48,8 +48,11 @@ export const pollGameAlerts = async () => {
       if (matchedKeyword == 'postponed' || 'weather'){
         alertType = 'Game Alert'
       }
-      if (matchedKeyword == 'scratched'){
-        alertType = 'Lineup Alert'
+      if (matchedKeyword == 'scratched' || 'Status alert' || 'optioned' || 'designated' || 'recalled'){
+        alertType = 'Staus Alert'
+      }
+      if (matchedKeyword == '10-day IL' || 'activated' || 'X-rays' || 'left game' || '7-day IL' || '15-day IL'){
+        alertType = 'Injury Alert'
       }
 
       //cleans the text so we don't repeat “game alert:” or “lineup alert:”

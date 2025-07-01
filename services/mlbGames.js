@@ -3,11 +3,12 @@ import fs from 'fs';
 import path from 'path';
 import { DateTime } from 'luxon';
 
-import { formatGameTime } from '../utils/formatters.js';
+import { formatGameTime, buildLineup } from '../utils/formatters.js';
 import { postToDiscord } from '../services/postToDiscord.js';
 
 //////////////////////////////////////////
 // Grab all MLB games for the day
+// and create the game object
 export const fetchMLBGames = async () => {
 
   // Let's get the game data for the day.
@@ -55,17 +56,14 @@ export const fetchMLBGames = async () => {
 
 
 //////////////////////////////////////////
-// See if there's a new lineup
+// POLL the lineups 
 export const pollLineups = async () => {
 
   //path to json data
   const filePath = path.resolve('./mlb-games.json');
   const fileData = fs.readFileSync(filePath, 'utf8');
   //check to make sure things aren't empty
-  if (!fileData) {
-    // console.log('⚠️ mlb-games.json is empty. Skipping lineup polling until games are fetched.');
-    return;
-  }
+  if (!fileData) {return;}
 
   const games = JSON.parse(fileData);
 
@@ -77,6 +75,7 @@ export const pollLineups = async () => {
       continue;
     }
 
+    //call the mlb boxscore api
     const boxscoreUrl = `https://statsapi.mlb.com/api/v1/game/${game.gamePk}/boxscore`;
     const res = await fetch(boxscoreUrl);
     const data = await res.json();
@@ -84,45 +83,26 @@ export const pollLineups = async () => {
 
     // Check AWAY team lineups
     if (!game.awayPosted) {
-      //getting batting order
-      const awayBattingOrder = data.teams?.away?.battingOrder;
+      const awayLineup = buildLineup(data.teams?.away, data.teams.away.players);
 
-      if (awayBattingOrder && awayBattingOrder.length > 0) {
-        const awayLineup = awayBattingOrder.map((playerId, idx) => {
-          const player = data.teams.away.players[`ID${playerId}`];
-          return {
-            order: idx + 1,
-            name: player?.person?.fullName,
-            position: player?.position?.abbreviation,
-          };
-        });
-
+      if (awayLineup) {
         game.awayPosted = true;
         game.awayLineup = awayLineup;
 
-        //post to discord
+        // post to discord
         postLineups(game, awayLineup, "away");
       }
     }
 
     // Check HOME team lineups
     if (!game.homePosted) {
-      const homeBattingOrder = data.teams?.home?.battingOrder;
+      const homeLineup = buildLineup(data.teams?.home, data.teams.home.players);
 
-      if (homeBattingOrder && homeBattingOrder.length > 0) {
-        const homeLineup = homeBattingOrder.map((playerId, idx) => {
-          const player = data.teams.home.players[`ID${playerId}`];
-          return {
-            order: idx + 1,
-            name: player?.person?.fullName,
-            position: player?.position?.abbreviation,
-          };
-        });
-
+      if (homeLineup) {
         game.homePosted = true;
         game.homeLineup = homeLineup;
 
-        //post to discord
+        // post to discord
         postLineups(game, homeLineup, "home");
       }
     }
@@ -170,12 +150,12 @@ const postLineups = async (game, lineup, teamType) => {
 
   const lineupPitcher = `**SP**: ${pitcher} (${pitcherHand}HP)`;
 
-  const lineupTime = `**Game Time**: ${game.gameTime}`;
-  const lineupOpponent = `**Opponent**: ${opponentName} | ${opponentPitcher} (${opponentPitcherHand}HP)`;
-
+  const lineupTime = `**First Pitch**: ${game.gameTime}`;
+  const lineupOpponent = `**Opponent**: ${opponentName}`;
+  const vsPitcher = `**Opposing Pitcher**: ${opponentPitcher} (${opponentPitcherHand}HP)`;
   const lineupLocation = `**Location**: ${game.venue}, ${game.city}, ${game.state}`;
 
-  const message = `\n\n⚾️ Lineup ⚾️\n\n${lineupHeader}\n\n${lineupBody}\n\n${lineupPitcher}\n\n${lineupTime}\n${lineupOpponent}\n${lineupLocation}\n\n----------------------\n\n`;
+  const message = `\n\n⚾️ Lineup ⚾️\n\n${lineupHeader}\n\n${lineupBody}\n\n${lineupPitcher}\n\n${lineupTime}\n${lineupOpponent}\n${vsPitcher}\n${lineupLocation}\n\n----------------------\n\n`;
 
   //send it to Discord
   await postToDiscord(message);
