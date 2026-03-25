@@ -1,6 +1,6 @@
 {
   "date": "2026-03-25",
-  "updatedAt": "2026-03-25T15:39:22.553Z",
+  "updatedAt": "2026-03-25T20:35:45.948Z",
   "games": [
     {
       "gamePk": 823244,
@@ -10,10 +10,10 @@
       "gameDate": "2026-03-25T20:05:00-04:00",
       "officialDate": "2026-03-25",
       "venue": "Oracle Park, San Francisco, CA",
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "weather": "-",
-      "total": "-",
-      "line": "-",
+      "total": "6",
+      "line": "NYY -123",
       "away": {
         "teamId": 147,
         "abbr": "NYY",
@@ -23,8 +23,54 @@
           "name": "Max Fried (L)",
           "stats": "0-0, -.-- ERA, - WHIP"
         },
-        "lineup": [],
-        "note": "Lineup pending"
+        "lineup": [
+          {
+            "name": "Trent Grisham",
+            "position": "CF",
+            "bats": null
+          },
+          {
+            "name": "Aaron Judge",
+            "position": "RF",
+            "bats": null
+          },
+          {
+            "name": "Cody Bellinger",
+            "position": "LF",
+            "bats": null
+          },
+          {
+            "name": "Ben Rice",
+            "position": "1B",
+            "bats": null
+          },
+          {
+            "name": "Giancarlo Stanton",
+            "position": "DH",
+            "bats": null
+          },
+          {
+            "name": "Jazz Chisholm Jr.",
+            "position": "2B",
+            "bats": null
+          },
+          {
+            "name": "José Caballero",
+            "position": "SS",
+            "bats": null
+          },
+          {
+            "name": "Ryan McMahon",
+            "position": "3B",
+            "bats": null
+          },
+          {
+            "name": "Austin Wells",
+            "position": "C",
+            "bats": null
+          }
+        ],
+        "note": null
       },
       "home": {
         "teamId": 137,
@@ -35,8 +81,54 @@
           "name": "Logan Webb (R)",
           "stats": "0-0, -.-- ERA, - WHIP"
         },
-        "lineup": [],
-        "note": "Lineup pending"
+        "lineup": [
+          {
+            "name": "Luis Arraez",
+            "position": "2B",
+            "bats": null
+          },
+          {
+            "name": "Matt Chapman",
+            "position": "3B",
+            "bats": null
+          },
+          {
+            "name": "Rafael Devers",
+            "position": "DH",
+            "bats": null
+          },
+          {
+            "name": "Willy Adames",
+            "position": "SS",
+            "bats": null
+          },
+          {
+            "name": "Jung Hoo Lee",
+            "position": "RF",
+            "bats": null
+          },
+          {
+            "name": "Heliot Ramos",
+            "position": "LF",
+            "bats": null
+          },
+          {
+            "name": "Casey Schmitt",
+            "position": "1B",
+            "bats": null
+          },
+          {
+            "name": "Patrick Bailey",
+            "position": "C",
+            "bats": null
+          },
+          {
+            "name": "Harrison Bader",
+            "position": "CF",
+            "bats": null
+          }
+        ],
+        "note": null
       }
     }
   ]

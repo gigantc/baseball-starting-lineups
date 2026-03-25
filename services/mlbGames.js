@@ -5,6 +5,7 @@ import { DateTime } from 'luxon';
 
 import { formatGameTime, buildLineup, formatPitcherStats } from '../utils/formatters.js';
 import { postToDiscord } from '../services/postToDiscord.js';
+import { enrichGamesWithOdds } from '../services/oddsFeed.js';
 
 const SCOREBOARD_URL = (date) =>
   `https://bdfed.stitch.mlbinfra.com/bdfed/transform-milb-scoreboard?stitch_env=prod&sortTemplate=4&sportId=1&startDate=${date}&endDate=${date}`;
@@ -95,6 +96,40 @@ const buildSiteGame = (game) => ({
   },
 });
 
+const loadExistingSitePayload = () => {
+  if (!fs.existsSync(SITE_LATEST_FILE)) {
+    return null;
+  }
+
+  try {
+    return JSON.parse(fs.readFileSync(SITE_LATEST_FILE, 'utf8'));
+  } catch {
+    return null;
+  }
+};
+
+const preserveExistingLineups = (games, existingPayload) => {
+  if (!existingPayload?.games?.length) {
+    return games;
+  }
+
+  const existingByGamePk = new Map(existingPayload.games.map((game) => [game.gamePk, game]));
+
+  return games.map((game) => {
+    const existingGame = existingByGamePk.get(game.gamePk);
+    if (!existingGame) return game;
+
+    for (const side of ['away', 'home']) {
+      if (existingGame?.[side]?.lineup?.length) {
+        game[side].lineup = existingGame[side].lineup;
+        game[side].note = null;
+      }
+    }
+
+    return game;
+  });
+};
+
 const writeSiteJson = (games, date) => {
   ensureSiteDataDir();
 
@@ -116,8 +151,45 @@ const syncSiteLineup = (siteGames, lineup, teamType, gamePk) => {
   if (!siteGame) return;
 
   const target = siteGame[teamType];
-  target.lineup = lineup.map((player) => `${player.position} ${player.name}`);
+  target.lineup = lineup.map((player) => ({
+    name: player.name,
+    position: player.position,
+    bats: player.bats,
+  }));
   target.note = null;
+};
+
+const syncSitePayloadFromGames = (sitePayload, games) => {
+  if (!sitePayload?.games?.length) {
+    return sitePayload;
+  }
+
+  const gamesByPk = new Map(games.map((game) => [game.gamePk, game]));
+
+  for (const siteGame of sitePayload.games) {
+    const sourceGame = gamesByPk.get(siteGame.gamePk);
+    if (!sourceGame) continue;
+
+    if (sourceGame.awayLineup?.length) {
+      siteGame.away.lineup = sourceGame.awayLineup.map((player) => ({
+        name: player.name,
+        position: player.position,
+        bats: player.bats,
+      }));
+      siteGame.away.note = null;
+    }
+
+    if (sourceGame.homeLineup?.length) {
+      siteGame.home.lineup = sourceGame.homeLineup.map((player) => ({
+        name: player.name,
+        position: player.position,
+        bats: player.bats,
+      }));
+      siteGame.home.note = null;
+    }
+  }
+
+  return sitePayload;
 };
 
 export const fetchMLBGames = async () => {
@@ -148,10 +220,16 @@ export const fetchMLBGames = async () => {
 
   fs.writeFileSync(MLB_GAMES_FILE, JSON.stringify(games, null, 2), 'utf8');
 
-  const siteGames = rawGames
-    .map(buildSiteGame)
-    .sort((a, b) => a.sortTime.localeCompare(b.sortTime));
+  const existingSitePayload = loadExistingSitePayload();
 
+  const siteGames = preserveExistingLineups(
+    rawGames
+      .map(buildSiteGame)
+      .sort((a, b) => a.sortTime.localeCompare(b.sortTime)),
+    existingSitePayload
+  );
+
+  await enrichGamesWithOdds(siteGames, today);
   writeSiteJson(siteGames, today);
 };
 
@@ -181,7 +259,6 @@ export const pollLineups = async () => {
       if (awayLineup) {
         game.awayPosted = true;
         game.awayLineup = awayLineup;
-        if (sitePayload) syncSiteLineup(sitePayload.games, awayLineup, 'away', game.gamePk);
         await postLineups(game, awayLineup, 'away');
       }
     }
@@ -192,7 +269,6 @@ export const pollLineups = async () => {
       if (homeLineup) {
         game.homePosted = true;
         game.homeLineup = homeLineup;
-        if (sitePayload) syncSiteLineup(sitePayload.games, homeLineup, 'home', game.gamePk);
         await postLineups(game, homeLineup, 'home');
       }
     }
@@ -201,11 +277,12 @@ export const pollLineups = async () => {
   fs.writeFileSync(MLB_GAMES_FILE, JSON.stringify(games, null, 2), 'utf8');
 
   if (sitePayload) {
-    sitePayload.updatedAt = new Date().toISOString();
-    writeJsonAtomic(SITE_LATEST_FILE, sitePayload);
+    const syncedPayload = syncSitePayloadFromGames(sitePayload, games);
+    syncedPayload.updatedAt = new Date().toISOString();
+    writeJsonAtomic(SITE_LATEST_FILE, syncedPayload);
 
     if (!process.env.SITE_DATA_DIR) {
-      writeJsonAtomic(LOCAL_FRONTEND_DATA_FILE, sitePayload);
+      writeJsonAtomic(LOCAL_FRONTEND_DATA_FILE, syncedPayload);
     }
   }
 };
@@ -232,7 +309,9 @@ const postLineups = async (game, lineup, teamType) => {
   const { teamName, pitcher, pitcherHand, opponentName, opponentPitcher, opponentPitcherHand } = mappings[teamType];
 
   const lineupHeader = `**${teamName}**: ${DateTime.fromISO(game.gameDate, { zone: 'America/New_York' }).toFormat('M/d')}`;
-  const lineupBody = lineup.map((p) => `${p.order}. ${p.name} - ${p.position}`).join('\n');
+  const lineupBody = lineup
+    .map((p) => `${p.order}. ${p.name} - ${p.position}${p.bats ? ` (${p.bats})` : ''}`)
+    .join('\n');
   const lineupPitcher = `**SP**: ${pitcher} (${pitcherHand}HP)`;
   const lineupTime = `**First Pitch**: ${game.gameTime}`;
   const lineupOpponent = `**Opponent**: ${opponentName}`;

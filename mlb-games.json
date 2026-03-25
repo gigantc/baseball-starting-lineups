@@ -3,13 +3,123 @@
     "home": "San Francisco Giants",
     "homePitcher": "Logan Webb",
     "homePitcherHand": "R",
-    "homePosted": false,
-    "homeLineup": [],
+    "homePosted": true,
+    "homeLineup": [
+      {
+        "order": 1,
+        "name": "Luis Arraez",
+        "position": "2B",
+        "bats": null
+      },
+      {
+        "order": 2,
+        "name": "Matt Chapman",
+        "position": "3B",
+        "bats": null
+      },
+      {
+        "order": 3,
+        "name": "Rafael Devers",
+        "position": "DH",
+        "bats": null
+      },
+      {
+        "order": 4,
+        "name": "Willy Adames",
+        "position": "SS",
+        "bats": null
+      },
+      {
+        "order": 5,
+        "name": "Jung Hoo Lee",
+        "position": "RF",
+        "bats": null
+      },
+      {
+        "order": 6,
+        "name": "Heliot Ramos",
+        "position": "LF",
+        "bats": null
+      },
+      {
+        "order": 7,
+        "name": "Casey Schmitt",
+        "position": "1B",
+        "bats": null
+      },
+      {
+        "order": 8,
+        "name": "Patrick Bailey",
+        "position": "C",
+        "bats": null
+      },
+      {
+        "order": 9,
+        "name": "Harrison Bader",
+        "position": "CF",
+        "bats": null
+      }
+    ],
     "away": "New York Yankees",
     "awayPitcher": "Max Fried",
     "awayPitcherHand": "L",
-    "awayPosted": false,
-    "awayLineup": [],
+    "awayPosted": true,
+    "awayLineup": [
+      {
+        "order": 1,
+        "name": "Trent Grisham",
+        "position": "CF",
+        "bats": null
+      },
+      {
+        "order": 2,
+        "name": "Aaron Judge",
+        "position": "RF",
+        "bats": null
+      },
+      {
+        "order": 3,
+        "name": "Cody Bellinger",
+        "position": "LF",
+        "bats": null
+      },
+      {
+        "order": 4,
+        "name": "Ben Rice",
+        "position": "1B",
+        "bats": null
+      },
+      {
+        "order": 5,
+        "name": "Giancarlo Stanton",
+        "position": "DH",
+        "bats": null
+      },
+      {
+        "order": 6,
+        "name": "Jazz Chisholm Jr.",
+        "position": "2B",
+        "bats": null
+      },
+      {
+        "order": 7,
+        "name": "José Caballero",
+        "position": "SS",
+        "bats": null
+      },
+      {
+        "order": 8,
+        "name": "Ryan McMahon",
+        "position": "3B",
+        "bats": null
+      },
+      {
+        "order": 9,
+        "name": "Austin Wells",
+        "position": "C",
+        "bats": null
+      }
+    ],
     "venue": "Oracle Park",
     "city": "San Francisco",
     "state": "CA",

@@ -31,7 +31,7 @@ const scheduleLineupPolling = () => {
     await pollLineups();
     setTimeout(poll, POLL_LINEUPS_INTERVAL);
   };
-  poll();
+  setTimeout(poll, POLL_LINEUPS_INTERVAL);
 };
 
 const scheduleAlertsPolling = () => {
@@ -47,14 +47,22 @@ const scheduleAlertsPolling = () => {
 //////////////////////////////////////////
 // INIT!
 const init = async () => {
+  console.log('⚾️ Starting baseball watcher...');
+
   // watch bluesky for lineup and game alerts
   // scheduleAlertsPolling();
 
-  // grab daily games FIRST
-  await scheduleDailyFetch();
+  // bootstrap immediately so first run is deterministic
+  await fetchMLBGames();
+  console.log('✅ Initial slate fetched');
 
-  // then watch for new lineups
+  await pollLineups();
+  console.log('✅ Initial lineup poll complete');
+
+  // schedule future work
+  scheduleDailyFetch();
   scheduleLineupPolling();
+  console.log('👀 Watcher running');
 };
 
 
@@ -68,10 +76,6 @@ const DAILY_FETCH_HOUR = 4;
 const DAILY_FETCH_MINUTE = 30;
 
 const scheduleDailyFetch = () => {
-  
-  //run right away if we are on dev
-  fetchMLBGames();
-
   const now = DateTime.local();
 
   //runs this when it hits the time above

@@ -70,6 +70,7 @@ export const buildLineup = (teamData, playersData) => {
         order: idx + 1,
         name: player?.person?.fullName,
         position: player?.position?.abbreviation,
+        bats: player?.person?.batSide?.code || null,
       };
     });
   }
