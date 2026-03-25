@@ -48,7 +48,7 @@ const scheduleAlertsPolling = () => {
 // INIT!
 const init = async () => {
   // watch bluesky for lineup and game alerts
-  scheduleAlertsPolling();
+  // scheduleAlertsPolling();
 
   // grab daily games FIRST
   await scheduleDailyFetch();
@@ -93,15 +93,6 @@ const scheduleDailyFetch = () => {
     setInterval(fetchMLBGames, 24 * 60 * 60 * 1000);
   }, msUntilRun);
 };
-
-
-
-
-
-
-
-
-
 
 
 init();

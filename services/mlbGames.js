@@ -3,28 +3,131 @@ import fs from 'fs';
 import path from 'path';
 import { DateTime } from 'luxon';
 
-import { formatGameTime, buildLineup } from '../utils/formatters.js';
+import { formatGameTime, buildLineup, formatPitcherStats } from '../utils/formatters.js';
 import { postToDiscord } from '../services/postToDiscord.js';
 
-//////////////////////////////////////////
-// Grab all MLB games for the day
-// and create the game object
+const SCOREBOARD_URL = (date) =>
+  `https://bdfed.stitch.mlbinfra.com/bdfed/transform-milb-scoreboard?stitch_env=prod&sortTemplate=4&sportId=1&startDate=${date}&endDate=${date}`;
+
+const MLB_GAMES_FILE = path.resolve('./mlb-games.json');
+const SITE_DATA_DIR = process.env.SITE_DATA_DIR
+  ? path.resolve(process.env.SITE_DATA_DIR)
+  : path.resolve('./site-data');
+const SITE_LATEST_FILE = path.resolve(SITE_DATA_DIR, 'latest.json');
+const LOCAL_FRONTEND_DATA_FILE = path.resolve('../mlb-lineup-site/public/data/latest.json');
+
+const ensureSiteDataDir = () => {
+  if (!fs.existsSync(SITE_DATA_DIR)) {
+    fs.mkdirSync(SITE_DATA_DIR, { recursive: true });
+  }
+};
+
+const writeJsonAtomic = (filePath, payload) => {
+  const directory = path.dirname(filePath);
+  if (!fs.existsSync(directory)) {
+    fs.mkdirSync(directory, { recursive: true });
+  }
+
+  const tempFile = `${filePath}.tmp`;
+  fs.writeFileSync(tempFile, JSON.stringify(payload, null, 2), 'utf8');
+  fs.renameSync(tempFile, filePath);
+};
+
+const buildVenueString = (game) => {
+  const venueName = game?.teams?.home?.team?.venue?.name || game?.venue?.name || 'TBD';
+  const city = game?.teams?.home?.team?.locationName || game?.venue?.location?.city || '';
+  const state = game?.venue?.location?.stateAbbrev || '';
+
+  const locationBits = [city, state].filter(Boolean).join(', ');
+  return locationBits ? `${venueName}, ${locationBits}` : venueName;
+};
+
+const buildRecordString = (record = {}) => {
+  const { wins = 0, losses = 0 } = record;
+  return `${wins}-${losses}`;
+};
+
+const buildPitcherPayload = (probablePitcher) => {
+  if (!probablePitcher) {
+    return {
+      name: 'TBD',
+      stats: '-',
+    };
+  }
+
+  const hand = probablePitcher?.pitchHand?.code ? ` (${probablePitcher.pitchHand.code})` : '';
+
+  return {
+    name: `${probablePitcher.fullName}${hand}`,
+    stats: formatPitcherStats(probablePitcher),
+  };
+};
+
+const buildSiteGame = (game) => ({
+  gamePk: game.gamePk,
+  gameGuid: game.gameGuid,
+  sortTime: DateTime.fromISO(game.gameDate).toFormat('HH:mm'),
+  time: formatGameTime(game.gameDate),
+  gameDate: game.gameDate,
+  officialDate: game.officialDate,
+  venue: buildVenueString(game),
+  status: game?.status?.detailedState || 'Scheduled',
+  weather: '-',
+  total: '-',
+  line: '-',
+  away: {
+    teamId: game.teams.away.team.id,
+    abbr: game.teams.away.team.abbreviation,
+    name: game.teams.away.team.name,
+    record: buildRecordString(game.teams.away.leagueRecord),
+    pitcher: buildPitcherPayload(game.teams.away.probablePitcher),
+    lineup: [],
+    note: 'Lineup pending',
+  },
+  home: {
+    teamId: game.teams.home.team.id,
+    abbr: game.teams.home.team.abbreviation,
+    name: game.teams.home.team.name,
+    record: buildRecordString(game.teams.home.leagueRecord),
+    pitcher: buildPitcherPayload(game.teams.home.probablePitcher),
+    lineup: [],
+    note: 'Lineup pending',
+  },
+});
+
+const writeSiteJson = (games, date) => {
+  ensureSiteDataDir();
+
+  const payload = {
+    date,
+    updatedAt: new Date().toISOString(),
+    games,
+  };
+
+  writeJsonAtomic(SITE_LATEST_FILE, payload);
+
+  if (!process.env.SITE_DATA_DIR) {
+    writeJsonAtomic(LOCAL_FRONTEND_DATA_FILE, payload);
+  }
+};
+
+const syncSiteLineup = (siteGames, lineup, teamType, gamePk) => {
+  const siteGame = siteGames.find((game) => game.gamePk === gamePk);
+  if (!siteGame) return;
+
+  const target = siteGame[teamType];
+  target.lineup = lineup.map((player) => `${player.position} ${player.name}`);
+  target.note = null;
+};
+
 export const fetchMLBGames = async () => {
-
-  // Let's get the game data for the day.
   const today = DateTime.now().toFormat('yyyy-MM-dd');
-
-  //this is here to manually pull a day in the past
-  // const today = "2025-06-30";
-
-  const url = `https://bdfed.stitch.mlbinfra.com/bdfed/transform-milb-scoreboard?stitch_env=prod&sortTemplate=4&sportId=1&startDate=${today}&endDate=${today}`;
-  
-  const res = await fetch(url);
+  const res = await fetch(SCOREBOARD_URL(today));
   const data = await res.json();
 
+  const rawGames = data.dates?.[0]?.games || [];
 
-  // initial game object
-  const games = data.dates?.[0]?.games?.map(game => ({
+  const games = rawGames.map((game) => ({
     home: game.teams.home.team.name,
     homePitcher: game.teams.home.probablePitcher?.nameFirstLast || null,
     homePitcherHand: game.teams.home.probablePitcher?.pitchHand.code || null,
@@ -35,93 +138,79 @@ export const fetchMLBGames = async () => {
     awayPitcherHand: game.teams.away.probablePitcher?.pitchHand.code || null,
     awayPosted: false,
     awayLineup: [],
-    venue: game.venue.name,
-    city: game.venue.location.city,
-    state: game.venue.location.stateAbbrev,
+    venue: game.teams.home.team.venue?.name || 'TBD',
+    city: game.teams.home.team.locationName || '',
+    state: game.venue?.location?.stateAbbrev || '',
     gamePk: game.gamePk,
     gameTime: formatGameTime(game.gameDate),
     gameDate: game.gameDate,
-  })) || [];
+  }));
 
-  //and let's write that to the json file
-  const filePath = path.resolve('./mlb-games.json');
-  fs.writeFileSync(filePath, JSON.stringify(games, null, 2), 'utf8');
+  fs.writeFileSync(MLB_GAMES_FILE, JSON.stringify(games, null, 2), 'utf8');
 
+  const siteGames = rawGames
+    .map(buildSiteGame)
+    .sort((a, b) => a.sortTime.localeCompare(b.sortTime));
 
-  // console.log(`Saved ${games.length} games to mlb-games.json`);
+  writeSiteJson(siteGames, today);
 };
 
-
-
-
-
-//////////////////////////////////////////
-// POLL the lineups 
 export const pollLineups = async () => {
-
-  //path to json data
-  const filePath = path.resolve('./mlb-games.json');
-  const fileData = fs.readFileSync(filePath, 'utf8');
-  //check to make sure things aren't empty
-  if (!fileData) {return;}
+  const fileData = fs.readFileSync(MLB_GAMES_FILE, 'utf8');
+  if (!fileData) return;
 
   const games = JSON.parse(fileData);
 
+  let sitePayload = null;
+  if (fs.existsSync(SITE_LATEST_FILE)) {
+    sitePayload = JSON.parse(fs.readFileSync(SITE_LATEST_FILE, 'utf8'));
+  }
 
   for (const game of games) {
-
-    // Skip if both lineups have been posted
     if (game.awayPosted && game.homePosted) {
       continue;
     }
 
-    //call the mlb boxscore api
     const boxscoreUrl = `https://statsapi.mlb.com/api/v1/game/${game.gamePk}/boxscore`;
     const res = await fetch(boxscoreUrl);
     const data = await res.json();
 
-
-    // Check AWAY team lineups
     if (!game.awayPosted) {
       const awayLineup = buildLineup(data.teams?.away, data.teams.away.players);
 
       if (awayLineup) {
         game.awayPosted = true;
         game.awayLineup = awayLineup;
-
-        // post to discord
-        postLineups(game, awayLineup, "away");
+        if (sitePayload) syncSiteLineup(sitePayload.games, awayLineup, 'away', game.gamePk);
+        await postLineups(game, awayLineup, 'away');
       }
     }
 
-    // Check HOME team lineups
     if (!game.homePosted) {
       const homeLineup = buildLineup(data.teams?.home, data.teams.home.players);
 
       if (homeLineup) {
         game.homePosted = true;
         game.homeLineup = homeLineup;
-
-        // post to discord
-        postLineups(game, homeLineup, "home");
+        if (sitePayload) syncSiteLineup(sitePayload.games, homeLineup, 'home', game.gamePk);
+        await postLineups(game, homeLineup, 'home');
       }
     }
+  }
 
+  fs.writeFileSync(MLB_GAMES_FILE, JSON.stringify(games, null, 2), 'utf8');
 
-  } //end for loop
+  if (sitePayload) {
+    sitePayload.updatedAt = new Date().toISOString();
+    writeJsonAtomic(SITE_LATEST_FILE, sitePayload);
 
-  // Save updated games list back to mlb-games.json
-  fs.writeFileSync(filePath, JSON.stringify(games, null, 2), 'utf8');
+    if (!process.env.SITE_DATA_DIR) {
+      writeJsonAtomic(LOCAL_FRONTEND_DATA_FILE, sitePayload);
+    }
+  }
 };
 
-
-
-
-//////////////////////////////////////////
-// FORMAT AND POST LINEUP TO DISCORD
 const postLineups = async (game, lineup, teamType) => {
-
-  //switch between home and away teams
   const mappings = {
     away: {
       teamName: game.away,
@@ -138,18 +227,13 @@ const postLineups = async (game, lineup, teamType) => {
       opponentName: game.away,
       opponentPitcher: game.awayPitcher,
       opponentPitcherHand: game.awayPitcherHand,
-    }
+    },
   };
   const { teamName, pitcher, pitcherHand, opponentName, opponentPitcher, opponentPitcherHand } = mappings[teamType];
 
-
-  //format message
   const lineupHeader = `**${teamName}**: ${DateTime.fromISO(game.gameDate, { zone: 'America/New_York' }).toFormat('M/d')}`;
-
-  const lineupBody = lineup.map(p => `${p.order}. ${p.name} - ${p.position}`).join('\n');
-
+  const lineupBody = lineup.map((p) => `${p.order}. ${p.name} - ${p.position}`).join('\n');
   const lineupPitcher = `**SP**: ${pitcher} (${pitcherHand}HP)`;
-
   const lineupTime = `**First Pitch**: ${game.gameTime}`;
   const lineupOpponent = `**Opponent**: ${opponentName}`;
   const vsPitcher = `**Opposing Pitcher**: ${opponentPitcher} (${opponentPitcherHand}HP)`;
@@ -157,10 +241,5 @@ const postLineups = async (game, lineup, teamType) => {
 
   const message = `\n\n⚾️ Lineup ⚾️\n\n${lineupHeader}\n\n${lineupBody}\n\n${lineupPitcher}\n\n${lineupTime}\n${lineupOpponent}\n${vsPitcher}\n${lineupLocation}\n\n----------------------\n\n`;
 
-  //send it to Discord
   await postToDiscord(message);
-
 };
-
-
-

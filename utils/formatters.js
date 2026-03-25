@@ -90,3 +90,20 @@ export const formatGameTime = (isoString) => {
 
   return `${format(eastern)} ET, ${format(pacific)} PT`;
 };
+
+export const formatPitcherStats = (pitcher) => {
+  const seasonPitching = pitcher?.stats?.find(
+    (stat) => stat?.type?.displayName === 'statsSingleSeason' && stat?.group?.displayName === 'pitching'
+  )?.stats;
+
+  if (!seasonPitching) {
+    return '-';
+  }
+
+  const wins = seasonPitching?.wins ?? 0;
+  const losses = seasonPitching?.losses ?? 0;
+  const era = seasonPitching?.era || '-.--';
+  const whip = seasonPitching?.whip || '-';
+
+  return `${wins}-${losses}, ${era} ERA, ${whip} WHIP`;
+};

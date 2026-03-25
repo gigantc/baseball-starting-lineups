@@ -1,0 +1,43 @@
+{
+  "date": "2026-03-25",
+  "updatedAt": "2026-03-25T15:39:22.553Z",
+  "games": [
+    {
+      "gamePk": 823244,
+      "gameGuid": "cc3d3afe-591e-44b8-a273-5730f50910b7",
+      "sortTime": "17:05",
+      "time": "8:05pm ET, 5:05pm PT",
+      "gameDate": "2026-03-25T20:05:00-04:00",
+      "officialDate": "2026-03-25",
+      "venue": "Oracle Park, San Francisco, CA",
+      "status": "Scheduled",
+      "weather": "-",
+      "total": "-",
+      "line": "-",
+      "away": {
+        "teamId": 147,
+        "abbr": "NYY",
+        "name": "New York Yankees",
+        "record": "0-0",
+        "pitcher": {
+          "name": "Max Fried (L)",
+          "stats": "0-0, -.-- ERA, - WHIP"
+        },
+        "lineup": [],
+        "note": "Lineup pending"
+      },
+      "home": {
+        "teamId": 137,
+        "abbr": "SF",
+        "name": "San Francisco Giants",
+        "record": "0-0",
+        "pitcher": {
+          "name": "Logan Webb (R)",
+          "stats": "0-0, -.-- ERA, - WHIP"
+        },
+        "lineup": [],
+        "note": "Lineup pending"
+      }
+    }
+  ]
+}
