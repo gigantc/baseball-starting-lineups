@@ -105,25 +105,31 @@ const getConsensusMoneyline = (market, game) => {
 };
 
 const getConsensusTotal = (markets) => {
-  const openTotals = markets
-    .filter((market) => getOpenBooks(market).length > 0)
-    .map((market) => Number(market.value))
-    .filter((value) => !Number.isNaN(value))
-    .filter((value) => value >= 6 && value <= 12);
+  let bestValue = null;
+  let bestImbalance = Infinity;
 
-  if (!openTotals.length) return '-';
+  for (const market of markets) {
+    const books = getOpenBooks(market);
+    if (!books.length) continue;
 
-  const counts = new Map();
-  for (const total of openTotals) {
-    counts.set(total, (counts.get(total) || 0) + 1);
+    const value = Number(market.value);
+    if (Number.isNaN(value)) continue;
+
+    const overPrices = books.map((b) => Number(b.outcome_0)).filter((p) => !Number.isNaN(p));
+    const underPrices = books.map((b) => Number(b.outcome_1)).filter((p) => !Number.isNaN(p));
+    if (!overPrices.length || !underPrices.length) continue;
+
+    const avgOver = average(overPrices);
+    const avgUnder = average(underPrices);
+    const imbalance = Math.abs(avgOver - avgUnder);
+
+    if (imbalance < bestImbalance) {
+      bestImbalance = imbalance;
+      bestValue = value;
+    }
   }
 
-  const sorted = [...counts.entries()].sort((a, b) => {
-    if (b[1] !== a[1]) return b[1] - a[1];
-    return a[0] - b[0];
-  });
-
-  return formatTotal(sorted[0]?.[0]);
+  return formatTotal(bestValue);
 };
 
 const getOpenBooks = (market) => (market?.market_books || []).filter((book) => book?.is_open);

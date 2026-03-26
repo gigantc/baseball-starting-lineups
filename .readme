@@ -21,3 +21,6 @@ Disable it from starting on boot:
 sudo systemctl disable baseball-watcher
 and then
 sudo systemctl stop baseball-watcher
+
+Files located in:
+/opt

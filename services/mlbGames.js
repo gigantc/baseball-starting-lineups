@@ -6,6 +6,9 @@ import { DateTime } from 'luxon';
 import { formatGameTime, buildLineup, formatPitcherStats } from '../utils/formatters.js';
 import { postToDiscord } from '../services/postToDiscord.js';
 import { enrichGamesWithOdds } from '../services/oddsFeed.js';
+import { fetchVenueDetails, enrichGamesWithWeather } from '../services/weather.js';
+
+const APP_TIMEZONE = process.env.APP_TIMEZONE || 'America/Phoenix';
 
 const SCOREBOARD_URL = (date) =>
   `https://bdfed.stitch.mlbinfra.com/bdfed/transform-milb-scoreboard?stitch_env=prod&sortTemplate=4&sportId=1&startDate=${date}&endDate=${date}`;
@@ -64,7 +67,7 @@ const buildPitcherPayload = (probablePitcher) => {
   };
 };
 
-const buildSiteGame = (game) => ({
+const buildSiteGame = (game, roofType = 'Open') => ({
   gamePk: game.gamePk,
   gameGuid: game.gameGuid,
   sortTime: DateTime.fromISO(game.gameDate).toFormat('HH:mm'),
@@ -72,6 +75,7 @@ const buildSiteGame = (game) => ({
   gameDate: game.gameDate,
   officialDate: game.officialDate,
   venue: buildVenueString(game),
+  roofType,
   status: game?.status?.detailedState || 'Scheduled',
   weather: '-',
   total: '-',
@@ -193,7 +197,7 @@ const syncSitePayloadFromGames = (sitePayload, games) => {
 };
 
 export const fetchMLBGames = async () => {
-  const today = DateTime.now().toFormat('yyyy-MM-dd');
+  const today = DateTime.now().setZone(APP_TIMEZONE).toFormat('yyyy-MM-dd');
   const res = await fetch(SCOREBOARD_URL(today));
   const data = await res.json();
 
@@ -220,16 +224,29 @@ export const fetchMLBGames = async () => {
 
   fs.writeFileSync(MLB_GAMES_FILE, JSON.stringify(games, null, 2), 'utf8');
 
+  // Fetch roof type for each venue
+  const venueDetailsMap = new Map();
+  for (const game of rawGames) {
+    const venueId = game.venue?.id;
+    if (venueId && !venueDetailsMap.has(venueId)) {
+      venueDetailsMap.set(venueId, await fetchVenueDetails(venueId));
+    }
+  }
+
   const existingSitePayload = loadExistingSitePayload();
 
   const siteGames = preserveExistingLineups(
     rawGames
-      .map(buildSiteGame)
+      .map((game) => {
+        const details = venueDetailsMap.get(game.venue?.id) || {};
+        return buildSiteGame(game, details.roofType || 'Open');
+      })
       .sort((a, b) => a.sortTime.localeCompare(b.sortTime)),
     existingSitePayload
   );
 
   await enrichGamesWithOdds(siteGames, today);
+  await enrichGamesWithWeather(siteGames, rawGames);
   writeSiteJson(siteGames, today);
 };
 

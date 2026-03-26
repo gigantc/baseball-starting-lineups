@@ -5,6 +5,8 @@ import { DateTime } from 'luxon';
 import { pollGameAlerts } from './services/gameAlerts.js';
 import { fetchMLBGames, pollLineups } from './services/mlbGames.js';
 
+const APP_TIMEZONE = process.env.APP_TIMEZONE || 'America/Phoenix';
+
 
 
 //////////////////////////////////////////
@@ -76,7 +78,7 @@ const DAILY_FETCH_HOUR = 4;
 const DAILY_FETCH_MINUTE = 30;
 
 const scheduleDailyFetch = () => {
-  const now = DateTime.local();
+  const now = DateTime.now().setZone(APP_TIMEZONE);
 
   //runs this when it hits the time above
   let nextRun = now.set({
