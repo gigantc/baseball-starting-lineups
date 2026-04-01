@@ -52,7 +52,7 @@ const init = async () => {
   console.log('⚾️ Starting baseball watcher...');
 
   // watch bluesky for lineup and game alerts
-  // scheduleAlertsPolling();
+  scheduleAlertsPolling();
 
   // bootstrap immediately so first run is deterministic
   await fetchMLBGames();

@@ -203,24 +203,35 @@ export const fetchMLBGames = async () => {
 
   const rawGames = data.dates?.[0]?.games || [];
 
-  const games = rawGames.map((game) => ({
-    home: game.teams.home.team.name,
-    homePitcher: game.teams.home.probablePitcher?.nameFirstLast || null,
-    homePitcherHand: game.teams.home.probablePitcher?.pitchHand.code || null,
-    homePosted: false,
-    homeLineup: [],
-    away: game.teams.away.team.name,
-    awayPitcher: game.teams.away.probablePitcher?.nameFirstLast || null,
-    awayPitcherHand: game.teams.away.probablePitcher?.pitchHand.code || null,
-    awayPosted: false,
-    awayLineup: [],
-    venue: game.teams.home.team.venue?.name || 'TBD',
-    city: game.teams.home.team.locationName || '',
-    state: game.venue?.location?.stateAbbrev || '',
-    gamePk: game.gamePk,
-    gameTime: formatGameTime(game.gameDate),
-    gameDate: game.gameDate,
-  }));
+  let existingGames = new Map();
+  try {
+    const existing = JSON.parse(fs.readFileSync(MLB_GAMES_FILE, 'utf8'));
+    existingGames = new Map(existing.map((g) => [g.gamePk, g]));
+  } catch {
+    // no existing file or invalid JSON — start fresh
+  }
+
+  const games = rawGames.map((game) => {
+    const prev = existingGames.get(game.gamePk);
+    return {
+      home: game.teams.home.team.name,
+      homePitcher: game.teams.home.probablePitcher?.nameFirstLast || null,
+      homePitcherHand: game.teams.home.probablePitcher?.pitchHand.code || null,
+      homePosted: prev?.homePosted || false,
+      homeLineup: prev?.homeLineup || [],
+      away: game.teams.away.team.name,
+      awayPitcher: game.teams.away.probablePitcher?.nameFirstLast || null,
+      awayPitcherHand: game.teams.away.probablePitcher?.pitchHand.code || null,
+      awayPosted: prev?.awayPosted || false,
+      awayLineup: prev?.awayLineup || [],
+      venue: game.teams.home.team.venue?.name || 'TBD',
+      city: game.teams.home.team.locationName || '',
+      state: game.venue?.location?.stateAbbrev || '',
+      gamePk: game.gamePk,
+      gameTime: formatGameTime(game.gameDate),
+      gameDate: game.gameDate,
+    };
+  });
 
   fs.writeFileSync(MLB_GAMES_FILE, JSON.stringify(games, null, 2), 'utf8');
 
@@ -250,6 +261,51 @@ export const fetchMLBGames = async () => {
   writeSiteJson(siteGames, today);
 };
 
+const refreshTBDPitchers = async (games, sitePayload) => {
+  const tbdGames = games.filter(
+    (g) => !g.awayPitcher || !g.homePitcher
+  );
+
+  if (!tbdGames.length) return;
+
+  const today = DateTime.now().setZone(APP_TIMEZONE).toFormat('yyyy-MM-dd');
+  let rawGames;
+  try {
+    const res = await fetch(SCOREBOARD_URL(today));
+    const data = await res.json();
+    rawGames = data.dates?.[0]?.games || [];
+  } catch (error) {
+    console.error('Error refreshing TBD pitchers:', error);
+    return;
+  }
+
+  const rawByPk = new Map(rawGames.map((g) => [g.gamePk, g]));
+
+  for (const game of tbdGames) {
+    const raw = rawByPk.get(game.gamePk);
+    if (!raw) continue;
+
+    for (const side of ['away', 'home']) {
+      const pitcherKey = `${side}Pitcher`;
+      const handKey = `${side}PitcherHand`;
+
+      if (!game[pitcherKey] && raw.teams[side].probablePitcher) {
+        const pp = raw.teams[side].probablePitcher;
+        game[pitcherKey] = pp.nameFirstLast || pp.fullName;
+        game[handKey] = pp.pitchHand?.code || null;
+        console.log(`Updated ${side} pitcher for ${game[side]}: ${game[pitcherKey]}`);
+
+        if (sitePayload?.games?.length) {
+          const siteGame = sitePayload.games.find((sg) => sg.gamePk === game.gamePk);
+          if (siteGame) {
+            siteGame[side].pitcher = buildPitcherPayload(pp);
+          }
+        }
+      }
+    }
+  }
+};
+
 export const pollLineups = async () => {
   const fileData = fs.readFileSync(MLB_GAMES_FILE, 'utf8');
   if (!fileData) return;
@@ -260,6 +316,8 @@ export const pollLineups = async () => {
   if (fs.existsSync(SITE_LATEST_FILE)) {
     sitePayload = JSON.parse(fs.readFileSync(SITE_LATEST_FILE, 'utf8'));
   }
+
+  await refreshTBDPitchers(games, sitePayload);
 
   for (const game of games) {
     if (game.awayPosted && game.homePosted) {
