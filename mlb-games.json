@@ -1,654 +1,74 @@
 [
   {
-    "home": "St. Louis Cardinals",
-    "homePitcher": "Michael McGreevy",
+    "home": "Miami Marlins",
+    "homePitcher": "Max Meyer",
     "homePitcherHand": "R",
     "homePosted": true,
     "homeLineup": [
       {
         "order": 1,
-        "name": "JJ Wetherholt",
-        "position": "2B",
-        "bats": null
-      },
-      {
-        "order": 2,
-        "name": "Iván Herrera",
-        "position": "C",
-        "bats": null
-      },
-      {
-        "order": 3,
-        "name": "Alec Burleson",
-        "position": "1B",
-        "bats": null
-      },
-      {
-        "order": 4,
-        "name": "Masyn Winn",
-        "position": "SS",
-        "bats": null
-      },
-      {
-        "order": 5,
-        "name": "Nolan Gorman",
+        "name": "Jakob Marsee",
         "position": "DH",
         "bats": null
       },
       {
+        "order": 2,
+        "name": "Xavier Edwards",
+        "position": "2B",
+        "bats": null
+      },
+      {
+        "order": 3,
+        "name": "Agustín Ramírez",
+        "position": "C",
+        "bats": null
+      },
+      {
+        "order": 4,
+        "name": "Liam Hicks",
+        "position": "1B",
+        "bats": null
+      },
+      {
+        "order": 5,
+        "name": "Otto Lopez",
+        "position": "SS",
+        "bats": null
+      },
+      {
         "order": 6,
-        "name": "Ramón Urías",
-        "position": "3B",
+        "name": "Owen Caissie",
+        "position": "RF",
         "bats": null
       },
       {
         "order": 7,
-        "name": "Nathan Church",
+        "name": "Griffin Conine",
         "position": "LF",
         "bats": null
       },
       {
         "order": 8,
-        "name": "Jordan Walker",
-        "position": "RF",
+        "name": "Javier Sanoja",
+        "position": "CF",
         "bats": null
       },
       {
         "order": 9,
-        "name": "Victor Scott II",
-        "position": "CF",
+        "name": "Graham Pauley",
+        "position": "3B",
         "bats": null
       }
     ],
-    "away": "Tampa Bay Rays",
-    "awayPitcher": "Joe Boyle",
+    "away": "Cincinnati Reds",
+    "awayPitcher": "Rhett Lowder",
     "awayPitcherHand": "R",
     "awayPosted": true,
     "awayLineup": [
-      {
-        "order": 1,
-        "name": "Yandy Díaz",
-        "position": "DH",
-        "bats": null
-      },
-      {
-        "order": 2,
-        "name": "Jonathan Aranda",
-        "position": "1B",
-        "bats": null
-      },
-      {
-        "order": 3,
-        "name": "Jake Fraley",
-        "position": "RF",
-        "bats": null
-      },
-      {
-        "order": 4,
-        "name": "Junior Caminero",
-        "position": "3B",
-        "bats": null
-      },
-      {
-        "order": 5,
-        "name": "Cedric Mullins",
-        "position": "CF",
-        "bats": null
-      },
-      {
-        "order": 6,
-        "name": "Chandler Simpson",
-        "position": "LF",
-        "bats": null
-      },
-      {
-        "order": 7,
-        "name": "Carson Williams",
-        "position": "SS",
-        "bats": null
-      },
-      {
-        "order": 8,
-        "name": "Richie Palacios",
-        "position": "2B",
-        "bats": null
-      },
-      {
-        "order": 9,
-        "name": "Hunter Feduccia",
-        "position": "C",
-        "bats": null
-      }
-    ],
-    "venue": "Busch Stadium",
-    "city": "St. Louis",
-    "state": "MO",
-    "gamePk": 823082,
-    "gameTime": "2:15pm ET, 11:15am PT",
-    "gameDate": "2026-03-28T14:15:00-04:00"
-  },
-  {
-    "home": "Chicago Cubs",
-    "homePitcher": "Cade Horton",
-    "homePitcherHand": "R",
-    "homePosted": true,
-    "homeLineup": [
-      {
-        "order": 1,
-        "name": "Michael Busch",
-        "position": "1B",
-        "bats": null
-      },
-      {
-        "order": 2,
-        "name": "Alex Bregman",
-        "position": "3B",
-        "bats": null
-      },
-      {
-        "order": 3,
-        "name": "Ian Happ",
-        "position": "LF",
-        "bats": null
-      },
-      {
-        "order": 4,
-        "name": "Pete Crow-Armstrong",
-        "position": "CF",
-        "bats": null
-      },
-      {
-        "order": 5,
-        "name": "Nico Hoerner",
-        "position": "2B",
-        "bats": null
-      },
-      {
-        "order": 6,
-        "name": "Dansby Swanson",
-        "position": "SS",
-        "bats": null
-      },
-      {
-        "order": 7,
-        "name": "Moisés Ballesteros",
-        "position": "DH",
-        "bats": null
-      },
-      {
-        "order": 8,
-        "name": "Matt Shaw",
-        "position": "RF",
-        "bats": null
-      },
-      {
-        "order": 9,
-        "name": "Miguel Amaya",
-        "position": "C",
-        "bats": null
-      }
-    ],
-    "away": "Washington Nationals",
-    "awayPitcher": "Miles Mikolas",
-    "awayPitcherHand": "R",
-    "awayPosted": true,
-    "awayLineup": [
-      {
-        "order": 1,
-        "name": "James Wood",
-        "position": "RF",
-        "bats": null
-      },
-      {
-        "order": 2,
-        "name": "Drew Millas",
-        "position": "C",
-        "bats": null
-      },
-      {
-        "order": 3,
-        "name": "Luis García Jr.",
-        "position": "1B",
-        "bats": null
-      },
-      {
-        "order": 4,
-        "name": "Daylen Lile",
-        "position": "LF",
-        "bats": null
-      },
-      {
-        "order": 5,
-        "name": "Brady House",
-        "position": "3B",
-        "bats": null
-      },
-      {
-        "order": 6,
-        "name": "Jorbit Vivas",
-        "position": "2B",
-        "bats": null
-      },
-      {
-        "order": 7,
-        "name": "Nasim Nuñez",
-        "position": "SS",
-        "bats": null
-      },
-      {
-        "order": 8,
-        "name": "José Tena",
-        "position": "DH",
-        "bats": null
-      },
-      {
-        "order": 9,
-        "name": "Jacob Young",
-        "position": "CF",
-        "bats": null
-      }
-    ],
-    "venue": "Wrigley Field",
-    "city": "Chicago",
-    "state": "IL",
-    "gamePk": 824701,
-    "gameTime": "2:20pm ET, 11:20am PT",
-    "gameDate": "2026-03-28T14:20:00-04:00"
-  },
-  {
-    "home": "Toronto Blue Jays",
-    "homePitcher": "Dylan Cease",
-    "homePitcherHand": "R",
-    "homePosted": true,
-    "homeLineup": [
-      {
-        "order": 1,
-        "name": "George Springer",
-        "position": "DH",
-        "bats": null
-      },
-      {
-        "order": 2,
-        "name": "Davis Schneider",
-        "position": "LF",
-        "bats": null
-      },
-      {
-        "order": 3,
-        "name": "Vladimir Guerrero Jr.",
-        "position": "1B",
-        "bats": null
-      },
-      {
-        "order": 4,
-        "name": "Kazuma Okamoto",
-        "position": "3B",
-        "bats": null
-      },
-      {
-        "order": 5,
-        "name": "Alejandro Kirk",
-        "position": "C",
-        "bats": null
-      },
-      {
-        "order": 6,
-        "name": "Daulton Varsho",
-        "position": "CF",
-        "bats": null
-      },
-      {
-        "order": 7,
-        "name": "Ernie Clement",
-        "position": "2B",
-        "bats": null
-      },
-      {
-        "order": 8,
-        "name": "Myles Straw",
-        "position": "RF",
-        "bats": null
-      },
-      {
-        "order": 9,
-        "name": "Andrés Giménez",
-        "position": "SS",
-        "bats": null
-      }
-    ],
-    "away": "Athletics",
-    "awayPitcher": "Jeffrey Springs",
-    "awayPitcherHand": "L",
-    "awayPosted": true,
-    "awayLineup": [
-      {
-        "order": 1,
-        "name": "Nick Kurtz",
-        "position": "1B",
-        "bats": null
-      },
-      {
-        "order": 2,
-        "name": "Shea Langeliers",
-        "position": "C",
-        "bats": null
-      },
-      {
-        "order": 3,
-        "name": "Tyler Soderstrom",
-        "position": "LF",
-        "bats": null
-      },
-      {
-        "order": 4,
-        "name": "Brent Rooker",
-        "position": "DH",
-        "bats": null
-      },
-      {
-        "order": 5,
-        "name": "Jacob Wilson",
-        "position": "SS",
-        "bats": null
-      },
-      {
-        "order": 6,
-        "name": "Jeff McNeil",
-        "position": "2B",
-        "bats": null
-      },
-      {
-        "order": 7,
-        "name": "Max Muncy",
-        "position": "3B",
-        "bats": null
-      },
-      {
-        "order": 8,
-        "name": "Carlos Cortes",
-        "position": "RF",
-        "bats": null
-      },
-      {
-        "order": 9,
-        "name": "Denzel Clarke",
-        "position": "CF",
-        "bats": null
-      }
-    ],
-    "venue": "Rogers Centre",
-    "city": "Toronto",
-    "state": "ON",
-    "gamePk": 822838,
-    "gameTime": "3:07pm ET, 12:07pm PT",
-    "gameDate": "2026-03-28T15:07:00-04:00"
-  },
-  {
-    "home": "Baltimore Orioles",
-    "homePitcher": "Kyle Bradish",
-    "homePitcherHand": "R",
-    "homePosted": true,
-    "homeLineup": [
-      {
-        "order": 1,
-        "name": "Taylor Ward",
-        "position": "LF",
-        "bats": null
-      },
-      {
-        "order": 2,
-        "name": "Gunnar Henderson",
-        "position": "SS",
-        "bats": null
-      },
-      {
-        "order": 3,
-        "name": "Pete Alonso",
-        "position": "1B",
-        "bats": null
-      },
-      {
-        "order": 4,
-        "name": "Adley Rutschman",
-        "position": "C",
-        "bats": null
-      },
-      {
-        "order": 5,
-        "name": "Samuel Basallo",
-        "position": "DH",
-        "bats": null
-      },
-      {
-        "order": 6,
-        "name": "Dylan Beavers",
-        "position": "RF",
-        "bats": null
-      },
-      {
-        "order": 7,
-        "name": "Coby Mayo",
-        "position": "3B",
-        "bats": null
-      },
-      {
-        "order": 8,
-        "name": "Colton Cowser",
-        "position": "CF",
-        "bats": null
-      },
-      {
-        "order": 9,
-        "name": "Jeremiah Jackson",
-        "position": "2B",
-        "bats": null
-      }
-    ],
-    "away": "Minnesota Twins",
-    "awayPitcher": "Taj Bradley",
-    "awayPitcherHand": "R",
-    "awayPosted": true,
-    "awayLineup": [
-      {
-        "order": 1,
-        "name": "Kody Clemens",
-        "position": "1B",
-        "bats": null
-      },
-      {
-        "order": 2,
-        "name": "Byron Buxton",
-        "position": "CF",
-        "bats": null
-      },
-      {
-        "order": 3,
-        "name": "Luke Keaschall",
-        "position": "2B",
-        "bats": null
-      },
-      {
-        "order": 4,
-        "name": "Matt Wallner",
-        "position": "RF",
-        "bats": null
-      },
-      {
-        "order": 5,
-        "name": "Josh Bell",
-        "position": "DH",
-        "bats": null
-      },
-      {
-        "order": 6,
-        "name": "Ryan Jeffers",
-        "position": "C",
-        "bats": null
-      },
-      {
-        "order": 7,
-        "name": "Trevor Larnach",
-        "position": "LF",
-        "bats": null
-      },
-      {
-        "order": 8,
-        "name": "Royce Lewis",
-        "position": "3B",
-        "bats": null
-      },
-      {
-        "order": 9,
-        "name": "Brooks Lee",
-        "position": "SS",
-        "bats": null
-      }
-    ],
-    "venue": "Oriole Park at Camden Yards",
-    "city": "Baltimore",
-    "state": "MD",
-    "gamePk": 824862,
-    "gameTime": "4:05pm ET, 1:05pm PT",
-    "gameDate": "2026-03-28T16:05:00-04:00"
-  },
-  {
-    "home": "Philadelphia Phillies",
-    "homePitcher": "Aaron Nola",
-    "homePitcherHand": "R",
-    "homePosted": true,
-    "homeLineup": [
-      {
-        "order": 1,
-        "name": "Trea Turner",
-        "position": "SS",
-        "bats": null
-      },
-      {
-        "order": 2,
-        "name": "Kyle Schwarber",
-        "position": "DH",
-        "bats": null
-      },
-      {
-        "order": 3,
-        "name": "Bryce Harper",
-        "position": "1B",
-        "bats": null
-      },
-      {
-        "order": 4,
-        "name": "Alec Bohm",
-        "position": "3B",
-        "bats": null
-      },
-      {
-        "order": 5,
-        "name": "Bryson Stott",
-        "position": "2B",
-        "bats": null
-      },
-      {
-        "order": 6,
-        "name": "Adolis García",
-        "position": "RF",
-        "bats": null
-      },
-      {
-        "order": 7,
-        "name": "Brandon Marsh",
-        "position": "LF",
-        "bats": null
-      },
-      {
-        "order": 8,
-        "name": "J.T. Realmuto",
-        "position": "C",
-        "bats": null
-      },
-      {
-        "order": 9,
-        "name": "Justin Crawford",
-        "position": "CF",
-        "bats": null
-      }
-    ],
-    "away": "Texas Rangers",
-    "awayPitcher": "Jacob deGrom",
-    "awayPitcherHand": "R",
-    "awayPosted": true,
-    "awayLineup": [
-      {
-        "order": 1,
-        "name": "Brandon Nimmo",
-        "position": "RF",
-        "bats": null
-      },
-      {
-        "order": 2,
-        "name": "Wyatt Langford",
-        "position": "LF",
-        "bats": null
-      },
-      {
-        "order": 3,
-        "name": "Corey Seager",
-        "position": "SS",
-        "bats": null
-      },
-      {
-        "order": 4,
-        "name": "Jake Burger",
-        "position": "1B",
-        "bats": null
-      },
-      {
-        "order": 5,
-        "name": "Joc Pederson",
-        "position": "DH",
-        "bats": null
-      },
-      {
-        "order": 6,
-        "name": "Josh Smith",
-        "position": "2B",
-        "bats": null
-      },
-      {
-        "order": 7,
-        "name": "Josh Jung",
-        "position": "3B",
-        "bats": null
-      },
-      {
-        "order": 8,
-        "name": "Evan Carter",
-        "position": "CF",
-        "bats": null
-      },
-      {
-        "order": 9,
-        "name": "Danny Jansen",
-        "position": "C",
-        "bats": null
-      }
-    ],
-    "venue": "Citizens Bank Park",
-    "city": "Philadelphia",
-    "state": "PA",
-    "gamePk": 823488,
-    "gameTime": "4:05pm ET, 1:05pm PT",
-    "gameDate": "2026-03-28T16:05:00-04:00"
-  },
-  {
-    "home": "Cincinnati Reds",
-    "homePitcher": "Brady Singer",
-    "homePitcherHand": "R",
-    "homePosted": true,
-    "homeLineup": [
       {
         "order": 1,
         "name": "TJ Friedl",
-        "position": "CF",
+        "position": "LF",
         "bats": null
       },
       {
@@ -672,811 +92,51 @@
       {
         "order": 5,
         "name": "Eugenio Suárez",
-        "position": "DH",
+        "position": "3B",
         "bats": null
       },
       {
         "order": 6,
+        "name": "Nathaniel Lowe",
+        "position": "DH",
+        "bats": null
+      },
+      {
+        "order": 7,
         "name": "Spencer Steer",
-        "position": "LF",
-        "bats": null
-      },
-      {
-        "order": 7,
-        "name": "Will Benson",
         "position": "RF",
         "bats": null
       },
       {
         "order": 8,
-        "name": "Jose Trevino",
-        "position": "C",
-        "bats": null
-      },
-      {
-        "order": 9,
-        "name": "Ke'Bryan Hayes",
-        "position": "3B",
-        "bats": null
-      }
-    ],
-    "away": "Boston Red Sox",
-    "awayPitcher": "Sonny Gray",
-    "awayPitcherHand": "R",
-    "awayPosted": true,
-    "awayLineup": [
-      {
-        "order": 1,
-        "name": "Roman Anthony",
-        "position": "LF",
-        "bats": null
-      },
-      {
-        "order": 2,
-        "name": "Trevor Story",
-        "position": "SS",
-        "bats": null
-      },
-      {
-        "order": 3,
-        "name": "Jarren Duran",
-        "position": "DH",
-        "bats": null
-      },
-      {
-        "order": 4,
-        "name": "Willson Contreras",
-        "position": "1B",
-        "bats": null
-      },
-      {
-        "order": 5,
-        "name": "Wilyer Abreu",
-        "position": "RF",
-        "bats": null
-      },
-      {
-        "order": 6,
-        "name": "Caleb Durbin",
-        "position": "3B",
-        "bats": null
-      },
-      {
-        "order": 7,
-        "name": "Marcelo Mayer",
-        "position": "2B",
-        "bats": null
-      },
-      {
-        "order": 8,
-        "name": "Carlos Narváez",
-        "position": "C",
-        "bats": null
-      },
-      {
-        "order": 9,
-        "name": "Ceddanne Rafaela",
-        "position": "CF",
-        "bats": null
-      }
-    ],
-    "venue": "Great American Ball Park",
-    "city": "Cincinnati",
-    "state": "OH",
-    "gamePk": 824540,
-    "gameTime": "4:10pm ET, 1:10pm PT",
-    "gameDate": "2026-03-28T16:10:00-04:00"
-  },
-  {
-    "home": "New York Mets",
-    "homePitcher": "David Peterson",
-    "homePitcherHand": "L",
-    "homePosted": true,
-    "homeLineup": [
-      {
-        "order": 1,
-        "name": "Francisco Lindor",
-        "position": "SS",
-        "bats": null
-      },
-      {
-        "order": 2,
-        "name": "Juan Soto",
-        "position": "LF",
-        "bats": null
-      },
-      {
-        "order": 3,
-        "name": "Bo Bichette",
-        "position": "3B",
-        "bats": null
-      },
-      {
-        "order": 4,
-        "name": "Jorge Polanco",
-        "position": "1B",
-        "bats": null
-      },
-      {
-        "order": 5,
-        "name": "Luis Robert Jr.",
+        "name": "Dane Myers",
         "position": "CF",
         "bats": null
       },
       {
-        "order": 6,
-        "name": "Brett Baty",
-        "position": "DH",
-        "bats": null
-      },
-      {
-        "order": 7,
-        "name": "Marcus Semien",
-        "position": "2B",
-        "bats": null
-      },
-      {
-        "order": 8,
-        "name": "Carson Benge",
-        "position": "RF",
-        "bats": null
-      },
-      {
         "order": 9,
-        "name": "Francisco Alvarez",
+        "name": "P.J. Higgins",
         "position": "C",
-        "bats": null
-      }
-    ],
-    "away": "Pittsburgh Pirates",
-    "awayPitcher": "Mitch Keller",
-    "awayPitcherHand": "R",
-    "awayPosted": true,
-    "awayLineup": [
-      {
-        "order": 1,
-        "name": "Jared Triolo",
-        "position": "SS",
-        "bats": null
-      },
-      {
-        "order": 2,
-        "name": "Ryan O'Hearn",
-        "position": "1B",
-        "bats": null
-      },
-      {
-        "order": 3,
-        "name": "Bryan Reynolds",
-        "position": "LF",
-        "bats": null
-      },
-      {
-        "order": 4,
-        "name": "Marcell Ozuna",
-        "position": "DH",
-        "bats": null
-      },
-      {
-        "order": 5,
-        "name": "Nick Gonzales",
-        "position": "3B",
-        "bats": null
-      },
-      {
-        "order": 6,
-        "name": "Brandon Lowe",
-        "position": "2B",
-        "bats": null
-      },
-      {
-        "order": 7,
-        "name": "Nick Yorke",
-        "position": "RF",
-        "bats": null
-      },
-      {
-        "order": 8,
-        "name": "Joey Bart",
-        "position": "C",
-        "bats": null
-      },
-      {
-        "order": 9,
-        "name": "Jake Mangum",
-        "position": "CF",
-        "bats": null
-      }
-    ],
-    "venue": "Citi Field",
-    "city": "Flushing",
-    "state": "NY",
-    "gamePk": 823651,
-    "gameTime": "4:10pm ET, 1:10pm PT",
-    "gameDate": "2026-03-28T16:10:00-04:00"
-  },
-  {
-    "home": "Miami Marlins",
-    "homePitcher": "Eury Pérez",
-    "homePitcherHand": "R",
-    "homePosted": true,
-    "homeLineup": [
-      {
-        "order": 1,
-        "name": "Jakob Marsee",
-        "position": "CF",
-        "bats": null
-      },
-      {
-        "order": 2,
-        "name": "Xavier Edwards",
-        "position": "2B",
-        "bats": null
-      },
-      {
-        "order": 3,
-        "name": "Agustín Ramírez",
-        "position": "DH",
-        "bats": null
-      },
-      {
-        "order": 4,
-        "name": "Liam Hicks",
-        "position": "C",
-        "bats": null
-      },
-      {
-        "order": 5,
-        "name": "Otto Lopez",
-        "position": "SS",
-        "bats": null
-      },
-      {
-        "order": 6,
-        "name": "Owen Caissie",
-        "position": "RF",
-        "bats": null
-      },
-      {
-        "order": 7,
-        "name": "Griffin Conine",
-        "position": "LF",
-        "bats": null
-      },
-      {
-        "order": 8,
-        "name": "Connor Norby",
-        "position": "1B",
-        "bats": null
-      },
-      {
-        "order": 9,
-        "name": "Graham Pauley",
-        "position": "3B",
-        "bats": null
-      }
-    ],
-    "away": "Colorado Rockies",
-    "awayPitcher": "Michael Lorenzen",
-    "awayPitcherHand": "R",
-    "awayPosted": true,
-    "awayLineup": [
-      {
-        "order": 1,
-        "name": "Jake McCarthy",
-        "position": "LF",
-        "bats": null
-      },
-      {
-        "order": 2,
-        "name": "Hunter Goodman",
-        "position": "C",
-        "bats": null
-      },
-      {
-        "order": 3,
-        "name": "Willi Castro",
-        "position": "2B",
-        "bats": null
-      },
-      {
-        "order": 4,
-        "name": "Ezequiel Tovar",
-        "position": "SS",
-        "bats": null
-      },
-      {
-        "order": 5,
-        "name": "TJ Rumfield",
-        "position": "1B",
-        "bats": null
-      },
-      {
-        "order": 6,
-        "name": "Troy Johnston",
-        "position": "RF",
-        "bats": null
-      },
-      {
-        "order": 7,
-        "name": "Brenton Doyle",
-        "position": "CF",
-        "bats": null
-      },
-      {
-        "order": 8,
-        "name": "Kyle Karros",
-        "position": "3B",
-        "bats": null
-      },
-      {
-        "order": 9,
-        "name": "Edouard Julien",
-        "position": "DH",
         "bats": null
       }
     ],
     "venue": "loanDepot park",
     "city": "Miami",
     "state": "FL",
-    "gamePk": 823892,
-    "gameTime": "4:10pm ET, 1:10pm PT",
-    "gameDate": "2026-03-28T16:10:00-04:00"
+    "gamePk": 823884,
+    "gameTime": "12:10pm ET, 9:10am PT",
+    "gameDate": "2026-04-09T12:10:00-04:00"
   },
   {
-    "home": "Houston Astros",
-    "homePitcher": "Cristian Javier",
-    "homePitcherHand": "R",
+    "home": "New York Yankees",
+    "homePitcher": "Ryan Weathers",
+    "homePitcherHand": "L",
     "homePosted": true,
     "homeLineup": [
       {
         "order": 1,
-        "name": "Jose Altuve",
+        "name": "Amed Rosario",
         "position": "2B",
-        "bats": null
-      },
-      {
-        "order": 2,
-        "name": "Yordan Alvarez",
-        "position": "DH",
-        "bats": null
-      },
-      {
-        "order": 3,
-        "name": "Isaac Paredes",
-        "position": "3B",
-        "bats": null
-      },
-      {
-        "order": 4,
-        "name": "Carlos Correa",
-        "position": "SS",
-        "bats": null
-      },
-      {
-        "order": 5,
-        "name": "Christian Walker",
-        "position": "1B",
-        "bats": null
-      },
-      {
-        "order": 6,
-        "name": "Cam Smith",
-        "position": "RF",
-        "bats": null
-      },
-      {
-        "order": 7,
-        "name": "Yainer Diaz",
-        "position": "C",
-        "bats": null
-      },
-      {
-        "order": 8,
-        "name": "Jake Meyers",
-        "position": "CF",
-        "bats": null
-      },
-      {
-        "order": 9,
-        "name": "Brice Matthews",
-        "position": "LF",
-        "bats": null
-      }
-    ],
-    "away": "Los Angeles Angels",
-    "awayPitcher": "Reid Detmers",
-    "awayPitcherHand": "L",
-    "awayPosted": true,
-    "awayLineup": [
-      {
-        "order": 1,
-        "name": "Zach Neto",
-        "position": "SS",
-        "bats": null
-      },
-      {
-        "order": 2,
-        "name": "Mike Trout",
-        "position": "CF",
-        "bats": null
-      },
-      {
-        "order": 3,
-        "name": "Nolan Schanuel",
-        "position": "1B",
-        "bats": null
-      },
-      {
-        "order": 4,
-        "name": "Jorge Soler",
-        "position": "DH",
-        "bats": null
-      },
-      {
-        "order": 5,
-        "name": "Yoán Moncada",
-        "position": "3B",
-        "bats": null
-      },
-      {
-        "order": 6,
-        "name": "Jo Adell",
-        "position": "RF",
-        "bats": null
-      },
-      {
-        "order": 7,
-        "name": "Josh Lowe",
-        "position": "LF",
-        "bats": null
-      },
-      {
-        "order": 8,
-        "name": "Logan O'Hoppe",
-        "position": "C",
-        "bats": null
-      },
-      {
-        "order": 9,
-        "name": "Oswald Peraza",
-        "position": "2B",
-        "bats": null
-      }
-    ],
-    "venue": "Daikin Park",
-    "city": "Houston",
-    "state": "TX",
-    "gamePk": 824213,
-    "gameTime": "7:10pm ET, 4:10pm PT",
-    "gameDate": "2026-03-28T19:10:00-04:00"
-  },
-  {
-    "home": "Milwaukee Brewers",
-    "homePitcher": "Chad Patrick",
-    "homePitcherHand": "R",
-    "homePosted": true,
-    "homeLineup": [
-      {
-        "order": 1,
-        "name": "Brice Turang",
-        "position": "2B",
-        "bats": null
-      },
-      {
-        "order": 2,
-        "name": "William Contreras",
-        "position": "C",
-        "bats": null
-      },
-      {
-        "order": 3,
-        "name": "Christian Yelich",
-        "position": "DH",
-        "bats": null
-      },
-      {
-        "order": 4,
-        "name": "Jake Bauers",
-        "position": "1B",
-        "bats": null
-      },
-      {
-        "order": 5,
-        "name": "Garrett Mitchell",
-        "position": "CF",
-        "bats": null
-      },
-      {
-        "order": 6,
-        "name": "Sal Frelick",
-        "position": "RF",
-        "bats": null
-      },
-      {
-        "order": 7,
-        "name": "Joey Ortiz",
-        "position": "SS",
-        "bats": null
-      },
-      {
-        "order": 8,
-        "name": "David Hamilton",
-        "position": "3B",
-        "bats": null
-      },
-      {
-        "order": 9,
-        "name": "Brandon Lockridge",
-        "position": "LF",
-        "bats": null
-      }
-    ],
-    "away": "Chicago White Sox",
-    "awayPitcher": "Sean Burke",
-    "awayPitcherHand": "R",
-    "awayPosted": true,
-    "awayLineup": [
-      {
-        "order": 1,
-        "name": "Chase Meidroth",
-        "position": "2B",
-        "bats": null
-      },
-      {
-        "order": 2,
-        "name": "Colson Montgomery",
-        "position": "3B",
-        "bats": null
-      },
-      {
-        "order": 3,
-        "name": "Andrew Benintendi",
-        "position": "LF",
-        "bats": null
-      },
-      {
-        "order": 4,
-        "name": "Munetaka Murakami",
-        "position": "1B",
-        "bats": null
-      },
-      {
-        "order": 5,
-        "name": "Lenyn Sosa",
-        "position": "DH",
-        "bats": null
-      },
-      {
-        "order": 6,
-        "name": "Tristan Peters",
-        "position": "CF",
-        "bats": null
-      },
-      {
-        "order": 7,
-        "name": "Everson Pereira",
-        "position": "RF",
-        "bats": null
-      },
-      {
-        "order": 8,
-        "name": "Reese McGuire",
-        "position": "C",
-        "bats": null
-      },
-      {
-        "order": 9,
-        "name": "Luisangel Acuña",
-        "position": "SS",
-        "bats": null
-      }
-    ],
-    "venue": "American Family Field",
-    "city": "Milwaukee",
-    "state": "WI",
-    "gamePk": 823811,
-    "gameTime": "7:10pm ET, 4:10pm PT",
-    "gameDate": "2026-03-28T19:10:00-04:00"
-  },
-  {
-    "home": "Atlanta Braves",
-    "homePitcher": "Reynaldo López",
-    "homePitcherHand": "R",
-    "homePosted": true,
-    "homeLineup": [
-      {
-        "order": 1,
-        "name": "Ronald Acuña Jr.",
-        "position": "RF",
-        "bats": null
-      },
-      {
-        "order": 2,
-        "name": "Drake Baldwin",
-        "position": "C",
-        "bats": null
-      },
-      {
-        "order": 3,
-        "name": "Matt Olson",
-        "position": "1B",
-        "bats": null
-      },
-      {
-        "order": 4,
-        "name": "Austin Riley",
-        "position": "3B",
-        "bats": null
-      },
-      {
-        "order": 5,
-        "name": "Mike Yastrzemski",
-        "position": "LF",
-        "bats": null
-      },
-      {
-        "order": 6,
-        "name": "Ozzie Albies",
-        "position": "2B",
-        "bats": null
-      },
-      {
-        "order": 7,
-        "name": "Michael Harris II",
-        "position": "CF",
-        "bats": null
-      },
-      {
-        "order": 8,
-        "name": "Dominic Smith",
-        "position": "DH",
-        "bats": null
-      },
-      {
-        "order": 9,
-        "name": "Mauricio Dubón",
-        "position": "SS",
-        "bats": null
-      }
-    ],
-    "away": "Kansas City Royals",
-    "awayPitcher": "Michael Wacha",
-    "awayPitcherHand": "R",
-    "awayPosted": true,
-    "awayLineup": [
-      {
-        "order": 1,
-        "name": "Maikel Garcia",
-        "position": "3B",
-        "bats": null
-      },
-      {
-        "order": 2,
-        "name": "Bobby Witt Jr.",
-        "position": "SS",
-        "bats": null
-      },
-      {
-        "order": 3,
-        "name": "Vinnie Pasquantino",
-        "position": "1B",
-        "bats": null
-      },
-      {
-        "order": 4,
-        "name": "Salvador Perez",
-        "position": "C",
-        "bats": null
-      },
-      {
-        "order": 5,
-        "name": "Carter Jensen",
-        "position": "DH",
-        "bats": null
-      },
-      {
-        "order": 6,
-        "name": "Jonathan India",
-        "position": "2B",
-        "bats": null
-      },
-      {
-        "order": 7,
-        "name": "Jac Caglianone",
-        "position": "RF",
-        "bats": null
-      },
-      {
-        "order": 8,
-        "name": "Isaac Collins",
-        "position": "LF",
-        "bats": null
-      },
-      {
-        "order": 9,
-        "name": "Kyle Isbel",
-        "position": "CF",
-        "bats": null
-      }
-    ],
-    "venue": "Truist Park",
-    "city": "Atlanta",
-    "state": "GA",
-    "gamePk": 824945,
-    "gameTime": "7:15pm ET, 4:15pm PT",
-    "gameDate": "2026-03-28T19:15:00-04:00"
-  },
-  {
-    "home": "San Francisco Giants",
-    "homePitcher": "Tyler Mahle",
-    "homePitcherHand": "R",
-    "homePosted": true,
-    "homeLineup": [
-      {
-        "order": 1,
-        "name": "Jung Hoo Lee",
-        "position": "RF",
-        "bats": null
-      },
-      {
-        "order": 2,
-        "name": "Matt Chapman",
-        "position": "3B",
-        "bats": null
-      },
-      {
-        "order": 3,
-        "name": "Luis Arraez",
-        "position": "2B",
-        "bats": null
-      },
-      {
-        "order": 4,
-        "name": "Rafael Devers",
-        "position": "DH",
-        "bats": null
-      },
-      {
-        "order": 5,
-        "name": "Heliot Ramos",
-        "position": "LF",
-        "bats": null
-      },
-      {
-        "order": 6,
-        "name": "Willy Adames",
-        "position": "SS",
-        "bats": null
-      },
-      {
-        "order": 7,
-        "name": "Harrison Bader",
-        "position": "CF",
-        "bats": null
-      },
-      {
-        "order": 8,
-        "name": "Patrick Bailey",
-        "position": "C",
-        "bats": null
-      },
-      {
-        "order": 9,
-        "name": "Casey Schmitt",
-        "position": "1B",
-        "bats": null
-      }
-    ],
-    "away": "New York Yankees",
-    "awayPitcher": "Will Warren",
-    "awayPitcherHand": "R",
-    "awayPosted": true,
-    "awayLineup": [
-      {
-        "order": 1,
-        "name": "Trent Grisham",
-        "position": "CF",
         "bats": null
       },
       {
@@ -1488,111 +148,171 @@
       {
         "order": 3,
         "name": "Cody Bellinger",
-        "position": "LF",
+        "position": "CF",
         "bats": null
       },
       {
         "order": 4,
-        "name": "Ben Rice",
-        "position": "1B",
-        "bats": null
-      },
-      {
-        "order": 5,
         "name": "Giancarlo Stanton",
         "position": "DH",
         "bats": null
       },
       {
+        "order": 5,
+        "name": "Ben Rice",
+        "position": "1B",
+        "bats": null
+      },
+      {
         "order": 6,
-        "name": "Jazz Chisholm Jr.",
-        "position": "2B",
+        "name": "Randal Grichuk",
+        "position": "LF",
         "bats": null
       },
       {
         "order": 7,
+        "name": "Austin Wells",
+        "position": "C",
+        "bats": null
+      },
+      {
+        "order": 8,
         "name": "José Caballero",
         "position": "SS",
         "bats": null
       },
       {
-        "order": 8,
+        "order": 9,
         "name": "Ryan McMahon",
+        "position": "3B",
+        "bats": null
+      }
+    ],
+    "away": "Athletics",
+    "awayPitcher": "Jeffrey Springs",
+    "awayPitcherHand": "L",
+    "awayPosted": true,
+    "awayLineup": [
+      {
+        "order": 1,
+        "name": "Jacob Wilson",
+        "position": "SS",
+        "bats": null
+      },
+      {
+        "order": 2,
+        "name": "Nick Kurtz",
+        "position": "1B",
+        "bats": null
+      },
+      {
+        "order": 3,
+        "name": "Brent Rooker",
+        "position": "RF",
+        "bats": null
+      },
+      {
+        "order": 4,
+        "name": "Andy Ibáñez",
         "position": "3B",
         "bats": null
       },
       {
-        "order": 9,
-        "name": "Austin Wells",
+        "order": 5,
+        "name": "Max Muncy",
+        "position": "DH",
+        "bats": null
+      },
+      {
+        "order": 6,
+        "name": "Tyler Soderstrom",
+        "position": "LF",
+        "bats": null
+      },
+      {
+        "order": 7,
+        "name": "Austin Wynns",
         "position": "C",
+        "bats": null
+      },
+      {
+        "order": 8,
+        "name": "Darell Hernaiz",
+        "position": "2B",
+        "bats": null
+      },
+      {
+        "order": 9,
+        "name": "Denzel Clarke",
+        "position": "CF",
         "bats": null
       }
     ],
-    "venue": "Oracle Park",
-    "city": "San Francisco",
-    "state": "CA",
-    "gamePk": 823241,
-    "gameTime": "7:15pm ET, 4:15pm PT",
-    "gameDate": "2026-03-28T19:15:00-04:00"
+    "venue": "Yankee Stadium",
+    "city": "Bronx",
+    "state": "NY",
+    "gamePk": 823565,
+    "gameTime": "1:35pm ET, 10:35am PT",
+    "gameDate": "2026-04-09T13:35:00-04:00"
   },
   {
-    "home": "San Diego Padres",
-    "homePitcher": "Randy Vásquez",
+    "home": "Minnesota Twins",
+    "homePitcher": "Mick Abel",
     "homePitcherHand": "R",
     "homePosted": true,
     "homeLineup": [
       {
         "order": 1,
-        "name": "Jake Cronenworth",
-        "position": "2B",
-        "bats": null
-      },
-      {
-        "order": 2,
-        "name": "Fernando Tatis Jr.",
-        "position": "RF",
-        "bats": null
-      },
-      {
-        "order": 3,
-        "name": "Manny Machado",
-        "position": "3B",
-        "bats": null
-      },
-      {
-        "order": 4,
-        "name": "Jackson Merrill",
+        "name": "Byron Buxton",
         "position": "CF",
         "bats": null
       },
       {
-        "order": 5,
-        "name": "Xander Bogaerts",
-        "position": "SS",
-        "bats": null
-      },
-      {
-        "order": 6,
-        "name": "Gavin Sheets",
-        "position": "1B",
-        "bats": null
-      },
-      {
-        "order": 7,
-        "name": "Ramón Laureano",
-        "position": "LF",
-        "bats": null
-      },
-      {
-        "order": 8,
-        "name": "Nick Castellanos",
+        "order": 2,
+        "name": "Trevor Larnach",
         "position": "DH",
         "bats": null
       },
       {
-        "order": 9,
-        "name": "Freddy Fermin",
+        "order": 3,
+        "name": "Josh Bell",
+        "position": "1B",
+        "bats": null
+      },
+      {
+        "order": 4,
+        "name": "Matt Wallner",
+        "position": "RF",
+        "bats": null
+      },
+      {
+        "order": 5,
+        "name": "Victor Caratini",
         "position": "C",
+        "bats": null
+      },
+      {
+        "order": 6,
+        "name": "Kody Clemens",
+        "position": "2B",
+        "bats": null
+      },
+      {
+        "order": 7,
+        "name": "Royce Lewis",
+        "position": "3B",
+        "bats": null
+      },
+      {
+        "order": 8,
+        "name": "Tristan Gray",
+        "position": "SS",
+        "bats": null
+      },
+      {
+        "order": 9,
+        "name": "James Outman",
+        "position": "LF",
         "bats": null
       }
     ],
@@ -1603,26 +323,26 @@
     "awayLineup": [
       {
         "order": 1,
-        "name": "Kerry Carpenter",
-        "position": "DH",
-        "bats": null
-      },
-      {
-        "order": 2,
-        "name": "Gleyber Torres",
-        "position": "2B",
-        "bats": null
-      },
-      {
-        "order": 3,
         "name": "Colt Keith",
         "position": "3B",
         "bats": null
       },
       {
-        "order": 4,
+        "order": 2,
+        "name": "Gleyber Torres",
+        "position": "DH",
+        "bats": null
+      },
+      {
+        "order": 3,
         "name": "Riley Greene",
         "position": "LF",
+        "bats": null
+      },
+      {
+        "order": 4,
+        "name": "Kerry Carpenter",
+        "position": "RF",
         "bats": null
       },
       {
@@ -1633,20 +353,20 @@
       },
       {
         "order": 6,
-        "name": "Kevin McGonigle",
-        "position": "SS",
+        "name": "Zach McKinstry",
+        "position": "2B",
         "bats": null
       },
       {
         "order": 7,
-        "name": "Matt Vierling",
-        "position": "CF",
+        "name": "Javier Báez",
+        "position": "SS",
         "bats": null
       },
       {
         "order": 8,
-        "name": "Zach McKinstry",
-        "position": "RF",
+        "name": "Parker Meadows",
+        "position": "CF",
         "bats": null
       },
       {
@@ -1656,157 +376,65 @@
         "bats": null
       }
     ],
-    "venue": "Petco Park",
-    "city": "San Diego",
-    "state": "CA",
-    "gamePk": 823323,
-    "gameTime": "8:40pm ET, 5:40pm PT",
-    "gameDate": "2026-03-28T20:40:00-04:00"
+    "venue": "Target Field",
+    "city": "Minneapolis",
+    "state": "MN",
+    "gamePk": 823724,
+    "gameTime": "1:40pm ET, 10:40am PT",
+    "gameDate": "2026-04-09T13:40:00-04:00"
   },
   {
-    "home": "Los Angeles Dodgers",
-    "homePitcher": "Tyler Glasnow",
+    "home": "New York Mets",
+    "homePitcher": "Nolan McLean",
     "homePitcherHand": "R",
-    "homePosted": true,
-    "homeLineup": [
-      {
-        "order": 1,
-        "name": "Shohei Ohtani",
-        "position": "DH",
-        "bats": null
-      },
-      {
-        "order": 2,
-        "name": "Kyle Tucker",
-        "position": "RF",
-        "bats": null
-      },
-      {
-        "order": 3,
-        "name": "Mookie Betts",
-        "position": "SS",
-        "bats": null
-      },
-      {
-        "order": 4,
-        "name": "Will Smith",
-        "position": "C",
-        "bats": null
-      },
-      {
-        "order": 5,
-        "name": "Freddie Freeman",
-        "position": "1B",
-        "bats": null
-      },
-      {
-        "order": 6,
-        "name": "Teoscar Hernández",
-        "position": "LF",
-        "bats": null
-      },
-      {
-        "order": 7,
-        "name": "Santiago Espinal",
-        "position": "3B",
-        "bats": null
-      },
-      {
-        "order": 8,
-        "name": "Andy Pages",
-        "position": "CF",
-        "bats": null
-      },
-      {
-        "order": 9,
-        "name": "Miguel Rojas",
-        "position": "2B",
-        "bats": null
-      }
-    ],
+    "homePosted": false,
+    "homeLineup": [],
     "away": "Arizona Diamondbacks",
     "awayPitcher": "Eduardo Rodriguez",
     "awayPitcherHand": "L",
     "awayPosted": false,
     "awayLineup": [],
-    "venue": "UNIQLO Field at Dodger Stadium",
-    "city": "Los Angeles",
-    "state": "CA",
-    "gamePk": 823973,
-    "gameTime": "9:10pm ET, 6:10pm PT",
-    "gameDate": "2026-03-28T21:10:00-04:00"
+    "venue": "Citi Field",
+    "city": "Flushing",
+    "state": "NY",
+    "gamePk": 823645,
+    "gameTime": "7:10pm ET, 4:10pm PT",
+    "gameDate": "2026-04-09T19:10:00-04:00"
   },
   {
-    "home": "Seattle Mariners",
-    "homePitcher": "Bryan Woo",
+    "home": "Kansas City Royals",
+    "homePitcher": "Seth Lugo",
     "homePitcherHand": "R",
-    "homePosted": true,
-    "homeLineup": [
-      {
-        "order": 1,
-        "name": "Rob Refsnyder",
-        "position": "DH",
-        "bats": null
-      },
-      {
-        "order": 2,
-        "name": "Cal Raleigh",
-        "position": "C",
-        "bats": null
-      },
-      {
-        "order": 3,
-        "name": "Julio Rodríguez",
-        "position": "CF",
-        "bats": null
-      },
-      {
-        "order": 4,
-        "name": "Josh Naylor",
-        "position": "1B",
-        "bats": null
-      },
-      {
-        "order": 5,
-        "name": "Randy Arozarena",
-        "position": "LF",
-        "bats": null
-      },
-      {
-        "order": 6,
-        "name": "Brendan Donovan",
-        "position": "3B",
-        "bats": null
-      },
-      {
-        "order": 7,
-        "name": "Victor Robles",
-        "position": "RF",
-        "bats": null
-      },
-      {
-        "order": 8,
-        "name": "Leo Rivas",
-        "position": "SS",
-        "bats": null
-      },
-      {
-        "order": 9,
-        "name": "Cole Young",
-        "position": "2B",
-        "bats": null
-      }
-    ],
-    "away": "Cleveland Guardians",
-    "awayPitcher": "Joey Cantillo",
+    "homePosted": false,
+    "homeLineup": [],
+    "away": "Chicago White Sox",
+    "awayPitcher": "Anthony Kay",
     "awayPitcherHand": "L",
     "awayPosted": false,
     "awayLineup": [],
-    "venue": "T-Mobile Park",
-    "city": "Seattle",
-    "state": "WA",
-    "gamePk": 823161,
+    "venue": "Kauffman Stadium",
+    "city": "Kansas City",
+    "state": "MO",
+    "gamePk": 824130,
+    "gameTime": "7:40pm ET, 4:40pm PT",
+    "gameDate": "2026-04-09T19:40:00-04:00"
+  },
+  {
+    "home": "San Diego Padres",
+    "homePitcher": "Randy Vásquez",
+    "homePitcherHand": "R",
+    "homePosted": false,
+    "homeLineup": [],
+    "away": "Colorado Rockies",
+    "awayPitcher": null,
+    "awayPitcherHand": null,
+    "awayPosted": false,
+    "awayLineup": [],
+    "venue": "Petco Park",
+    "city": "San Diego",
+    "state": "CA",
+    "gamePk": 823319,
     "gameTime": "9:40pm ET, 6:40pm PT",
-    "gameDate": "2026-03-28T21:40:00-04:00"
+    "gameDate": "2026-04-09T21:40:00-04:00"
   }
 ]

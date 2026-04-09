@@ -54,7 +54,8 @@ const init = async () => {
   // watch bluesky for lineup and game alerts
   scheduleAlertsPolling();
 
-  // bootstrap immediately so first run is deterministic
+  // bootstrap immediately so first run is deterministic.
+  // This is the one odds snapshot for the current slate unless the watcher is restarted manually.
   await fetchMLBGames();
   console.log('✅ Initial slate fetched');
 
@@ -71,7 +72,9 @@ const init = async () => {
 
 //////////////////////////////////////////
 // DAILY RUN TO GET GAME DATA
-// and start looking for lineups
+// and capture one morning odds snapshot for the slate.
+// We intentionally do not re-poll odds during the day because this app only needs
+// a static line / O/U reference, not live betting movement.
 
 // 24hr format, e.g. 14 for 2pm
 const DAILY_FETCH_HOUR = 4; 

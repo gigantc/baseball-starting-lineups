@@ -1,741 +1,33 @@
 {
-  "date": "2026-03-28",
-  "updatedAt": "2026-03-28T21:36:21.326Z",
+  "date": "2026-04-09",
+  "updatedAt": "2026-04-09T15:05:48.472Z",
   "games": [
     {
-      "gamePk": 823082,
-      "gameGuid": "df557aa3-3a78-46ae-ae87-a1bce641c579",
-      "sortTime": "11:15",
-      "time": "2:15pm ET, 11:15am PT",
-      "gameDate": "2026-03-28T14:15:00-04:00",
-      "officialDate": "2026-03-28",
-      "venue": "Busch Stadium, St. Louis, MO",
-      "roofType": "Open",
-      "status": "Scheduled",
-      "weather": "-",
-      "total": "-",
-      "line": "-",
-      "away": {
-        "teamId": 139,
-        "abbr": "TB",
-        "name": "Tampa Bay Rays",
-        "record": "0-1",
-        "pitcher": {
-          "name": "Joe Boyle (R)",
-          "stats": "0-0, -.-- ERA, - WHIP"
-        },
-        "lineup": [
-          {
-            "name": "Yandy Díaz",
-            "position": "DH",
-            "bats": null
-          },
-          {
-            "name": "Jonathan Aranda",
-            "position": "1B",
-            "bats": null
-          },
-          {
-            "name": "Jake Fraley",
-            "position": "RF",
-            "bats": null
-          },
-          {
-            "name": "Junior Caminero",
-            "position": "3B",
-            "bats": null
-          },
-          {
-            "name": "Cedric Mullins",
-            "position": "CF",
-            "bats": null
-          },
-          {
-            "name": "Chandler Simpson",
-            "position": "LF",
-            "bats": null
-          },
-          {
-            "name": "Carson Williams",
-            "position": "SS",
-            "bats": null
-          },
-          {
-            "name": "Richie Palacios",
-            "position": "2B",
-            "bats": null
-          },
-          {
-            "name": "Hunter Feduccia",
-            "position": "C",
-            "bats": null
-          }
-        ],
-        "note": null
-      },
-      "home": {
-        "teamId": 138,
-        "abbr": "STL",
-        "name": "St. Louis Cardinals",
-        "record": "1-0",
-        "pitcher": {
-          "name": "Michael McGreevy (R)",
-          "stats": "0-0, -.-- ERA, - WHIP"
-        },
-        "lineup": [
-          {
-            "name": "JJ Wetherholt",
-            "position": "2B",
-            "bats": null
-          },
-          {
-            "name": "Iván Herrera",
-            "position": "C",
-            "bats": null
-          },
-          {
-            "name": "Alec Burleson",
-            "position": "1B",
-            "bats": null
-          },
-          {
-            "name": "Masyn Winn",
-            "position": "SS",
-            "bats": null
-          },
-          {
-            "name": "Nolan Gorman",
-            "position": "DH",
-            "bats": null
-          },
-          {
-            "name": "Ramón Urías",
-            "position": "3B",
-            "bats": null
-          },
-          {
-            "name": "Nathan Church",
-            "position": "LF",
-            "bats": null
-          },
-          {
-            "name": "Jordan Walker",
-            "position": "RF",
-            "bats": null
-          },
-          {
-            "name": "Victor Scott II",
-            "position": "CF",
-            "bats": null
-          }
-        ],
-        "note": null
-      }
-    },
-    {
-      "gamePk": 824701,
-      "gameGuid": "4bf0553d-a493-47fa-9f0b-9704a833420d",
-      "sortTime": "11:20",
-      "time": "2:20pm ET, 11:20am PT",
-      "gameDate": "2026-03-28T14:20:00-04:00",
-      "officialDate": "2026-03-28",
-      "venue": "Wrigley Field, Chicago, IL",
-      "roofType": "Open",
-      "status": "Scheduled",
-      "weather": "-",
-      "total": "9",
-      "line": "CHC -222",
-      "away": {
-        "teamId": 120,
-        "abbr": "WSH",
-        "name": "Washington Nationals",
-        "record": "1-0",
-        "pitcher": {
-          "name": "Miles Mikolas (R)",
-          "stats": "0-0, -.-- ERA, - WHIP"
-        },
-        "lineup": [
-          {
-            "name": "James Wood",
-            "position": "RF",
-            "bats": null
-          },
-          {
-            "name": "Drew Millas",
-            "position": "C",
-            "bats": null
-          },
-          {
-            "name": "Luis García Jr.",
-            "position": "1B",
-            "bats": null
-          },
-          {
-            "name": "Daylen Lile",
-            "position": "LF",
-            "bats": null
-          },
-          {
-            "name": "Brady House",
-            "position": "3B",
-            "bats": null
-          },
-          {
-            "name": "Jorbit Vivas",
-            "position": "2B",
-            "bats": null
-          },
-          {
-            "name": "Nasim Nuñez",
-            "position": "SS",
-            "bats": null
-          },
-          {
-            "name": "José Tena",
-            "position": "DH",
-            "bats": null
-          },
-          {
-            "name": "Jacob Young",
-            "position": "CF",
-            "bats": null
-          }
-        ],
-        "note": null
-      },
-      "home": {
-        "teamId": 112,
-        "abbr": "CHC",
-        "name": "Chicago Cubs",
-        "record": "0-1",
-        "pitcher": {
-          "name": "Cade Horton (R)",
-          "stats": "0-0, -.-- ERA, - WHIP"
-        },
-        "lineup": [
-          {
-            "name": "Michael Busch",
-            "position": "1B",
-            "bats": null
-          },
-          {
-            "name": "Alex Bregman",
-            "position": "3B",
-            "bats": null
-          },
-          {
-            "name": "Ian Happ",
-            "position": "LF",
-            "bats": null
-          },
-          {
-            "name": "Pete Crow-Armstrong",
-            "position": "CF",
-            "bats": null
-          },
-          {
-            "name": "Nico Hoerner",
-            "position": "2B",
-            "bats": null
-          },
-          {
-            "name": "Dansby Swanson",
-            "position": "SS",
-            "bats": null
-          },
-          {
-            "name": "Moisés Ballesteros",
-            "position": "DH",
-            "bats": null
-          },
-          {
-            "name": "Matt Shaw",
-            "position": "RF",
-            "bats": null
-          },
-          {
-            "name": "Miguel Amaya",
-            "position": "C",
-            "bats": null
-          }
-        ],
-        "note": null
-      }
-    },
-    {
-      "gamePk": 822838,
-      "gameGuid": "3d2082df-58ea-48d2-809d-01ba6f066da4",
-      "sortTime": "12:07",
-      "time": "3:07pm ET, 12:07pm PT",
-      "gameDate": "2026-03-28T15:07:00-04:00",
-      "officialDate": "2026-03-28",
-      "venue": "Rogers Centre, Toronto, ON",
+      "gamePk": 823884,
+      "gameGuid": "9e95a61d-d0d4-44b8-a209-93382f9c1a1c",
+      "sortTime": "09:10",
+      "time": "12:10pm ET, 9:10am PT",
+      "gameDate": "2026-04-09T12:10:00-04:00",
+      "officialDate": "2026-04-09",
+      "venue": "loanDepot park, Miami, FL",
       "roofType": "Retractable",
-      "status": "Scheduled",
-      "weather": "-",
+      "status": "Pre-Game",
+      "weather": "72°F, Light Drizzle, Wind 15mph cross right to left (Retractable Roof)",
       "total": "8",
-      "line": "TOR -185",
+      "line": "MIA -127",
       "away": {
-        "teamId": 133,
-        "abbr": "ATH",
-        "name": "Athletics",
-        "record": "0-1",
-        "pitcher": {
-          "name": "Jeffrey Springs (L)",
-          "stats": "0-0, -.-- ERA, - WHIP"
-        },
-        "lineup": [
-          {
-            "name": "Nick Kurtz",
-            "position": "1B",
-            "bats": null
-          },
-          {
-            "name": "Shea Langeliers",
-            "position": "C",
-            "bats": null
-          },
-          {
-            "name": "Tyler Soderstrom",
-            "position": "LF",
-            "bats": null
-          },
-          {
-            "name": "Brent Rooker",
-            "position": "DH",
-            "bats": null
-          },
-          {
-            "name": "Jacob Wilson",
-            "position": "SS",
-            "bats": null
-          },
-          {
-            "name": "Jeff McNeil",
-            "position": "2B",
-            "bats": null
-          },
-          {
-            "name": "Max Muncy",
-            "position": "3B",
-            "bats": null
-          },
-          {
-            "name": "Carlos Cortes",
-            "position": "RF",
-            "bats": null
-          },
-          {
-            "name": "Denzel Clarke",
-            "position": "CF",
-            "bats": null
-          }
-        ],
-        "note": null
-      },
-      "home": {
-        "teamId": 141,
-        "abbr": "TOR",
-        "name": "Toronto Blue Jays",
-        "record": "1-0",
-        "pitcher": {
-          "name": "Dylan Cease (R)",
-          "stats": "0-0, -.-- ERA, - WHIP"
-        },
-        "lineup": [
-          {
-            "name": "George Springer",
-            "position": "DH",
-            "bats": null
-          },
-          {
-            "name": "Davis Schneider",
-            "position": "LF",
-            "bats": null
-          },
-          {
-            "name": "Vladimir Guerrero Jr.",
-            "position": "1B",
-            "bats": null
-          },
-          {
-            "name": "Kazuma Okamoto",
-            "position": "3B",
-            "bats": null
-          },
-          {
-            "name": "Alejandro Kirk",
-            "position": "C",
-            "bats": null
-          },
-          {
-            "name": "Daulton Varsho",
-            "position": "CF",
-            "bats": null
-          },
-          {
-            "name": "Ernie Clement",
-            "position": "2B",
-            "bats": null
-          },
-          {
-            "name": "Myles Straw",
-            "position": "RF",
-            "bats": null
-          },
-          {
-            "name": "Andrés Giménez",
-            "position": "SS",
-            "bats": null
-          }
-        ],
-        "note": null
-      }
-    },
-    {
-      "gamePk": 824862,
-      "gameGuid": "23d193d6-d40a-4ac7-9015-12c5c19cbb9f",
-      "sortTime": "13:05",
-      "time": "4:05pm ET, 1:05pm PT",
-      "gameDate": "2026-03-28T16:05:00-04:00",
-      "officialDate": "2026-03-28",
-      "venue": "Oriole Park at Camden Yards, Baltimore, MD",
-      "roofType": "Open",
-      "status": "Scheduled",
-      "weather": "-",
-      "total": "7.5",
-      "line": "BAL -157",
-      "away": {
-        "teamId": 142,
-        "abbr": "MIN",
-        "name": "Minnesota Twins",
-        "record": "0-1",
-        "pitcher": {
-          "name": "Taj Bradley (R)",
-          "stats": "0-0, -.-- ERA, - WHIP"
-        },
-        "lineup": [
-          {
-            "name": "Kody Clemens",
-            "position": "1B",
-            "bats": null
-          },
-          {
-            "name": "Byron Buxton",
-            "position": "CF",
-            "bats": null
-          },
-          {
-            "name": "Luke Keaschall",
-            "position": "2B",
-            "bats": null
-          },
-          {
-            "name": "Matt Wallner",
-            "position": "RF",
-            "bats": null
-          },
-          {
-            "name": "Josh Bell",
-            "position": "DH",
-            "bats": null
-          },
-          {
-            "name": "Ryan Jeffers",
-            "position": "C",
-            "bats": null
-          },
-          {
-            "name": "Trevor Larnach",
-            "position": "LF",
-            "bats": null
-          },
-          {
-            "name": "Royce Lewis",
-            "position": "3B",
-            "bats": null
-          },
-          {
-            "name": "Brooks Lee",
-            "position": "SS",
-            "bats": null
-          }
-        ],
-        "note": null
-      },
-      "home": {
-        "teamId": 110,
-        "abbr": "BAL",
-        "name": "Baltimore Orioles",
-        "record": "1-0",
-        "pitcher": {
-          "name": "Kyle Bradish (R)",
-          "stats": "0-0, -.-- ERA, - WHIP"
-        },
-        "lineup": [
-          {
-            "name": "Taylor Ward",
-            "position": "LF",
-            "bats": null
-          },
-          {
-            "name": "Gunnar Henderson",
-            "position": "SS",
-            "bats": null
-          },
-          {
-            "name": "Pete Alonso",
-            "position": "1B",
-            "bats": null
-          },
-          {
-            "name": "Adley Rutschman",
-            "position": "C",
-            "bats": null
-          },
-          {
-            "name": "Samuel Basallo",
-            "position": "DH",
-            "bats": null
-          },
-          {
-            "name": "Dylan Beavers",
-            "position": "RF",
-            "bats": null
-          },
-          {
-            "name": "Coby Mayo",
-            "position": "3B",
-            "bats": null
-          },
-          {
-            "name": "Colton Cowser",
-            "position": "CF",
-            "bats": null
-          },
-          {
-            "name": "Jeremiah Jackson",
-            "position": "2B",
-            "bats": null
-          }
-        ],
-        "note": null
-      }
-    },
-    {
-      "gamePk": 823488,
-      "gameGuid": "be1cb42f-5f0c-4319-82c4-4ba139def993",
-      "sortTime": "13:05",
-      "time": "4:05pm ET, 1:05pm PT",
-      "gameDate": "2026-03-28T16:05:00-04:00",
-      "officialDate": "2026-03-28",
-      "venue": "Citizens Bank Park, Philadelphia, PA",
-      "roofType": "Open",
-      "status": "Scheduled",
-      "weather": "-",
-      "total": "7.5",
-      "line": "PHI -114",
-      "away": {
-        "teamId": 140,
-        "abbr": "TEX",
-        "name": "Texas Rangers",
-        "record": "0-1",
-        "pitcher": {
-          "name": "Jacob deGrom (R)",
-          "stats": "0-0, -.-- ERA, - WHIP"
-        },
-        "lineup": [
-          {
-            "name": "Brandon Nimmo",
-            "position": "RF",
-            "bats": null
-          },
-          {
-            "name": "Wyatt Langford",
-            "position": "LF",
-            "bats": null
-          },
-          {
-            "name": "Corey Seager",
-            "position": "SS",
-            "bats": null
-          },
-          {
-            "name": "Jake Burger",
-            "position": "1B",
-            "bats": null
-          },
-          {
-            "name": "Joc Pederson",
-            "position": "DH",
-            "bats": null
-          },
-          {
-            "name": "Josh Smith",
-            "position": "2B",
-            "bats": null
-          },
-          {
-            "name": "Josh Jung",
-            "position": "3B",
-            "bats": null
-          },
-          {
-            "name": "Evan Carter",
-            "position": "CF",
-            "bats": null
-          },
-          {
-            "name": "Danny Jansen",
-            "position": "C",
-            "bats": null
-          }
-        ],
-        "note": null
-      },
-      "home": {
-        "teamId": 143,
-        "abbr": "PHI",
-        "name": "Philadelphia Phillies",
-        "record": "1-0",
-        "pitcher": {
-          "name": "Aaron Nola (R)",
-          "stats": "0-0, -.-- ERA, - WHIP"
-        },
-        "lineup": [
-          {
-            "name": "Trea Turner",
-            "position": "SS",
-            "bats": null
-          },
-          {
-            "name": "Kyle Schwarber",
-            "position": "DH",
-            "bats": null
-          },
-          {
-            "name": "Bryce Harper",
-            "position": "1B",
-            "bats": null
-          },
-          {
-            "name": "Alec Bohm",
-            "position": "3B",
-            "bats": null
-          },
-          {
-            "name": "Bryson Stott",
-            "position": "2B",
-            "bats": null
-          },
-          {
-            "name": "Adolis García",
-            "position": "RF",
-            "bats": null
-          },
-          {
-            "name": "Brandon Marsh",
-            "position": "LF",
-            "bats": null
-          },
-          {
-            "name": "J.T. Realmuto",
-            "position": "C",
-            "bats": null
-          },
-          {
-            "name": "Justin Crawford",
-            "position": "CF",
-            "bats": null
-          }
-        ],
-        "note": null
-      }
-    },
-    {
-      "gamePk": 824540,
-      "gameGuid": "cd6dc80f-ade0-44b2-b294-15b24891bfcc",
-      "sortTime": "13:10",
-      "time": "4:10pm ET, 1:10pm PT",
-      "gameDate": "2026-03-28T16:10:00-04:00",
-      "officialDate": "2026-03-28",
-      "venue": "Great American Ball Park, Cincinnati, OH",
-      "roofType": "Open",
-      "status": "Scheduled",
-      "weather": "-",
-      "total": "7.5",
-      "line": "BOS -147",
-      "away": {
-        "teamId": 111,
-        "abbr": "BOS",
-        "name": "Boston Red Sox",
-        "record": "1-0",
-        "pitcher": {
-          "name": "Sonny Gray (R)",
-          "stats": "0-0, -.-- ERA, - WHIP"
-        },
-        "lineup": [
-          {
-            "name": "Roman Anthony",
-            "position": "LF",
-            "bats": null
-          },
-          {
-            "name": "Trevor Story",
-            "position": "SS",
-            "bats": null
-          },
-          {
-            "name": "Jarren Duran",
-            "position": "DH",
-            "bats": null
-          },
-          {
-            "name": "Willson Contreras",
-            "position": "1B",
-            "bats": null
-          },
-          {
-            "name": "Wilyer Abreu",
-            "position": "RF",
-            "bats": null
-          },
-          {
-            "name": "Caleb Durbin",
-            "position": "3B",
-            "bats": null
-          },
-          {
-            "name": "Marcelo Mayer",
-            "position": "2B",
-            "bats": null
-          },
-          {
-            "name": "Carlos Narváez",
-            "position": "C",
-            "bats": null
-          },
-          {
-            "name": "Ceddanne Rafaela",
-            "position": "CF",
-            "bats": null
-          }
-        ],
-        "note": null
-      },
-      "home": {
         "teamId": 113,
         "abbr": "CIN",
         "name": "Cincinnati Reds",
-        "record": "0-1",
+        "record": "8-4",
         "pitcher": {
-          "name": "Brady Singer (R)",
-          "stats": "0-0, -.-- ERA, - WHIP"
+          "name": "Rhett Lowder (R)",
+          "stats": "1-0, 1.64 ERA, 0.91 WHIP"
         },
         "lineup": [
           {
             "name": "TJ Friedl",
-            "position": "CF",
+            "position": "LF",
             "bats": null
           },
           {
@@ -755,229 +47,27 @@
           },
           {
             "name": "Eugenio Suárez",
+            "position": "3B",
+            "bats": null
+          },
+          {
+            "name": "Nathaniel Lowe",
             "position": "DH",
             "bats": null
           },
           {
             "name": "Spencer Steer",
-            "position": "LF",
-            "bats": null
-          },
-          {
-            "name": "Will Benson",
             "position": "RF",
             "bats": null
           },
           {
-            "name": "Jose Trevino",
-            "position": "C",
-            "bats": null
-          },
-          {
-            "name": "Ke'Bryan Hayes",
-            "position": "3B",
-            "bats": null
-          }
-        ],
-        "note": null
-      }
-    },
-    {
-      "gamePk": 823651,
-      "gameGuid": "6109cc15-1f38-49cf-a50e-26f53c982744",
-      "sortTime": "13:10",
-      "time": "4:10pm ET, 1:10pm PT",
-      "gameDate": "2026-03-28T16:10:00-04:00",
-      "officialDate": "2026-03-28",
-      "venue": "Citi Field, Flushing, NY",
-      "roofType": "Open",
-      "status": "Scheduled",
-      "weather": "41°F, Overcast, Wind 16mph cross right to left",
-      "total": "8",
-      "line": "NYM -173",
-      "away": {
-        "teamId": 134,
-        "abbr": "PIT",
-        "name": "Pittsburgh Pirates",
-        "record": "0-1",
-        "pitcher": {
-          "name": "Mitch Keller (R)",
-          "stats": "0-0, -.-- ERA, - WHIP"
-        },
-        "lineup": [
-          {
-            "name": "Jared Triolo",
-            "position": "SS",
-            "bats": null
-          },
-          {
-            "name": "Ryan O'Hearn",
-            "position": "1B",
-            "bats": null
-          },
-          {
-            "name": "Bryan Reynolds",
-            "position": "LF",
-            "bats": null
-          },
-          {
-            "name": "Marcell Ozuna",
-            "position": "DH",
-            "bats": null
-          },
-          {
-            "name": "Nick Gonzales",
-            "position": "3B",
-            "bats": null
-          },
-          {
-            "name": "Brandon Lowe",
-            "position": "2B",
-            "bats": null
-          },
-          {
-            "name": "Nick Yorke",
-            "position": "RF",
-            "bats": null
-          },
-          {
-            "name": "Joey Bart",
-            "position": "C",
-            "bats": null
-          },
-          {
-            "name": "Jake Mangum",
-            "position": "CF",
-            "bats": null
-          }
-        ],
-        "note": null
-      },
-      "home": {
-        "teamId": 121,
-        "abbr": "NYM",
-        "name": "New York Mets",
-        "record": "1-0",
-        "pitcher": {
-          "name": "David Peterson (L)",
-          "stats": "0-0, -.-- ERA, - WHIP"
-        },
-        "lineup": [
-          {
-            "name": "Francisco Lindor",
-            "position": "SS",
-            "bats": null
-          },
-          {
-            "name": "Juan Soto",
-            "position": "LF",
-            "bats": null
-          },
-          {
-            "name": "Bo Bichette",
-            "position": "3B",
-            "bats": null
-          },
-          {
-            "name": "Jorge Polanco",
-            "position": "1B",
-            "bats": null
-          },
-          {
-            "name": "Luis Robert Jr.",
+            "name": "Dane Myers",
             "position": "CF",
             "bats": null
           },
           {
-            "name": "Brett Baty",
-            "position": "DH",
-            "bats": null
-          },
-          {
-            "name": "Marcus Semien",
-            "position": "2B",
-            "bats": null
-          },
-          {
-            "name": "Carson Benge",
-            "position": "RF",
-            "bats": null
-          },
-          {
-            "name": "Francisco Alvarez",
+            "name": "P.J. Higgins",
             "position": "C",
-            "bats": null
-          }
-        ],
-        "note": null
-      }
-    },
-    {
-      "gamePk": 823892,
-      "gameGuid": "f23a5406-5601-4684-aba9-14401bdff325",
-      "sortTime": "13:10",
-      "time": "4:10pm ET, 1:10pm PT",
-      "gameDate": "2026-03-28T16:10:00-04:00",
-      "officialDate": "2026-03-28",
-      "venue": "loanDepot park, Miami, FL",
-      "roofType": "Retractable",
-      "status": "Scheduled",
-      "weather": "82°F, Clear, Wind 11mph in from left (Retractable Roof)",
-      "total": "7.5",
-      "line": "MIA -194",
-      "away": {
-        "teamId": 115,
-        "abbr": "COL",
-        "name": "Colorado Rockies",
-        "record": "0-1",
-        "pitcher": {
-          "name": "Michael Lorenzen (R)",
-          "stats": "0-0, -.-- ERA, - WHIP"
-        },
-        "lineup": [
-          {
-            "name": "Jake McCarthy",
-            "position": "LF",
-            "bats": null
-          },
-          {
-            "name": "Hunter Goodman",
-            "position": "C",
-            "bats": null
-          },
-          {
-            "name": "Willi Castro",
-            "position": "2B",
-            "bats": null
-          },
-          {
-            "name": "Ezequiel Tovar",
-            "position": "SS",
-            "bats": null
-          },
-          {
-            "name": "TJ Rumfield",
-            "position": "1B",
-            "bats": null
-          },
-          {
-            "name": "Troy Johnston",
-            "position": "RF",
-            "bats": null
-          },
-          {
-            "name": "Brenton Doyle",
-            "position": "CF",
-            "bats": null
-          },
-          {
-            "name": "Kyle Karros",
-            "position": "3B",
-            "bats": null
-          },
-          {
-            "name": "Edouard Julien",
-            "position": "DH",
             "bats": null
           }
         ],
@@ -987,15 +77,15 @@
         "teamId": 146,
         "abbr": "MIA",
         "name": "Miami Marlins",
-        "record": "1-0",
+        "record": "7-5",
         "pitcher": {
-          "name": "Eury Pérez (R)",
-          "stats": "0-0, -.-- ERA, - WHIP"
+          "name": "Max Meyer (R)",
+          "stats": "0-0, 4.66 ERA, 1.34 WHIP"
         },
         "lineup": [
           {
             "name": "Jakob Marsee",
-            "position": "CF",
+            "position": "DH",
             "bats": null
           },
           {
@@ -1005,12 +95,12 @@
           },
           {
             "name": "Agustín Ramírez",
-            "position": "DH",
+            "position": "C",
             "bats": null
           },
           {
             "name": "Liam Hicks",
-            "position": "C",
+            "position": "1B",
             "bats": null
           },
           {
@@ -1029,8 +119,8 @@
             "bats": null
           },
           {
-            "name": "Connor Norby",
-            "position": "1B",
+            "name": "Javier Sanoja",
+            "position": "CF",
             "bats": null
           },
           {
@@ -1043,330 +133,70 @@
       }
     },
     {
-      "gamePk": 824213,
-      "gameGuid": "2c85c75c-a9fc-4696-99e9-8a2225780eb6",
-      "sortTime": "16:10",
-      "time": "7:10pm ET, 4:10pm PT",
-      "gameDate": "2026-03-28T19:10:00-04:00",
-      "officialDate": "2026-03-28",
-      "venue": "Daikin Park, Houston, TX",
-      "roofType": "Retractable",
-      "status": "Scheduled",
-      "weather": "74°F, Partly Cloudy, Wind 5mph in from right (Retractable Roof)",
-      "total": "9",
-      "line": "HOU -147",
-      "away": {
-        "teamId": 108,
-        "abbr": "LAA",
-        "name": "Los Angeles Angels",
-        "record": "2-0",
-        "pitcher": {
-          "name": "Reid Detmers (L)",
-          "stats": "0-0, -.-- ERA, - WHIP"
-        },
-        "lineup": [
-          {
-            "name": "Zach Neto",
-            "position": "SS",
-            "bats": null
-          },
-          {
-            "name": "Mike Trout",
-            "position": "CF",
-            "bats": null
-          },
-          {
-            "name": "Nolan Schanuel",
-            "position": "1B",
-            "bats": null
-          },
-          {
-            "name": "Jorge Soler",
-            "position": "DH",
-            "bats": null
-          },
-          {
-            "name": "Yoán Moncada",
-            "position": "3B",
-            "bats": null
-          },
-          {
-            "name": "Jo Adell",
-            "position": "RF",
-            "bats": null
-          },
-          {
-            "name": "Josh Lowe",
-            "position": "LF",
-            "bats": null
-          },
-          {
-            "name": "Logan O'Hoppe",
-            "position": "C",
-            "bats": null
-          },
-          {
-            "name": "Oswald Peraza",
-            "position": "2B",
-            "bats": null
-          }
-        ],
-        "note": null
-      },
-      "home": {
-        "teamId": 117,
-        "abbr": "HOU",
-        "name": "Houston Astros",
-        "record": "0-2",
-        "pitcher": {
-          "name": "Cristian Javier (R)",
-          "stats": "0-0, -.-- ERA, - WHIP"
-        },
-        "lineup": [
-          {
-            "name": "Jose Altuve",
-            "position": "2B",
-            "bats": null
-          },
-          {
-            "name": "Yordan Alvarez",
-            "position": "DH",
-            "bats": null
-          },
-          {
-            "name": "Isaac Paredes",
-            "position": "3B",
-            "bats": null
-          },
-          {
-            "name": "Carlos Correa",
-            "position": "SS",
-            "bats": null
-          },
-          {
-            "name": "Christian Walker",
-            "position": "1B",
-            "bats": null
-          },
-          {
-            "name": "Cam Smith",
-            "position": "RF",
-            "bats": null
-          },
-          {
-            "name": "Yainer Diaz",
-            "position": "C",
-            "bats": null
-          },
-          {
-            "name": "Jake Meyers",
-            "position": "CF",
-            "bats": null
-          },
-          {
-            "name": "Brice Matthews",
-            "position": "LF",
-            "bats": null
-          }
-        ],
-        "note": null
-      }
-    },
-    {
-      "gamePk": 823811,
-      "gameGuid": "a08b9998-b835-4efa-9df0-89c3a4d3b69a",
-      "sortTime": "16:10",
-      "time": "7:10pm ET, 4:10pm PT",
-      "gameDate": "2026-03-28T19:10:00-04:00",
-      "officialDate": "2026-03-28",
-      "venue": "American Family Field, Milwaukee, WI",
-      "roofType": "Retractable",
-      "status": "Scheduled",
-      "weather": "48°F, Overcast, Wind 13mph cross left to right (Retractable Roof)",
-      "total": "8",
-      "line": "MIL -190",
-      "away": {
-        "teamId": 145,
-        "abbr": "CWS",
-        "name": "Chicago White Sox",
-        "record": "0-1",
-        "pitcher": {
-          "name": "Sean Burke (R)",
-          "stats": "0-0, -.-- ERA, - WHIP"
-        },
-        "lineup": [
-          {
-            "name": "Chase Meidroth",
-            "position": "2B",
-            "bats": null
-          },
-          {
-            "name": "Colson Montgomery",
-            "position": "3B",
-            "bats": null
-          },
-          {
-            "name": "Andrew Benintendi",
-            "position": "LF",
-            "bats": null
-          },
-          {
-            "name": "Munetaka Murakami",
-            "position": "1B",
-            "bats": null
-          },
-          {
-            "name": "Lenyn Sosa",
-            "position": "DH",
-            "bats": null
-          },
-          {
-            "name": "Tristan Peters",
-            "position": "CF",
-            "bats": null
-          },
-          {
-            "name": "Everson Pereira",
-            "position": "RF",
-            "bats": null
-          },
-          {
-            "name": "Reese McGuire",
-            "position": "C",
-            "bats": null
-          },
-          {
-            "name": "Luisangel Acuña",
-            "position": "SS",
-            "bats": null
-          }
-        ],
-        "note": null
-      },
-      "home": {
-        "teamId": 158,
-        "abbr": "MIL",
-        "name": "Milwaukee Brewers",
-        "record": "1-0",
-        "pitcher": {
-          "name": "Chad Patrick (R)",
-          "stats": "0-0, -.-- ERA, - WHIP"
-        },
-        "lineup": [
-          {
-            "name": "Brice Turang",
-            "position": "2B",
-            "bats": null
-          },
-          {
-            "name": "William Contreras",
-            "position": "C",
-            "bats": null
-          },
-          {
-            "name": "Christian Yelich",
-            "position": "DH",
-            "bats": null
-          },
-          {
-            "name": "Jake Bauers",
-            "position": "1B",
-            "bats": null
-          },
-          {
-            "name": "Garrett Mitchell",
-            "position": "CF",
-            "bats": null
-          },
-          {
-            "name": "Sal Frelick",
-            "position": "RF",
-            "bats": null
-          },
-          {
-            "name": "Joey Ortiz",
-            "position": "SS",
-            "bats": null
-          },
-          {
-            "name": "David Hamilton",
-            "position": "3B",
-            "bats": null
-          },
-          {
-            "name": "Brandon Lockridge",
-            "position": "LF",
-            "bats": null
-          }
-        ],
-        "note": null
-      }
-    },
-    {
-      "gamePk": 824945,
-      "gameGuid": "a80d6a0b-77f2-41d8-961e-4ac00a08bc98",
-      "sortTime": "16:15",
-      "time": "7:15pm ET, 4:15pm PT",
-      "gameDate": "2026-03-28T19:15:00-04:00",
-      "officialDate": "2026-03-28",
-      "venue": "Truist Park, Atlanta, GA",
+      "gamePk": 823565,
+      "gameGuid": "8ce03f9a-b9a8-4761-9bca-91045acfac44",
+      "sortTime": "10:35",
+      "time": "1:35pm ET, 10:35am PT",
+      "gameDate": "2026-04-09T13:35:00-04:00",
+      "officialDate": "2026-04-09",
+      "venue": "Yankee Stadium, Bronx, NY",
       "roofType": "Open",
-      "status": "Scheduled",
-      "weather": "65°F, Clear, Wind 9mph in from left",
-      "total": "8.5",
-      "line": "ATL -148",
+      "status": "Pre-Game",
+      "weather": "50°F, Clear, Wind 12mph cross left to right",
+      "total": "8",
+      "line": "NYY -202",
       "away": {
-        "teamId": 118,
-        "abbr": "KC",
-        "name": "Kansas City Royals",
-        "record": "0-1",
+        "teamId": 133,
+        "abbr": "ATH",
+        "name": "Athletics",
+        "record": "4-7",
         "pitcher": {
-          "name": "Michael Wacha (R)",
-          "stats": "0-0, -.-- ERA, - WHIP"
+          "name": "Jeffrey Springs (L)",
+          "stats": "1-0, 2.38 ERA, 0.97 WHIP"
         },
         "lineup": [
           {
-            "name": "Maikel Garcia",
-            "position": "3B",
-            "bats": null
-          },
-          {
-            "name": "Bobby Witt Jr.",
+            "name": "Jacob Wilson",
             "position": "SS",
             "bats": null
           },
           {
-            "name": "Vinnie Pasquantino",
+            "name": "Nick Kurtz",
             "position": "1B",
             "bats": null
           },
           {
-            "name": "Salvador Perez",
-            "position": "C",
-            "bats": null
-          },
-          {
-            "name": "Carter Jensen",
-            "position": "DH",
-            "bats": null
-          },
-          {
-            "name": "Jonathan India",
-            "position": "2B",
-            "bats": null
-          },
-          {
-            "name": "Jac Caglianone",
+            "name": "Brent Rooker",
             "position": "RF",
             "bats": null
           },
           {
-            "name": "Isaac Collins",
+            "name": "Andy Ibáñez",
+            "position": "3B",
+            "bats": null
+          },
+          {
+            "name": "Max Muncy",
+            "position": "DH",
+            "bats": null
+          },
+          {
+            "name": "Tyler Soderstrom",
             "position": "LF",
             "bats": null
           },
           {
-            "name": "Kyle Isbel",
+            "name": "Austin Wynns",
+            "position": "C",
+            "bats": null
+          },
+          {
+            "name": "Darell Hernaiz",
+            "position": "2B",
+            "bats": null
+          },
+          {
+            "name": "Denzel Clarke",
             "position": "CF",
             "bats": null
           }
@@ -1374,90 +204,18 @@
         "note": null
       },
       "home": {
-        "teamId": 144,
-        "abbr": "ATL",
-        "name": "Atlanta Braves",
-        "record": "1-0",
-        "pitcher": {
-          "name": "Reynaldo López (R)",
-          "stats": "0-0, -.-- ERA, - WHIP"
-        },
-        "lineup": [
-          {
-            "name": "Ronald Acuña Jr.",
-            "position": "RF",
-            "bats": null
-          },
-          {
-            "name": "Drake Baldwin",
-            "position": "C",
-            "bats": null
-          },
-          {
-            "name": "Matt Olson",
-            "position": "1B",
-            "bats": null
-          },
-          {
-            "name": "Austin Riley",
-            "position": "3B",
-            "bats": null
-          },
-          {
-            "name": "Mike Yastrzemski",
-            "position": "LF",
-            "bats": null
-          },
-          {
-            "name": "Ozzie Albies",
-            "position": "2B",
-            "bats": null
-          },
-          {
-            "name": "Michael Harris II",
-            "position": "CF",
-            "bats": null
-          },
-          {
-            "name": "Dominic Smith",
-            "position": "DH",
-            "bats": null
-          },
-          {
-            "name": "Mauricio Dubón",
-            "position": "SS",
-            "bats": null
-          }
-        ],
-        "note": null
-      }
-    },
-    {
-      "gamePk": 823241,
-      "gameGuid": "0d3c3efc-80cb-4323-a44c-3e6d40555080",
-      "sortTime": "16:15",
-      "time": "7:15pm ET, 4:15pm PT",
-      "gameDate": "2026-03-28T19:15:00-04:00",
-      "officialDate": "2026-03-28",
-      "venue": "Oracle Park, San Francisco, CA",
-      "roofType": "Retractable",
-      "status": "Scheduled",
-      "weather": "69°F, Clear, Wind 10mph out to center (Retractable Roof)",
-      "total": "8.5",
-      "line": "NYY -128",
-      "away": {
         "teamId": 147,
         "abbr": "NYY",
         "name": "New York Yankees",
-        "record": "2-0",
+        "record": "8-3",
         "pitcher": {
-          "name": "Will Warren (R)",
-          "stats": "0-0, -.-- ERA, - WHIP"
+          "name": "Ryan Weathers (L)",
+          "stats": "0-0, 4.50 ERA, 1.88 WHIP"
         },
         "lineup": [
           {
-            "name": "Trent Grisham",
-            "position": "CF",
+            "name": "Amed Rosario",
+            "position": "2B",
             "bats": null
           },
           {
@@ -1467,12 +225,7 @@
           },
           {
             "name": "Cody Bellinger",
-            "position": "LF",
-            "bats": null
-          },
-          {
-            "name": "Ben Rice",
-            "position": "1B",
+            "position": "CF",
             "bats": null
           },
           {
@@ -1481,8 +234,18 @@
             "bats": null
           },
           {
-            "name": "Jazz Chisholm Jr.",
-            "position": "2B",
+            "name": "Ben Rice",
+            "position": "1B",
+            "bats": null
+          },
+          {
+            "name": "Randal Grichuk",
+            "position": "LF",
+            "bats": null
+          },
+          {
+            "name": "Austin Wells",
+            "position": "C",
             "bats": null
           },
           {
@@ -1494,110 +257,42 @@
             "name": "Ryan McMahon",
             "position": "3B",
             "bats": null
-          },
-          {
-            "name": "Austin Wells",
-            "position": "C",
-            "bats": null
-          }
-        ],
-        "note": null
-      },
-      "home": {
-        "teamId": 137,
-        "abbr": "SF",
-        "name": "San Francisco Giants",
-        "record": "0-2",
-        "pitcher": {
-          "name": "Tyler Mahle (R)",
-          "stats": "0-0, -.-- ERA, - WHIP"
-        },
-        "lineup": [
-          {
-            "name": "Jung Hoo Lee",
-            "position": "RF",
-            "bats": null
-          },
-          {
-            "name": "Matt Chapman",
-            "position": "3B",
-            "bats": null
-          },
-          {
-            "name": "Luis Arraez",
-            "position": "2B",
-            "bats": null
-          },
-          {
-            "name": "Rafael Devers",
-            "position": "DH",
-            "bats": null
-          },
-          {
-            "name": "Heliot Ramos",
-            "position": "LF",
-            "bats": null
-          },
-          {
-            "name": "Willy Adames",
-            "position": "SS",
-            "bats": null
-          },
-          {
-            "name": "Harrison Bader",
-            "position": "CF",
-            "bats": null
-          },
-          {
-            "name": "Patrick Bailey",
-            "position": "C",
-            "bats": null
-          },
-          {
-            "name": "Casey Schmitt",
-            "position": "1B",
-            "bats": null
           }
         ],
         "note": null
       }
     },
     {
-      "gamePk": 823323,
-      "gameGuid": "c3eb56ec-2f90-4701-be32-9b6af71f3105",
-      "sortTime": "17:40",
-      "time": "8:40pm ET, 5:40pm PT",
-      "gameDate": "2026-03-28T20:40:00-04:00",
-      "officialDate": "2026-03-28",
-      "venue": "Petco Park, San Diego, CA",
+      "gamePk": 823724,
+      "gameGuid": "145d59e9-0ff8-475a-a2dd-986563cf625e",
+      "sortTime": "10:40",
+      "time": "1:40pm ET, 10:40am PT",
+      "gameDate": "2026-04-09T13:40:00-04:00",
+      "officialDate": "2026-04-09",
+      "venue": "Target Field, Minneapolis, MN",
       "roofType": "Open",
-      "status": "Scheduled",
-      "weather": "75°F, Overcast, Wind 12mph in from center",
+      "status": "Pre-Game",
+      "weather": "42°F, Overcast, Wind 9mph out to center",
       "total": "8",
-      "line": "DET -113",
+      "line": "DET -133",
       "away": {
         "teamId": 116,
         "abbr": "DET",
         "name": "Detroit Tigers",
-        "record": "2-0",
+        "record": "4-8",
         "pitcher": {
           "name": "Jack Flaherty (R)",
-          "stats": "0-0, -.-- ERA, - WHIP"
+          "stats": "0-1, 7.56 ERA, 1.80 WHIP"
         },
         "lineup": [
           {
-            "name": "Kerry Carpenter",
-            "position": "DH",
+            "name": "Colt Keith",
+            "position": "3B",
             "bats": null
           },
           {
             "name": "Gleyber Torres",
-            "position": "2B",
-            "bats": null
-          },
-          {
-            "name": "Colt Keith",
-            "position": "3B",
+            "position": "DH",
             "bats": null
           },
           {
@@ -1606,23 +301,28 @@
             "bats": null
           },
           {
+            "name": "Kerry Carpenter",
+            "position": "RF",
+            "bats": null
+          },
+          {
             "name": "Spencer Torkelson",
             "position": "1B",
             "bats": null
           },
           {
-            "name": "Kevin McGonigle",
+            "name": "Zach McKinstry",
+            "position": "2B",
+            "bats": null
+          },
+          {
+            "name": "Javier Báez",
             "position": "SS",
             "bats": null
           },
           {
-            "name": "Matt Vierling",
+            "name": "Parker Meadows",
             "position": "CF",
-            "bats": null
-          },
-          {
-            "name": "Zach McKinstry",
-            "position": "RF",
             "bats": null
           },
           {
@@ -1634,58 +334,58 @@
         "note": null
       },
       "home": {
-        "teamId": 135,
-        "abbr": "SD",
-        "name": "San Diego Padres",
-        "record": "0-2",
+        "teamId": 142,
+        "abbr": "MIN",
+        "name": "Minnesota Twins",
+        "record": "6-6",
         "pitcher": {
-          "name": "Randy Vásquez (R)",
-          "stats": "0-0, -.-- ERA, - WHIP"
+          "name": "Mick Abel (R)",
+          "stats": "0-2, 11.05 ERA, 2.86 WHIP"
         },
         "lineup": [
           {
-            "name": "Jake Cronenworth",
-            "position": "2B",
-            "bats": null
-          },
-          {
-            "name": "Fernando Tatis Jr.",
-            "position": "RF",
-            "bats": null
-          },
-          {
-            "name": "Manny Machado",
-            "position": "3B",
-            "bats": null
-          },
-          {
-            "name": "Jackson Merrill",
+            "name": "Byron Buxton",
             "position": "CF",
             "bats": null
           },
           {
-            "name": "Xander Bogaerts",
-            "position": "SS",
-            "bats": null
-          },
-          {
-            "name": "Gavin Sheets",
-            "position": "1B",
-            "bats": null
-          },
-          {
-            "name": "Ramón Laureano",
-            "position": "LF",
-            "bats": null
-          },
-          {
-            "name": "Nick Castellanos",
+            "name": "Trevor Larnach",
             "position": "DH",
             "bats": null
           },
           {
-            "name": "Freddy Fermin",
+            "name": "Josh Bell",
+            "position": "1B",
+            "bats": null
+          },
+          {
+            "name": "Matt Wallner",
+            "position": "RF",
+            "bats": null
+          },
+          {
+            "name": "Victor Caratini",
             "position": "C",
+            "bats": null
+          },
+          {
+            "name": "Kody Clemens",
+            "position": "2B",
+            "bats": null
+          },
+          {
+            "name": "Royce Lewis",
+            "position": "3B",
+            "bats": null
+          },
+          {
+            "name": "Tristan Gray",
+            "position": "SS",
+            "bats": null
+          },
+          {
+            "name": "James Outman",
+            "position": "LF",
             "bats": null
           }
         ],
@@ -1693,171 +393,117 @@
       }
     },
     {
-      "gamePk": 823973,
-      "gameGuid": "9f8a182a-c99d-4f86-b80d-3ed04983ff18",
-      "sortTime": "18:10",
-      "time": "9:10pm ET, 6:10pm PT",
-      "gameDate": "2026-03-28T21:10:00-04:00",
-      "officialDate": "2026-03-28",
-      "venue": "UNIQLO Field at Dodger Stadium, Los Angeles, CA",
+      "gamePk": 823645,
+      "gameGuid": "cd657559-be27-49fb-88dc-da0be6a16beb",
+      "sortTime": "16:10",
+      "time": "7:10pm ET, 4:10pm PT",
+      "gameDate": "2026-04-09T19:10:00-04:00",
+      "officialDate": "2026-04-09",
+      "venue": "Citi Field, Flushing, NY",
       "roofType": "Open",
       "status": "Scheduled",
-      "weather": "71°F, Overcast, Wind 6mph out to right",
-      "total": "9",
-      "line": "LAD -234",
+      "weather": "43°F, Overcast, Wind 11mph out to left",
+      "total": "7",
+      "line": "NYM -164",
       "away": {
         "teamId": 109,
         "abbr": "AZ",
         "name": "Arizona Diamondbacks",
-        "record": "0-2",
+        "record": "6-6",
         "pitcher": {
           "name": "Eduardo Rodriguez (L)",
-          "stats": "0-0, -.-- ERA, - WHIP"
+          "stats": "0-0, 0.00 ERA, 0.92 WHIP"
         },
         "lineup": [],
         "note": "Lineup pending"
       },
       "home": {
-        "teamId": 119,
-        "abbr": "LAD",
-        "name": "Los Angeles Dodgers",
-        "record": "2-0",
+        "teamId": 121,
+        "abbr": "NYM",
+        "name": "New York Mets",
+        "record": "7-5",
         "pitcher": {
-          "name": "Tyler Glasnow (R)",
-          "stats": "0-0, -.-- ERA, - WHIP"
+          "name": "Nolan McLean (R)",
+          "stats": "1-0, 2.61 ERA, 0.87 WHIP"
         },
-        "lineup": [
-          {
-            "name": "Shohei Ohtani",
-            "position": "DH",
-            "bats": null
-          },
-          {
-            "name": "Kyle Tucker",
-            "position": "RF",
-            "bats": null
-          },
-          {
-            "name": "Mookie Betts",
-            "position": "SS",
-            "bats": null
-          },
-          {
-            "name": "Will Smith",
-            "position": "C",
-            "bats": null
-          },
-          {
-            "name": "Freddie Freeman",
-            "position": "1B",
-            "bats": null
-          },
-          {
-            "name": "Teoscar Hernández",
-            "position": "LF",
-            "bats": null
-          },
-          {
-            "name": "Santiago Espinal",
-            "position": "3B",
-            "bats": null
-          },
-          {
-            "name": "Andy Pages",
-            "position": "CF",
-            "bats": null
-          },
-          {
-            "name": "Miguel Rojas",
-            "position": "2B",
-            "bats": null
-          }
-        ],
-        "note": null
+        "lineup": [],
+        "note": "Lineup pending"
       }
     },
     {
-      "gamePk": 823161,
-      "gameGuid": "4da3cce2-eb12-4082-86aa-af6c4d2dc33c",
-      "sortTime": "18:40",
-      "time": "9:40pm ET, 6:40pm PT",
-      "gameDate": "2026-03-28T21:40:00-04:00",
-      "officialDate": "2026-03-28",
-      "venue": "T-Mobile Park, Seattle, WA",
-      "roofType": "Retractable",
+      "gamePk": 824130,
+      "gameGuid": "3b833051-169d-4200-b89a-61972213aa6f",
+      "sortTime": "16:40",
+      "time": "7:40pm ET, 4:40pm PT",
+      "gameDate": "2026-04-09T19:40:00-04:00",
+      "officialDate": "2026-04-09",
+      "venue": "Kauffman Stadium, Kansas City, MO",
+      "roofType": "Open",
       "status": "Scheduled",
-      "weather": "49°F, Light Drizzle, Wind 7mph in from left (Retractable Roof)",
-      "total": "7",
-      "line": "SEA -187",
+      "weather": "77°F, Overcast, Wind 13mph out to center",
+      "total": "9",
+      "line": "KC -183",
       "away": {
-        "teamId": 114,
-        "abbr": "CLE",
-        "name": "Cleveland Guardians",
-        "record": "1-1",
+        "teamId": 145,
+        "abbr": "CWS",
+        "name": "Chicago White Sox",
+        "record": "4-8",
         "pitcher": {
-          "name": "Joey Cantillo (L)",
-          "stats": "0-0, -.-- ERA, - WHIP"
+          "name": "Anthony Kay (L)",
+          "stats": "0-0, 4.00 ERA, 1.33 WHIP"
         },
         "lineup": [],
         "note": "Lineup pending"
       },
       "home": {
-        "teamId": 136,
-        "abbr": "SEA",
-        "name": "Seattle Mariners",
-        "record": "1-1",
+        "teamId": 118,
+        "abbr": "KC",
+        "name": "Kansas City Royals",
+        "record": "5-7",
         "pitcher": {
-          "name": "Bryan Woo (R)",
-          "stats": "0-0, -.-- ERA, - WHIP"
+          "name": "Seth Lugo (R)",
+          "stats": "1-0, 1.59 ERA, 0.97 WHIP"
         },
-        "lineup": [
-          {
-            "name": "Rob Refsnyder",
-            "position": "DH",
-            "bats": null
-          },
-          {
-            "name": "Cal Raleigh",
-            "position": "C",
-            "bats": null
-          },
-          {
-            "name": "Julio Rodríguez",
-            "position": "CF",
-            "bats": null
-          },
-          {
-            "name": "Josh Naylor",
-            "position": "1B",
-            "bats": null
-          },
-          {
-            "name": "Randy Arozarena",
-            "position": "LF",
-            "bats": null
-          },
-          {
-            "name": "Brendan Donovan",
-            "position": "3B",
-            "bats": null
-          },
-          {
-            "name": "Victor Robles",
-            "position": "RF",
-            "bats": null
-          },
-          {
-            "name": "Leo Rivas",
-            "position": "SS",
-            "bats": null
-          },
-          {
-            "name": "Cole Young",
-            "position": "2B",
-            "bats": null
-          }
-        ],
-        "note": null
+        "lineup": [],
+        "note": "Lineup pending"
+      }
+    },
+    {
+      "gamePk": 823319,
+      "gameGuid": "d612baee-a702-4304-ad8c-8dc75ec74c19",
+      "sortTime": "18:40",
+      "time": "9:40pm ET, 6:40pm PT",
+      "gameDate": "2026-04-09T21:40:00-04:00",
+      "officialDate": "2026-04-09",
+      "venue": "Petco Park, San Diego, CA",
+      "roofType": "Open",
+      "status": "Scheduled",
+      "weather": "67°F, Overcast, Wind 6mph cross right to left",
+      "total": "8",
+      "line": "SD -197",
+      "away": {
+        "teamId": 115,
+        "abbr": "COL",
+        "name": "Colorado Rockies",
+        "record": "6-6",
+        "pitcher": {
+          "name": "TBD",
+          "stats": "-"
+        },
+        "lineup": [],
+        "note": "Lineup pending"
+      },
+      "home": {
+        "teamId": 135,
+        "abbr": "SD",
+        "name": "San Diego Padres",
+        "record": "6-6",
+        "pitcher": {
+          "name": "Randy Vásquez (R)",
+          "stats": "1-0, 0.75 ERA, 1.00 WHIP"
+        },
+        "lineup": [],
+        "note": "Lineup pending"
       }
     }
   ]
