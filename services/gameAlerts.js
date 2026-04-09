@@ -3,6 +3,7 @@ dotenv.config();
 import { AtpAgent } from '@atproto/api';
 
 import { postToDiscord } from '../services/postToDiscord.js';
+import { refreshLineupFromAlert } from '../services/mlbGames.js';
 import { loadSeenPosts, saveSeenPosts } from '../utils/storage.js';
 const seenPosts = loadSeenPosts();
 
@@ -14,6 +15,19 @@ await agent.login({
 
 const POSITIVE_RULES = [
   {
+    type: 'Game Alert',
+    patterns: [
+      'game alert',
+      'postponed',
+      'delayed',
+      'inclement weather',
+      'weather delay',
+      'expected to start at',
+      'start time has changed',
+      'first pitch has been moved',
+    ],
+  },
+  {
     type: 'Lineup Alert',
     patterns: [
       'scratched',
@@ -23,40 +37,42 @@ const POSITIVE_RULES = [
       'lineup change',
       'late lineup change',
       'will start in place of',
-      'batting leadoff',
-      'leading off',
-      'starting at',
+      'will open',
+      'bullpen game',
+      'opener',
     ],
   },
   {
     type: 'Injury Alert',
     patterns: [
-      'placed on the il',
-      'placed on il',
-      '10-day il',
-      '15-day il',
-      '7-day il',
-      'surprise il',
-      'day-to-day',
-      'left today',
+      'status alert',
+      'leaves game',
+      'leaves with trainer',
+      'with trainer',
+      'exits game',
       'left the game',
+      'left today',
+      'after being hit by',
+      'day-to-day',
       'x-rays',
       'mri',
       'will miss',
       'out today',
       'not starting today',
-    ],
-  },
-  {
-    type: 'Game Alert',
-    patterns: [
-      'postponed',
-      'delayed',
-      'start time has changed',
-      'first pitch has been moved',
-      'weather delay',
-      'starter has changed',
+      'expected to make next start',
+      'expected to start',
       'will start for',
+      'will start',
+      'forearm',
+      'hand',
+      'hamstring',
+      'oblique',
+      'shoulder',
+      'elbow',
+      'neck',
+      'leg',
+      'back',
+      'personal',
     ],
   },
   {
@@ -64,10 +80,20 @@ const POSITIVE_RULES = [
     patterns: [
       'activated from the il',
       'activated off the il',
+      'placed on the il',
+      'placed on il',
+      '10-day il',
+      '15-day il',
+      '7-day il',
+      'surprise il',
       'optioned',
+      'optioned to triple-a',
+      'selected to active roster',
       'designated for assignment',
       'recalled',
       'called up',
+      'rotation',
+      '6-man rotation',
     ],
   },
 ];
@@ -98,6 +124,32 @@ const NEGATIVE_PATTERNS = [
   'opening day starter',
 ];
 
+const LINEUP_POST_PATTERNS = [
+  /^\w+[\w\s.-]*\s\d{1,2}\/\d{1,2}/m,
+  /\bsp\b/m,
+];
+
+const LINEUP_POSITION_COUNT_PATTERN = /\b(?:c|1b|2b|3b|ss|lf|cf|rf|dh|sp)\b/g;
+
+const looksLikeStandardLineupPost = (text) => {
+  const hasHeader = LINEUP_POST_PATTERNS[0].test(text);
+  const hasStarter = LINEUP_POST_PATTERNS[1].test(text);
+  const positionCount = (text.match(LINEUP_POSITION_COUNT_PATTERN) || []).length;
+
+  return (hasHeader && hasStarter) || positionCount >= 8;
+};
+
+const extractUpdatedLineupHeader = (originalText) => {
+  const firstLine = originalText.split('\n')[0]?.trim();
+  const match = firstLine?.match(/^Updated\s+(.+?)\s+(\d{1,2}\/\d{1,2})$/i);
+  if (!match) return null;
+
+  return {
+    teamLabel: match[1].trim(),
+    dateLabel: match[2],
+  };
+};
+
 const classifyPost = (text) => {
   if (NEGATIVE_PATTERNS.some((pattern) => text.includes(pattern))) {
     return null;
@@ -111,6 +163,10 @@ const classifyPost = (text) => {
         matchedPattern,
       };
     }
+  }
+
+  if (looksLikeStandardLineupPost(text)) {
+    return null;
   }
 
   return null;
@@ -132,6 +188,19 @@ export const pollGameAlerts = async () => {
         continue;
       }
 
+      const updatedLineup = extractUpdatedLineupHeader(originalText);
+      if (updatedLineup) {
+        const postedUpdate = await refreshLineupFromAlert(updatedLineup.teamLabel, updatedLineup.dateLabel);
+        seenPosts.add(cid);
+        saveSeenPosts(seenPosts);
+
+        if (postedUpdate) {
+          break;
+        }
+
+        continue;
+      }
+
       const classification = classifyPost(text);
       if (!classification) {
         seenPosts.add(cid);
@@ -139,7 +208,7 @@ export const pollGameAlerts = async () => {
         continue;
       }
 
-      const message = `🚨 ${classification.type} 🚨\n\n${originalText}\n\n----------------------\n\n`;
+      const message = `🚨 News Alert 🚨\n\n${originalText}\n\n----------------------\n\n`;
 
       seenPosts.add(cid);
       saveSeenPosts(seenPosts);

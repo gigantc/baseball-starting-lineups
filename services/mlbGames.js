@@ -4,6 +4,7 @@ import path from 'path';
 import { DateTime } from 'luxon';
 
 import { formatGameTime, buildLineup, formatPitcherStats } from '../utils/formatters.js';
+import { teamAbbreviations } from '../utils/teamMap.js';
 import { postToDiscord } from '../services/postToDiscord.js';
 import { enrichGamesWithOdds } from '../services/oddsFeed.js';
 import { fetchVenueDetails, enrichGamesWithWeather } from '../services/weather.js';
@@ -161,6 +162,35 @@ const syncSiteLineup = (siteGames, lineup, teamType, gamePk) => {
     bats: player.bats,
   }));
   target.note = null;
+};
+
+const lineupsAreEqual = (a = [], b = []) => JSON.stringify(a) === JSON.stringify(b);
+
+const formatDiscordLineup = (lineup = []) =>
+  lineup.map((p) => `${p.order}. ${p.name} - ${p.position}${p.bats ? ` (${p.bats})` : ''}`).join('\n');
+
+const formatWeatherForDiscord = (weather = '-') => {
+  if (!weather || weather === '-') return '**Weather**: -';
+  if (weather === 'Dome Stadium') return '**Weather**: Dome Stadium';
+
+  if (weather.includes('(Retractable Roof)')) {
+    return `**Weather**: Retractable Roof\n${weather.replace(' (Retractable Roof)', '')}`;
+  }
+
+  return `**Weather**: ${weather}`;
+};
+
+const normalizeTeamLabel = (label = '') => label.toLowerCase().replace(/^updated\s+/, '').trim();
+
+const resolveTeamName = (label = '') => {
+  const normalized = normalizeTeamLabel(label);
+
+  for (const [abbr, name] of Object.entries(teamAbbreviations)) {
+    if (normalized === name.toLowerCase()) return name;
+    if (normalized === abbr.toLowerCase()) return name;
+  }
+
+  return Object.values(teamAbbreviations).find((name) => normalized.includes(name.toLowerCase())) || null;
 };
 
 const syncSitePayloadFromGames = (sitePayload, games) => {
@@ -362,6 +392,73 @@ export const pollLineups = async () => {
   }
 };
 
+export const refreshLineupFromAlert = async (teamLabel, postDateLabel) => {
+  if (!fs.existsSync(MLB_GAMES_FILE)) {
+    return false;
+  }
+
+  const teamName = resolveTeamName(teamLabel);
+  if (!teamName) {
+    return false;
+  }
+
+  const games = JSON.parse(fs.readFileSync(MLB_GAMES_FILE, 'utf8'));
+  const sitePayload = fs.existsSync(SITE_LATEST_FILE)
+    ? JSON.parse(fs.readFileSync(SITE_LATEST_FILE, 'utf8'))
+    : null;
+
+  const targetGame = games.find((game) => game.home === teamName || game.away === teamName);
+  if (!targetGame) {
+    return false;
+  }
+
+  const teamType = targetGame.home === teamName ? 'home' : 'away';
+  const lineupKey = `${teamType}Lineup`;
+  const postedKey = `${teamType}Posted`;
+
+  const boxscoreUrl = `https://statsapi.mlb.com/api/v1/game/${targetGame.gamePk}/boxscore`;
+  const res = await fetch(boxscoreUrl);
+  const data = await res.json();
+
+  const freshLineup = buildLineup(data.teams?.[teamType], data.teams?.[teamType]?.players);
+  if (!freshLineup || !freshLineup.length) {
+    return false;
+  }
+
+  if (lineupsAreEqual(targetGame[lineupKey] || [], freshLineup)) {
+    return false;
+  }
+
+  targetGame[lineupKey] = freshLineup;
+  targetGame[postedKey] = true;
+
+  fs.writeFileSync(MLB_GAMES_FILE, JSON.stringify(games, null, 2), 'utf8');
+
+  if (sitePayload?.games?.length) {
+    const siteGame = sitePayload.games.find((game) => game.gamePk === targetGame.gamePk);
+    if (siteGame) {
+      syncSiteLineup(sitePayload.games, freshLineup, teamType, targetGame.gamePk);
+      sitePayload.updatedAt = new Date().toISOString();
+      writeJsonAtomic(SITE_LATEST_FILE, sitePayload);
+
+      if (!process.env.SITE_DATA_DIR) {
+        writeJsonAtomic(LOCAL_FRONTEND_DATA_FILE, sitePayload);
+      }
+    }
+  }
+
+  const pitcher = teamType === 'home'
+    ? `${targetGame.homePitcher} (${targetGame.homePitcherHand}HP)`
+    : `${targetGame.awayPitcher} (${targetGame.awayPitcherHand}HP)`;
+  const headerDate = postDateLabel || DateTime.fromISO(targetGame.gameDate, { zone: 'America/New_York' }).toFormat('M/d');
+  const siteGame = sitePayload?.games?.find((game) => game.gamePk === targetGame.gamePk);
+  const weatherLine = formatWeatherForDiscord(siteGame?.weather);
+  const message = `🚨 Lineup Update 🚨\n\n**${teamName}**: ${headerDate}\nUpdated lineup\n\n${formatDiscordLineup(freshLineup)}\n\n**SP**: ${pitcher}\n\n${weatherLine}\n\n----------------------\n\n`;
+
+  await postToDiscord(message);
+  return true;
+};
+
 const postLineups = async (game, lineup, teamType) => {
   const mappings = {
     away: {
@@ -393,7 +490,13 @@ const postLineups = async (game, lineup, teamType) => {
   const vsPitcher = `**Opposing Pitcher**: ${opponentPitcher} (${opponentPitcherHand}HP)`;
   const lineupLocation = `**Location**: ${game.venue}, ${game.city}, ${game.state}`;
 
-  const message = `\n\n⚾️ Lineup ⚾️\n\n${lineupHeader}\n\n${lineupBody}\n\n${lineupPitcher}\n\n${lineupTime}\n${lineupOpponent}\n${vsPitcher}\n${lineupLocation}\n\n----------------------\n\n`;
+  const sitePayload = fs.existsSync(SITE_LATEST_FILE)
+    ? JSON.parse(fs.readFileSync(SITE_LATEST_FILE, 'utf8'))
+    : null;
+  const siteGame = sitePayload?.games?.find((siteGame) => siteGame.gamePk === game.gamePk);
+  const weatherLine = formatWeatherForDiscord(siteGame?.weather);
+
+  const message = `\n\n⚾️ Lineup ⚾️\n\n${lineupHeader}\n\n${lineupBody}\n\n${lineupPitcher}\n\n${lineupTime}\n${lineupOpponent}\n${vsPitcher}\n${lineupLocation}\n${weatherLine}\n\n----------------------\n\n`;
 
   await postToDiscord(message);
 };

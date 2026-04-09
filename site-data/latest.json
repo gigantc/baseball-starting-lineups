@@ -1,6 +1,6 @@
 {
   "date": "2026-04-09",
-  "updatedAt": "2026-04-09T15:05:48.472Z",
+  "updatedAt": "2026-04-09T15:49:58.722Z",
   "games": [
     {
       "gamePk": 823884,
@@ -11,10 +11,10 @@
       "officialDate": "2026-04-09",
       "venue": "loanDepot park, Miami, FL",
       "roofType": "Retractable",
-      "status": "Pre-Game",
-      "weather": "72°F, Light Drizzle, Wind 15mph cross right to left (Retractable Roof)",
+      "status": "Warmup",
+      "weather": "72°F, Showers, Wind 11mph cross right to left (Retractable Roof)",
       "total": "8",
-      "line": "MIA -127",
+      "line": "MIA -121",
       "away": {
         "teamId": 113,
         "abbr": "CIN",
@@ -142,9 +142,9 @@
       "venue": "Yankee Stadium, Bronx, NY",
       "roofType": "Open",
       "status": "Pre-Game",
-      "weather": "50°F, Clear, Wind 12mph cross left to right",
+      "weather": "50°F, Clear, Wind 11mph cross left to right",
       "total": "8",
-      "line": "NYY -202",
+      "line": "NYY -200",
       "away": {
         "teamId": 133,
         "abbr": "ATH",
@@ -272,9 +272,9 @@
       "venue": "Target Field, Minneapolis, MN",
       "roofType": "Open",
       "status": "Pre-Game",
-      "weather": "42°F, Overcast, Wind 9mph out to center",
+      "weather": "43°F, Mostly Clear, Wind 9mph out to center",
       "total": "8",
-      "line": "DET -133",
+      "line": "DET -132",
       "away": {
         "teamId": 116,
         "abbr": "DET",
@@ -404,7 +404,7 @@
       "status": "Scheduled",
       "weather": "43°F, Overcast, Wind 11mph out to left",
       "total": "7",
-      "line": "NYM -164",
+      "line": "NYM -161",
       "away": {
         "teamId": 109,
         "abbr": "AZ",
@@ -440,9 +440,9 @@
       "venue": "Kauffman Stadium, Kansas City, MO",
       "roofType": "Open",
       "status": "Scheduled",
-      "weather": "77°F, Overcast, Wind 13mph out to center",
+      "weather": "78°F, Overcast, Wind 16mph out to left",
       "total": "9",
-      "line": "KC -183",
+      "line": "KC -184",
       "away": {
         "teamId": 145,
         "abbr": "CWS",
@@ -478,9 +478,9 @@
       "venue": "Petco Park, San Diego, CA",
       "roofType": "Open",
       "status": "Scheduled",
-      "weather": "67°F, Overcast, Wind 6mph cross right to left",
+      "weather": "67°F, Overcast, Wind 5mph cross right to left",
       "total": "8",
-      "line": "SD -197",
+      "line": "SD -198",
       "away": {
         "teamId": 115,
         "abbr": "COL",
