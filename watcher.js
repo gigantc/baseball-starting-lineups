@@ -30,8 +30,13 @@ const POLL_LINEUPS_INTERVAL = 180000;
 
 const scheduleLineupPolling = () => {
   const poll = async () => {
-    await pollLineups();
-    setTimeout(poll, POLL_LINEUPS_INTERVAL);
+    try {
+      await pollLineups();
+    } catch (error) {
+      console.error('Lineup poll failed:', error);
+    } finally {
+      setTimeout(poll, POLL_LINEUPS_INTERVAL);
+    }
   };
   setTimeout(poll, POLL_LINEUPS_INTERVAL);
 };

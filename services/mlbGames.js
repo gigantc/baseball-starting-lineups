@@ -193,6 +193,37 @@ const resolveTeamName = (label = '') => {
   return Object.values(teamAbbreviations).find((name) => normalized.includes(name.toLowerCase())) || null;
 };
 
+const formatAlertDateLabel = (gameDate) =>
+  DateTime.fromISO(gameDate, { zone: 'America/New_York' }).toFormat('M/d');
+
+const resolveAlertTargetGame = (games, teamName, postDateLabel) => {
+  const teamGames = games.filter((game) => game.home === teamName || game.away === teamName);
+  if (teamGames.length <= 1) {
+    return teamGames[0] || null;
+  }
+
+  const datedGames = postDateLabel
+    ? teamGames.filter((game) => formatAlertDateLabel(game.gameDate) === postDateLabel)
+    : teamGames;
+
+  if (datedGames.length <= 1) {
+    return datedGames[0] || null;
+  }
+
+  const postedGames = datedGames.filter((game) => {
+    const teamType = game.home === teamName ? 'home' : 'away';
+    const postedKey = `${teamType}Posted`;
+    const lineupKey = `${teamType}Lineup`;
+    return game[postedKey] || game[lineupKey]?.length;
+  });
+
+  if (postedGames.length === 1) {
+    return postedGames[0];
+  }
+
+  return null;
+};
+
 const syncSitePayloadFromGames = (sitePayload, games) => {
   if (!sitePayload?.games?.length) {
     return sitePayload;
@@ -407,8 +438,9 @@ export const refreshLineupFromAlert = async (teamLabel, postDateLabel) => {
     ? JSON.parse(fs.readFileSync(SITE_LATEST_FILE, 'utf8'))
     : null;
 
-  const targetGame = games.find((game) => game.home === teamName || game.away === teamName);
+  const targetGame = resolveAlertTargetGame(games, teamName, postDateLabel);
   if (!targetGame) {
+    console.warn(`Unable to uniquely match updated lineup alert for ${teamName}${postDateLabel ? ` on ${postDateLabel}` : ''}`);
     return false;
   }
 

@@ -163,6 +163,22 @@ const LINEUP_POST_PATTERNS = [
 
 const LINEUP_POSITION_COUNT_PATTERN = /\b(?:c|1b|2b|3b|ss|lf|cf|rf|dh|sp)\b/g;
 
+const matchesAnyPattern = (text, patterns) => patterns.some((pattern) => text.includes(pattern));
+
+const findMatchingRule = (text, rules) => {
+  for (const rule of rules) {
+    const matchedPattern = rule.patterns.find((pattern) => text.includes(pattern));
+    if (matchedPattern) {
+      return {
+        type: rule.type,
+        matchedPattern,
+      };
+    }
+  }
+
+  return null;
+};
+
 const looksLikeStandardLineupPost = (text) => {
   const hasHeader = LINEUP_POST_PATTERNS[0].test(text);
   const hasStarter = LINEUP_POST_PATTERNS[1].test(text);
@@ -192,32 +208,25 @@ const extractUpdatedLineupHeader = (originalText) => {
   };
 };
 
+const shouldIgnoreQuotedPost = (text) =>
+  QUOTE_PATTERN.test(text) && !matchesAnyPattern(text, HARD_NEWS_PATTERNS);
+
+const shouldIgnoreNoisePost = (text) => matchesAnyPattern(text, NEGATIVE_PATTERNS);
+
 const classifyPost = (text) => {
-  const hasHardNewsSignal = HARD_NEWS_PATTERNS.some((pattern) => text.includes(pattern));
-
-  if (QUOTE_PATTERN.test(text) && !hasHardNewsSignal) {
+  if (shouldIgnoreQuotedPost(text)) {
     return null;
   }
 
-  if (NEGATIVE_PATTERNS.some((pattern) => text.includes(pattern))) {
+  if (shouldIgnoreNoisePost(text)) {
     return null;
-  }
-
-  for (const rule of POSITIVE_RULES) {
-    const matchedPattern = rule.patterns.find((pattern) => text.includes(pattern));
-    if (matchedPattern) {
-      return {
-        type: rule.type,
-        matchedPattern,
-      };
-    }
   }
 
   if (looksLikeStandardLineupPost(text)) {
     return null;
   }
 
-  return null;
+  return findMatchingRule(text, POSITIVE_RULES);
 };
 
 export const pollGameAlerts = async () => {
