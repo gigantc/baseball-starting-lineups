@@ -124,8 +124,40 @@ const NEGATIVE_PATTERNS = [
   'opening day starter',
 ];
 
+const HARD_NEWS_PATTERNS = [
+  'called up',
+  'will be called up',
+  'optioned',
+  'optioned to triple-a',
+  'placed on the il',
+  'placed on il',
+  '10-day il',
+  '15-day il',
+  '7-day il',
+  'reinstated',
+  'designated for assignment',
+  'selected to active roster',
+  'activated from the il',
+  'activated off the il',
+  'recalled',
+  'scratched',
+  'leaves game',
+  'with trainer',
+  'postponed',
+  'delayed',
+  'expected to start at',
+  'will open',
+  'will start for',
+];
+
+const QUOTE_PATTERN = /["“”]/;
+const BLUESKY_LINEUP_HEADER_ALIASES = ['d-backs', 'dbacks'];
+const TEAM_HEADER_DATE_PATTERN = /^[a-z0-9][a-z0-9\s.&'/-]*\s\d{1,2}\/\d{1,2}$/im;
+const PLAYER_INITIAL_LINE_PATTERN = /^[a-z]\.?\s?[a-z' -]+\s+(?:c|1b|2b|3b|ss|lf|cf|rf|dh)$/i;
+const STARTING_PITCHER_LINE_PATTERN = /^[a-z]\.?\s?[a-z' -]+\s+sp$/i;
+
 const LINEUP_POST_PATTERNS = [
-  /^\w+[\w\s.-]*\s\d{1,2}\/\d{1,2}/m,
+  /^[a-z0-9][a-z0-9\s.&'/-]*\s\d{1,2}\/\d{1,2}$/im,
   /\bsp\b/m,
 ];
 
@@ -135,8 +167,18 @@ const looksLikeStandardLineupPost = (text) => {
   const hasHeader = LINEUP_POST_PATTERNS[0].test(text);
   const hasStarter = LINEUP_POST_PATTERNS[1].test(text);
   const positionCount = (text.match(LINEUP_POSITION_COUNT_PATTERN) || []).length;
+  const lines = text.split('\n').map((line) => line.trim()).filter(Boolean);
+  const playerPositionLines = lines.filter((line) => /\b(?:c|1b|2b|3b|ss|lf|cf|rf|dh)\b/i.test(line)).length;
 
-  return (hasHeader && hasStarter) || positionCount >= 8;
+  const firstLine = lines[0] || '';
+  const rest = lines.slice(1);
+  const namedPlayerLines = rest.filter((line) => PLAYER_INITIAL_LINE_PATTERN.test(line)).length;
+  const hasPitcherLine = rest.some((line) => STARTING_PITCHER_LINE_PATTERN.test(line));
+  const normalizedFirstLine = firstLine.toLowerCase();
+  const hasKnownBlueskyAliasHeader = BLUESKY_LINEUP_HEADER_ALIASES.some((alias) => normalizedFirstLine.startsWith(`${alias} `));
+  const looksLikeCanonicalLineupBlock = (TEAM_HEADER_DATE_PATTERN.test(firstLine) || hasKnownBlueskyAliasHeader) && namedPlayerLines >= 7 && hasPitcherLine;
+
+  return looksLikeCanonicalLineupBlock || (hasHeader && hasStarter) || (hasHeader && playerPositionLines >= 7) || (hasStarter && positionCount >= 8) || playerPositionLines >= 8;
 };
 
 const extractUpdatedLineupHeader = (originalText) => {
@@ -151,6 +193,12 @@ const extractUpdatedLineupHeader = (originalText) => {
 };
 
 const classifyPost = (text) => {
+  const hasHardNewsSignal = HARD_NEWS_PATTERNS.some((pattern) => text.includes(pattern));
+
+  if (QUOTE_PATTERN.test(text) && !hasHardNewsSignal) {
+    return null;
+  }
+
   if (NEGATIVE_PATTERNS.some((pattern) => text.includes(pattern))) {
     return null;
   }
