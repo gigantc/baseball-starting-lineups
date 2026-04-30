@@ -71,6 +71,8 @@ const buildPitcherPayload = (probablePitcher) => {
 const buildSiteGame = (game, roofType = 'Open') => ({
   gamePk: game.gamePk,
   gameGuid: game.gameGuid,
+  gameNumber: game.gameNumber || 1,
+  doubleHeader: game.doubleHeader || 'N',
   sortTime: DateTime.fromISO(game.gameDate).toFormat('HH:mm'),
   time: formatGameTime(game.gameDate),
   gameDate: game.gameDate,
@@ -221,7 +223,9 @@ const resolveAlertTargetGame = (games, teamName, postDateLabel) => {
     return postedGames[0];
   }
 
-  return null;
+  // Doubleheader fallback: if neither posted, return Game 1; if both posted, return Game 2 (later game still relevant)
+  const sorted = [...datedGames].sort((a, b) => (a.gameNumber || 1) - (b.gameNumber || 1));
+  return postedGames.length === 0 ? sorted[0] : sorted[sorted.length - 1];
 };
 
 const syncSitePayloadFromGames = (sitePayload, games) => {
@@ -289,6 +293,8 @@ export const fetchMLBGames = async () => {
       city: game.teams.home.team.locationName || '',
       state: game.venue?.location?.stateAbbrev || '',
       gamePk: game.gamePk,
+      gameNumber: game.gameNumber || 1,
+      doubleHeader: game.doubleHeader || 'N',
       gameTime: formatGameTime(game.gameDate),
       gameDate: game.gameDate,
     };
@@ -483,9 +489,10 @@ export const refreshLineupFromAlert = async (teamLabel, postDateLabel) => {
     ? `${targetGame.homePitcher} (${targetGame.homePitcherHand}HP)`
     : `${targetGame.awayPitcher} (${targetGame.awayPitcherHand}HP)`;
   const headerDate = postDateLabel || DateTime.fromISO(targetGame.gameDate, { zone: 'America/New_York' }).toFormat('M/d');
+  const alertGameLabel = targetGame.doubleHeader !== 'N' ? ` (Game ${targetGame.gameNumber})` : '';
   const siteGame = sitePayload?.games?.find((game) => game.gamePk === targetGame.gamePk);
   const weatherLine = formatWeatherForDiscord(siteGame?.weather);
-  const message = `🚨 Lineup Update 🚨\n\n**${teamName}**: ${headerDate}\nUpdated lineup\n\n${formatDiscordLineup(freshLineup)}\n\n**SP**: ${pitcher}\n\n${weatherLine}\n\n----------------------\n\n`;
+  const message = `🚨 Lineup Update 🚨\n\n**${teamName}**: ${headerDate}${alertGameLabel}\nUpdated lineup\n\n${formatDiscordLineup(freshLineup)}\n\n**SP**: ${pitcher}\n\n${weatherLine}\n\n----------------------\n\n`;
 
   await postToDiscord(message);
   return true;
@@ -512,7 +519,8 @@ const postLineups = async (game, lineup, teamType) => {
   };
   const { teamName, pitcher, pitcherHand, opponentName, opponentPitcher, opponentPitcherHand } = mappings[teamType];
 
-  const lineupHeader = `**${teamName}**: ${DateTime.fromISO(game.gameDate, { zone: 'America/New_York' }).toFormat('M/d')}`;
+  const gameLabel = game.doubleHeader !== 'N' ? ` (Game ${game.gameNumber})` : '';
+  const lineupHeader = `**${teamName}**: ${DateTime.fromISO(game.gameDate, { zone: 'America/New_York' }).toFormat('M/d')}${gameLabel}`;
   const lineupBody = lineup
     .map((p) => `${p.order}. ${p.name} - ${p.position}${p.bats ? ` (${p.bats})` : ''}`)
     .join('\n');

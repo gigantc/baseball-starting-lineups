@@ -1,418 +1,270 @@
 {
-  "date": "2026-04-09",
-  "updatedAt": "2026-04-09T15:55:59.788Z",
+  "date": "2026-04-30",
+  "updatedAt": "2026-04-30T14:52:56.946Z",
   "games": [
     {
-      "gamePk": 823884,
-      "gameGuid": "9e95a61d-d0d4-44b8-a209-93382f9c1a1c",
-      "sortTime": "09:10",
-      "time": "12:10pm ET, 9:10am PT",
-      "gameDate": "2026-04-09T12:10:00-04:00",
-      "officialDate": "2026-04-09",
-      "venue": "loanDepot park, Miami, FL",
-      "roofType": "Retractable",
-      "status": "Warmup",
-      "weather": "72°F, Showers, Wind 11mph cross right to left (Retractable Roof)",
-      "total": "8",
-      "line": "MIA -121",
-      "away": {
-        "teamId": 113,
-        "abbr": "CIN",
-        "name": "Cincinnati Reds",
-        "record": "8-4",
-        "pitcher": {
-          "name": "Rhett Lowder (R)",
-          "stats": "1-0, 1.64 ERA, 0.91 WHIP"
-        },
-        "lineup": [
-          {
-            "name": "TJ Friedl",
-            "position": "LF",
-            "bats": null
-          },
-          {
-            "name": "Matt McLain",
-            "position": "2B",
-            "bats": null
-          },
-          {
-            "name": "Elly De La Cruz",
-            "position": "SS",
-            "bats": null
-          },
-          {
-            "name": "Sal Stewart",
-            "position": "1B",
-            "bats": null
-          },
-          {
-            "name": "Eugenio Suárez",
-            "position": "3B",
-            "bats": null
-          },
-          {
-            "name": "Nathaniel Lowe",
-            "position": "DH",
-            "bats": null
-          },
-          {
-            "name": "Spencer Steer",
-            "position": "RF",
-            "bats": null
-          },
-          {
-            "name": "Dane Myers",
-            "position": "CF",
-            "bats": null
-          },
-          {
-            "name": "P.J. Higgins",
-            "position": "C",
-            "bats": null
-          }
-        ],
-        "note": null
-      },
-      "home": {
-        "teamId": 146,
-        "abbr": "MIA",
-        "name": "Miami Marlins",
-        "record": "7-5",
-        "pitcher": {
-          "name": "Max Meyer (R)",
-          "stats": "0-0, 4.66 ERA, 1.34 WHIP"
-        },
-        "lineup": [
-          {
-            "name": "Jakob Marsee",
-            "position": "DH",
-            "bats": null
-          },
-          {
-            "name": "Xavier Edwards",
-            "position": "2B",
-            "bats": null
-          },
-          {
-            "name": "Agustín Ramírez",
-            "position": "C",
-            "bats": null
-          },
-          {
-            "name": "Liam Hicks",
-            "position": "1B",
-            "bats": null
-          },
-          {
-            "name": "Otto Lopez",
-            "position": "SS",
-            "bats": null
-          },
-          {
-            "name": "Owen Caissie",
-            "position": "RF",
-            "bats": null
-          },
-          {
-            "name": "Griffin Conine",
-            "position": "LF",
-            "bats": null
-          },
-          {
-            "name": "Javier Sanoja",
-            "position": "CF",
-            "bats": null
-          },
-          {
-            "name": "Graham Pauley",
-            "position": "3B",
-            "bats": null
-          }
-        ],
-        "note": null
-      }
-    },
-    {
-      "gamePk": 823565,
-      "gameGuid": "8ce03f9a-b9a8-4761-9bca-91045acfac44",
-      "sortTime": "10:35",
-      "time": "1:35pm ET, 10:35am PT",
-      "gameDate": "2026-04-09T13:35:00-04:00",
-      "officialDate": "2026-04-09",
-      "venue": "Yankee Stadium, Bronx, NY",
+      "gamePk": 824929,
+      "gameGuid": "482628e5-8f7e-463d-b96e-90f4471f492f",
+      "gameNumber": 1,
+      "doubleHeader": "N",
+      "sortTime": "09:15",
+      "time": "12:15pm ET, 9:15am PT",
+      "gameDate": "2026-04-30T12:15:00-04:00",
+      "officialDate": "2026-04-30",
+      "venue": "Truist Park, Atlanta, GA",
       "roofType": "Open",
       "status": "Pre-Game",
-      "weather": "50°F, Clear, Wind 11mph cross left to right",
-      "total": "8",
-      "line": "NYY -200",
-      "away": {
-        "teamId": 133,
-        "abbr": "ATH",
-        "name": "Athletics",
-        "record": "4-7",
-        "pitcher": {
-          "name": "Jeffrey Springs (L)",
-          "stats": "1-0, 2.38 ERA, 0.97 WHIP"
-        },
-        "lineup": [
-          {
-            "name": "Jacob Wilson",
-            "position": "SS",
-            "bats": null
-          },
-          {
-            "name": "Nick Kurtz",
-            "position": "1B",
-            "bats": null
-          },
-          {
-            "name": "Brent Rooker",
-            "position": "RF",
-            "bats": null
-          },
-          {
-            "name": "Andy Ibáñez",
-            "position": "3B",
-            "bats": null
-          },
-          {
-            "name": "Max Muncy",
-            "position": "DH",
-            "bats": null
-          },
-          {
-            "name": "Tyler Soderstrom",
-            "position": "LF",
-            "bats": null
-          },
-          {
-            "name": "Austin Wynns",
-            "position": "C",
-            "bats": null
-          },
-          {
-            "name": "Darell Hernaiz",
-            "position": "2B",
-            "bats": null
-          },
-          {
-            "name": "Denzel Clarke",
-            "position": "CF",
-            "bats": null
-          }
-        ],
-        "note": null
-      },
-      "home": {
-        "teamId": 147,
-        "abbr": "NYY",
-        "name": "New York Yankees",
-        "record": "8-3",
-        "pitcher": {
-          "name": "Ryan Weathers (L)",
-          "stats": "0-0, 4.50 ERA, 1.88 WHIP"
-        },
-        "lineup": [
-          {
-            "name": "Amed Rosario",
-            "position": "2B",
-            "bats": null
-          },
-          {
-            "name": "Aaron Judge",
-            "position": "RF",
-            "bats": null
-          },
-          {
-            "name": "Cody Bellinger",
-            "position": "CF",
-            "bats": null
-          },
-          {
-            "name": "Giancarlo Stanton",
-            "position": "DH",
-            "bats": null
-          },
-          {
-            "name": "Ben Rice",
-            "position": "1B",
-            "bats": null
-          },
-          {
-            "name": "Randal Grichuk",
-            "position": "LF",
-            "bats": null
-          },
-          {
-            "name": "Austin Wells",
-            "position": "C",
-            "bats": null
-          },
-          {
-            "name": "José Caballero",
-            "position": "SS",
-            "bats": null
-          },
-          {
-            "name": "Ryan McMahon",
-            "position": "3B",
-            "bats": null
-          }
-        ],
-        "note": null
-      }
-    },
-    {
-      "gamePk": 823724,
-      "gameGuid": "145d59e9-0ff8-475a-a2dd-986563cf625e",
-      "sortTime": "10:40",
-      "time": "1:40pm ET, 10:40am PT",
-      "gameDate": "2026-04-09T13:40:00-04:00",
-      "officialDate": "2026-04-09",
-      "venue": "Target Field, Minneapolis, MN",
-      "roofType": "Open",
-      "status": "Pre-Game",
-      "weather": "43°F, Mostly Clear, Wind 9mph out to center",
-      "total": "8",
-      "line": "DET -132",
+      "weather": "66°F, Overcast, Wind 10mph out to center",
+      "total": "8.5",
+      "line": "ATL -129",
       "away": {
         "teamId": 116,
         "abbr": "DET",
         "name": "Detroit Tigers",
-        "record": "4-8",
+        "record": "15-16",
         "pitcher": {
-          "name": "Jack Flaherty (R)",
-          "stats": "0-1, 7.56 ERA, 1.80 WHIP"
+          "name": "Framber Valdez (L)",
+          "stats": "2-1, 3.41 ERA, 1.31 WHIP"
         },
-        "lineup": [
-          {
-            "name": "Colt Keith",
-            "position": "3B",
-            "bats": null
-          },
-          {
-            "name": "Gleyber Torres",
-            "position": "DH",
-            "bats": null
-          },
-          {
-            "name": "Riley Greene",
-            "position": "LF",
-            "bats": null
-          },
-          {
-            "name": "Kerry Carpenter",
-            "position": "RF",
-            "bats": null
-          },
-          {
-            "name": "Spencer Torkelson",
-            "position": "1B",
-            "bats": null
-          },
-          {
-            "name": "Zach McKinstry",
-            "position": "2B",
-            "bats": null
-          },
-          {
-            "name": "Javier Báez",
-            "position": "SS",
-            "bats": null
-          },
-          {
-            "name": "Parker Meadows",
-            "position": "CF",
-            "bats": null
-          },
-          {
-            "name": "Jake Rogers",
-            "position": "C",
-            "bats": null
-          }
-        ],
-        "note": null
+        "lineup": [],
+        "note": "Lineup pending"
       },
       "home": {
-        "teamId": 142,
-        "abbr": "MIN",
-        "name": "Minnesota Twins",
-        "record": "6-6",
+        "teamId": 144,
+        "abbr": "ATL",
+        "name": "Atlanta Braves",
+        "record": "22-9",
         "pitcher": {
-          "name": "Mick Abel (R)",
-          "stats": "0-2, 11.05 ERA, 2.86 WHIP"
+          "name": "Bryce Elder (R)",
+          "stats": "3-1, 1.95 ERA, 0.97 WHIP"
         },
-        "lineup": [
-          {
-            "name": "Byron Buxton",
-            "position": "CF",
-            "bats": null
-          },
-          {
-            "name": "Trevor Larnach",
-            "position": "DH",
-            "bats": null
-          },
-          {
-            "name": "Josh Bell",
-            "position": "1B",
-            "bats": null
-          },
-          {
-            "name": "Matt Wallner",
-            "position": "RF",
-            "bats": null
-          },
-          {
-            "name": "Victor Caratini",
-            "position": "C",
-            "bats": null
-          },
-          {
-            "name": "Kody Clemens",
-            "position": "2B",
-            "bats": null
-          },
-          {
-            "name": "Royce Lewis",
-            "position": "3B",
-            "bats": null
-          },
-          {
-            "name": "Tristan Gray",
-            "position": "SS",
-            "bats": null
-          },
-          {
-            "name": "James Outman",
-            "position": "LF",
-            "bats": null
-          }
-        ],
-        "note": null
+        "lineup": [],
+        "note": "Lineup pending"
       }
     },
     {
-      "gamePk": 823645,
-      "gameGuid": "cd657559-be27-49fb-88dc-da0be6a16beb",
-      "sortTime": "16:10",
-      "time": "7:10pm ET, 4:10pm PT",
-      "gameDate": "2026-04-09T19:10:00-04:00",
-      "officialDate": "2026-04-09",
-      "venue": "Citi Field, Flushing, NY",
+      "gamePk": 824848,
+      "gameGuid": "e58bbe99-17ee-4e01-996d-327dfa7f80c3",
+      "gameNumber": 1,
+      "doubleHeader": "Y",
+      "sortTime": "09:35",
+      "time": "12:35pm ET, 9:35am PT",
+      "gameDate": "2026-04-30T12:35:00-04:00",
+      "officialDate": "2026-04-30",
+      "venue": "Oriole Park at Camden Yards, Baltimore, MD",
+      "roofType": "Open",
+      "status": "Pre-Game",
+      "weather": "63°F, Clear, Wind 12mph cross right to left",
+      "total": "9",
+      "line": "BAL -121",
+      "away": {
+        "teamId": 117,
+        "abbr": "HOU",
+        "name": "Houston Astros",
+        "record": "11-19",
+        "pitcher": {
+          "name": "Peter Lambert (R)",
+          "stats": "1-1, 3.27 ERA, 1.27 WHIP"
+        },
+        "lineup": [],
+        "note": "Lineup pending"
+      },
+      "home": {
+        "teamId": 110,
+        "abbr": "BAL",
+        "name": "Baltimore Orioles",
+        "record": "14-15",
+        "pitcher": {
+          "name": "Chris Bassitt (R)",
+          "stats": "1-2, 6.75 ERA, 2.06 WHIP"
+        },
+        "lineup": [],
+        "note": "Lineup pending"
+      }
+    },
+    {
+      "gamePk": 823391,
+      "gameGuid": "4e52b770-96d8-43f5-bc70-b7ff57792376",
+      "gameNumber": 1,
+      "doubleHeader": "N",
+      "sortTime": "09:35",
+      "time": "12:35pm ET, 9:35am PT",
+      "gameDate": "2026-04-30T12:35:00-04:00",
+      "officialDate": "2026-04-30",
+      "venue": "PNC Park, Pittsburgh, PA",
+      "roofType": "Open",
+      "status": "Pre-Game",
+      "weather": "48°F, Overcast, Wind 11mph out to center",
+      "total": "7",
+      "line": "PIT -216",
+      "away": {
+        "teamId": 138,
+        "abbr": "STL",
+        "name": "St. Louis Cardinals",
+        "record": "17-13",
+        "pitcher": {
+          "name": "Hunter Dobbins (R)",
+          "stats": "0-0, -.-- ERA, - WHIP"
+        },
+        "lineup": [],
+        "note": "Lineup pending"
+      },
+      "home": {
+        "teamId": 134,
+        "abbr": "PIT",
+        "name": "Pittsburgh Pirates",
+        "record": "16-15",
+        "pitcher": {
+          "name": "Paul Skenes (R)",
+          "stats": "4-1, 2.48 ERA, 0.72 WHIP"
+        },
+        "lineup": [],
+        "note": "Lineup pending"
+      }
+    },
+    {
+      "gamePk": 823472,
+      "gameGuid": "7a6f61d8-b7aa-4e74-a0d7-a2f0e97dfed2",
+      "gameNumber": 1,
+      "doubleHeader": "S",
+      "sortTime": "09:35",
+      "time": "12:35pm ET, 9:35am PT",
+      "gameDate": "2026-04-30T12:35:00-04:00",
+      "officialDate": "2026-04-30",
+      "venue": "Citizens Bank Park, Philadelphia, PA",
+      "roofType": "Open",
+      "status": "Pre-Game",
+      "weather": "58°F, Overcast, Wind 6mph cross right to left",
+      "total": "7",
+      "line": "PHI -148",
+      "away": {
+        "teamId": 137,
+        "abbr": "SF",
+        "name": "San Francisco Giants",
+        "record": "13-16",
+        "pitcher": {
+          "name": "Logan Webb (R)",
+          "stats": "2-3, 4.86 ERA, 1.38 WHIP"
+        },
+        "lineup": [],
+        "note": "Lineup pending"
+      },
+      "home": {
+        "teamId": 143,
+        "abbr": "PHI",
+        "name": "Philadelphia Phillies",
+        "record": "10-19",
+        "pitcher": {
+          "name": "Cristopher Sánchez (L)",
+          "stats": "2-2, 2.94 ERA, 1.60 WHIP"
+        },
+        "lineup": [],
+        "note": "Lineup pending"
+      }
+    },
+    {
+      "gamePk": 824850,
+      "gameGuid": "85e9c7b4-a708-4c6a-b43a-3662ab374bd6",
+      "gameNumber": 2,
+      "doubleHeader": "Y",
+      "sortTime": "09:40",
+      "time": "12:40pm ET, 9:40am PT",
+      "gameDate": "2026-04-30T12:40:00-04:00",
+      "officialDate": "2026-04-30",
+      "venue": "Oriole Park at Camden Yards, Baltimore, MD",
       "roofType": "Open",
       "status": "Scheduled",
-      "weather": "43°F, Overcast, Wind 11mph out to left",
-      "total": "7",
-      "line": "NYM -161",
+      "weather": "63°F, Clear, Wind 12mph cross right to left",
+      "total": "9",
+      "line": "BAL -121",
       "away": {
-        "teamId": 109,
-        "abbr": "AZ",
-        "name": "Arizona Diamondbacks",
-        "record": "6-6",
+        "teamId": 117,
+        "abbr": "HOU",
+        "name": "Houston Astros",
+        "record": "11-19",
         "pitcher": {
-          "name": "Eduardo Rodriguez (L)",
-          "stats": "0-0, 0.00 ERA, 0.92 WHIP"
+          "name": "Lance McCullers Jr. (R)",
+          "stats": "1-2, 6.75 ERA, 1.50 WHIP"
+        },
+        "lineup": [],
+        "note": "Lineup pending"
+      },
+      "home": {
+        "teamId": 110,
+        "abbr": "BAL",
+        "name": "Baltimore Orioles",
+        "record": "14-15",
+        "pitcher": {
+          "name": "Brandon Young (R)",
+          "stats": "2-0, 2.53 ERA, 1.13 WHIP"
+        },
+        "lineup": [],
+        "note": "Lineup pending"
+      }
+    },
+    {
+      "gamePk": 824524,
+      "gameGuid": "c5e5e642-7db6-4086-b815-1cc681caba5e",
+      "gameNumber": 1,
+      "doubleHeader": "N",
+      "sortTime": "09:40",
+      "time": "12:40pm ET, 9:40am PT",
+      "gameDate": "2026-04-30T12:40:00-04:00",
+      "officialDate": "2026-04-30",
+      "venue": "Great American Ball Park, Cincinnati, OH",
+      "roofType": "Open",
+      "status": "Pre-Game",
+      "weather": "54°F, Mostly Clear, Wind 10mph out to right",
+      "total": "9",
+      "line": "CIN -164",
+      "away": {
+        "teamId": 115,
+        "abbr": "COL",
+        "name": "Colorado Rockies",
+        "record": "14-17",
+        "pitcher": {
+          "name": "Michael Lorenzen (R)",
+          "stats": "2-2, 5.97 ERA, 1.85 WHIP"
+        },
+        "lineup": [],
+        "note": "Lineup pending"
+      },
+      "home": {
+        "teamId": 113,
+        "abbr": "CIN",
+        "name": "Cincinnati Reds",
+        "record": "19-11",
+        "pitcher": {
+          "name": "Andrew Abbott (L)",
+          "stats": "0-2, 6.59 ERA, 1.78 WHIP"
+        },
+        "lineup": [],
+        "note": "Lineup pending"
+      }
+    },
+    {
+      "gamePk": 823634,
+      "gameGuid": "0dfa56e8-1225-4ef2-a869-06584b001e70",
+      "gameNumber": 1,
+      "doubleHeader": "N",
+      "sortTime": "10:10",
+      "time": "1:10pm ET, 10:10am PT",
+      "gameDate": "2026-04-30T13:10:00-04:00",
+      "officialDate": "2026-04-30",
+      "venue": "Citi Field, Flushing, NY",
+      "roofType": "Open",
+      "status": "Pre-Game",
+      "weather": "53°F, Overcast, Wind 5mph out to right",
+      "total": "7.5",
+      "line": "NYM -193",
+      "away": {
+        "teamId": 120,
+        "abbr": "WSH",
+        "name": "Washington Nationals",
+        "record": "14-17",
+        "pitcher": {
+          "name": "Miles Mikolas (R)",
+          "stats": "0-3, 8.49 ERA, 1.84 WHIP"
         },
         "lineup": [],
         "note": "Lineup pending"
@@ -421,71 +273,115 @@
         "teamId": 121,
         "abbr": "NYM",
         "name": "New York Mets",
-        "record": "7-5",
+        "record": "10-20",
         "pitcher": {
-          "name": "Nolan McLean (R)",
-          "stats": "1-0, 2.61 ERA, 0.87 WHIP"
+          "name": "Freddy Peralta (R)",
+          "stats": "1-3, 3.90 ERA, 1.21 WHIP"
         },
         "lineup": [],
         "note": "Lineup pending"
       }
     },
     {
-      "gamePk": 824130,
-      "gameGuid": "3b833051-169d-4200-b89a-61972213aa6f",
-      "sortTime": "16:40",
-      "time": "7:40pm ET, 4:40pm PT",
-      "gameDate": "2026-04-09T19:40:00-04:00",
-      "officialDate": "2026-04-09",
-      "venue": "Kauffman Stadium, Kansas City, MO",
-      "roofType": "Open",
+      "gamePk": 823795,
+      "gameGuid": "9058ba6d-1b09-4e9c-94f8-3fa59272fc73",
+      "gameNumber": 1,
+      "doubleHeader": "N",
+      "sortTime": "10:40",
+      "time": "1:40pm ET, 10:40am PT",
+      "gameDate": "2026-04-30T13:40:00-04:00",
+      "officialDate": "2026-04-30",
+      "venue": "American Family Field, Milwaukee, WI",
+      "roofType": "Retractable",
       "status": "Scheduled",
-      "weather": "78°F, Overcast, Wind 16mph out to left",
-      "total": "9",
-      "line": "KC -184",
+      "weather": "47°F, Overcast, Wind 9mph in from left (Retractable Roof)",
+      "total": "7.5",
+      "line": "MIL -125",
       "away": {
-        "teamId": 145,
-        "abbr": "CWS",
-        "name": "Chicago White Sox",
-        "record": "4-8",
+        "teamId": 109,
+        "abbr": "AZ",
+        "name": "Arizona Diamondbacks",
+        "record": "16-13",
         "pitcher": {
-          "name": "Anthony Kay (L)",
-          "stats": "0-0, 4.00 ERA, 1.33 WHIP"
+          "name": "Michael Soroka (R)",
+          "stats": "4-0, 2.60 ERA, 1.16 WHIP"
         },
         "lineup": [],
         "note": "Lineup pending"
       },
       "home": {
-        "teamId": 118,
-        "abbr": "KC",
-        "name": "Kansas City Royals",
-        "record": "5-7",
+        "teamId": 158,
+        "abbr": "MIL",
+        "name": "Milwaukee Brewers",
+        "record": "15-14",
         "pitcher": {
-          "name": "Seth Lugo (R)",
-          "stats": "1-0, 1.59 ERA, 0.97 WHIP"
+          "name": "Brandon Woodruff (R)",
+          "stats": "2-1, 3.77 ERA, 1.01 WHIP"
         },
         "lineup": [],
         "note": "Lineup pending"
       }
     },
     {
-      "gamePk": 823319,
-      "gameGuid": "d612baee-a702-4304-ad8c-8dc75ec74c19",
-      "sortTime": "18:40",
-      "time": "9:40pm ET, 6:40pm PT",
-      "gameDate": "2026-04-09T21:40:00-04:00",
-      "officialDate": "2026-04-09",
-      "venue": "Petco Park, San Diego, CA",
+      "gamePk": 825016,
+      "gameGuid": "c374ed82-c92e-4b72-a48f-3ddf666929e4",
+      "gameNumber": 1,
+      "doubleHeader": "N",
+      "sortTime": "12:05",
+      "time": "3:05pm ET, 12:05pm PT",
+      "gameDate": "2026-04-30T15:05:00-04:00",
+      "officialDate": "2026-04-30",
+      "venue": "Sutter Health Park, Sacramento, CA",
       "roofType": "Open",
       "status": "Scheduled",
-      "weather": "67°F, Overcast, Wind 5mph cross right to left",
-      "total": "8",
-      "line": "SD -198",
+      "weather": "74°F, Mostly Clear, Wind 3mph cross right to left",
+      "total": "9.5",
+      "line": "ATH -125",
       "away": {
-        "teamId": 115,
-        "abbr": "COL",
-        "name": "Colorado Rockies",
-        "record": "6-6",
+        "teamId": 118,
+        "abbr": "KC",
+        "name": "Kansas City Royals",
+        "record": "12-18",
+        "pitcher": {
+          "name": "Noah Cameron (L)",
+          "stats": "2-1, 5.13 ERA, 1.52 WHIP"
+        },
+        "lineup": [],
+        "note": "Lineup pending"
+      },
+      "home": {
+        "teamId": 133,
+        "abbr": "ATH",
+        "name": "Athletics",
+        "record": "16-14",
+        "pitcher": {
+          "name": "Jeffrey Springs (L)",
+          "stats": "3-2, 3.79 ERA, 1.01 WHIP"
+        },
+        "lineup": [],
+        "note": "Lineup pending"
+      }
+    },
+    {
+      "gamePk": 823471,
+      "gameGuid": "280c9390-aeee-420a-8619-18bfc123b2be",
+      "gameNumber": 2,
+      "doubleHeader": "S",
+      "sortTime": "14:35",
+      "time": "5:35pm ET, 2:35pm PT",
+      "gameDate": "2026-04-30T17:35:00-04:00",
+      "officialDate": "2026-04-30",
+      "venue": "Citizens Bank Park, Philadelphia, PA",
+      "roofType": "Open",
+      "status": "Scheduled",
+      "weather": "62°F, Clear, Wind 8mph in from left",
+      "total": "7.5",
+      "line": "PHI -143",
+      "away": {
+        "teamId": 137,
+        "abbr": "SF",
+        "name": "San Francisco Giants",
+        "record": "13-16",
         "pitcher": {
           "name": "TBD",
           "stats": "-"
@@ -494,13 +390,53 @@
         "note": "Lineup pending"
       },
       "home": {
-        "teamId": 135,
-        "abbr": "SD",
-        "name": "San Diego Padres",
-        "record": "6-6",
+        "teamId": 143,
+        "abbr": "PHI",
+        "name": "Philadelphia Phillies",
+        "record": "10-19",
         "pitcher": {
-          "name": "Randy Vásquez (R)",
-          "stats": "1-0, 0.75 ERA, 1.00 WHIP"
+          "name": "TBD",
+          "stats": "-"
+        },
+        "lineup": [],
+        "note": "Lineup pending"
+      }
+    },
+    {
+      "gamePk": 823714,
+      "gameGuid": "f58adbc4-0d49-46ff-9fd5-dd5a6c39615e",
+      "gameNumber": 1,
+      "doubleHeader": "N",
+      "sortTime": "16:40",
+      "time": "7:40pm ET, 4:40pm PT",
+      "gameDate": "2026-04-30T19:40:00-04:00",
+      "officialDate": "2026-04-30",
+      "venue": "Target Field, Minneapolis, MN",
+      "roofType": "Open",
+      "status": "Scheduled",
+      "weather": "49°F, Overcast, Wind 8mph out to right",
+      "total": "8",
+      "line": "TOR -135",
+      "away": {
+        "teamId": 141,
+        "abbr": "TOR",
+        "name": "Toronto Blue Jays",
+        "record": "14-16",
+        "pitcher": {
+          "name": "Kevin Gausman (R)",
+          "stats": "2-1, 2.57 ERA, 0.94 WHIP"
+        },
+        "lineup": [],
+        "note": "Lineup pending"
+      },
+      "home": {
+        "teamId": 142,
+        "abbr": "MIN",
+        "name": "Minnesota Twins",
+        "record": "13-18",
+        "pitcher": {
+          "name": "Bailey Ober (R)",
+          "stats": "2-1, 3.94 ERA, 1.16 WHIP"
         },
         "lineup": [],
         "note": "Lineup pending"
