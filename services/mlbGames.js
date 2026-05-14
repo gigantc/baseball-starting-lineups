@@ -16,6 +16,12 @@ loadBvpCache();
 
 const APP_TIMEZONE = process.env.APP_TIMEZONE || 'America/Phoenix';
 
+const buildDetailsLink = (gamePk) => {
+  if (!process.env.SITE_URL || !gamePk) return '';
+  const base = process.env.SITE_URL.replace(/\/$/, '');
+  return `\n\n[Lineup Details](${base}/#game=${gamePk})`;
+};
+
 const SCOREBOARD_URL = (date) =>
   `https://bdfed.stitch.mlbinfra.com/bdfed/transform-milb-scoreboard?stitch_env=prod&sortTemplate=4&sportId=1&startDate=${date}&endDate=${date}`;
 
@@ -512,7 +518,7 @@ export const refreshLineupFromAlert = async (teamLabel, postDateLabel) => {
   const alertGameLabel = targetGame.doubleHeader !== 'N' ? ` (Game ${targetGame.gameNumber})` : '';
   const siteGame = sitePayload?.games?.find((game) => game.gamePk === targetGame.gamePk);
   const weatherLine = formatWeatherForDiscord(siteGame?.weather);
-  const message = `🚨 Lineup Update 🚨\n\n**${teamName}**: ${headerDate}${alertGameLabel}\nUpdated lineup\n\n${formatDiscordLineup(freshLineup)}\n\n**SP**: ${pitcher}\n\n${weatherLine}\n\n----------------------\n\n`;
+  const message = `🚨 Lineup Update 🚨\n\n**${teamName}**: ${headerDate}${alertGameLabel}\nUpdated lineup\n\n${formatDiscordLineup(freshLineup)}\n\n**SP**: ${pitcher}\n\n${weatherLine}${buildDetailsLink(targetGame.gamePk)}\n\n----------------------\n\n`;
 
   await postToDiscord(message);
   return true;
@@ -556,7 +562,7 @@ const postLineups = async (game, lineup, teamType) => {
   const siteGame = sitePayload?.games?.find((siteGame) => siteGame.gamePk === game.gamePk);
   const weatherLine = formatWeatherForDiscord(siteGame?.weather);
 
-  const message = `\n\n⚾️ Lineup ⚾️\n\n${lineupHeader}\n\n${lineupBody}\n\n${lineupPitcher}\n\n${lineupTime}\n${lineupOpponent}\n${vsPitcher}\n${lineupLocation}\n${weatherLine}\n\n----------------------\n\n`;
+  const message = `\n\n⚾️ Lineup ⚾️\n\n${lineupHeader}\n\n${lineupBody}\n\n${lineupPitcher}\n\n${lineupTime}\n${lineupOpponent}\n${vsPitcher}\n${lineupLocation}\n${weatherLine}${buildDetailsLink(game.gamePk)}\n\n----------------------\n\n`;
 
   await postToDiscord(message);
 };
