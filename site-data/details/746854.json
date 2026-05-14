@@ -1,0 +1,572 @@
+{
+  "gamePk": 746854,
+  "updatedAt": "2026-05-14T23:33:55.964Z",
+  "venue": {
+    "name": "Wrigley Field",
+    "location": "Chicago, IL",
+    "roof": "Open",
+    "capacity": 41363,
+    "dimensions": {
+      "lf": 355,
+      "cf": 400,
+      "rf": 353
+    }
+  },
+  "weather": {
+    "temp": "76°F",
+    "condition": "Sunny",
+    "wind": "7 mph, In From RF"
+  },
+  "umpires": [
+    {
+      "role": "HP",
+      "name": "Roberto Ortiz"
+    },
+    {
+      "role": "1B",
+      "name": "Alfonso Márquez"
+    },
+    {
+      "role": "2B",
+      "name": "Lance Barrett"
+    },
+    {
+      "role": "3B",
+      "name": "Mark Ripperger"
+    }
+  ],
+  "broadcasts": {
+    "tv": [
+      {
+        "team": "home",
+        "name": "MARQ"
+      },
+      {
+        "team": "away",
+        "name": "ARID"
+      }
+    ],
+    "radio": [
+      {
+        "team": "away",
+        "name": "98.7 FM"
+      },
+      {
+        "team": "home",
+        "name": "WSCR"
+      }
+    ]
+  },
+  "away": {
+    "teamId": 109,
+    "abbr": "AZ",
+    "name": "Arizona Diamondbacks",
+    "record": "50-48",
+    "standing": "3rd NL West",
+    "pitcher": {
+      "id": 669194,
+      "name": "Ryne Nelson",
+      "slug": "ryne-nelson-669194",
+      "throws": "R",
+      "jersey": "19",
+      "w": 7,
+      "l": 6,
+      "era": "4.78",
+      "whip": "1.39",
+      "k": 68,
+      "arsenal": [
+        {
+          "code": "FF",
+          "name": "Four-seam FB",
+          "pct": 0.5573566,
+          "mph": 95.18952346234155
+        },
+        {
+          "code": "FC",
+          "name": "Cutter",
+          "pct": 0.1837074,
+          "mph": 91.24082721719458
+        },
+        {
+          "code": "CH",
+          "name": "Changeup",
+          "pct": 0.09891937,
+          "mph": 82.9799230168068
+        },
+        {
+          "code": "SL",
+          "name": "Slider",
+          "pct": 0.08478803,
+          "mph": 84.17588992156867
+        },
+        {
+          "code": "CU",
+          "name": "Curveball",
+          "pct": 0.05694098,
+          "mph": 77.75924382481753
+        },
+        {
+          "code": "ST",
+          "name": "Sweeper",
+          "pct": 0.018287614,
+          "mph": 82.27402361363637
+        }
+      ]
+    },
+    "lineup": [
+      {
+        "id": 606466,
+        "name": "Ketel Marte",
+        "slug": "ketel-marte-606466",
+        "pos": "2B",
+        "bats": "S",
+        "hr": 19,
+        "rbi": 57,
+        "sb": 6,
+        "avg": ".295",
+        "obp": ".365",
+        "slg": ".515",
+        "ops": ".880",
+        "ab": 363
+      },
+      {
+        "id": 672515,
+        "name": "Gabriel Moreno",
+        "slug": "gabriel-moreno-672515",
+        "pos": "C",
+        "bats": "R",
+        "hr": 4,
+        "rbi": 32,
+        "sb": 1,
+        "avg": ".251",
+        "obp": ".336",
+        "slg": ".374",
+        "ops": ".710",
+        "ab": 235
+      },
+      {
+        "id": 666971,
+        "name": "Lourdes Gurriel Jr.",
+        "slug": "lourdes-gurriel-jr-666971",
+        "pos": "LF",
+        "bats": "R",
+        "hr": 13,
+        "rbi": 56,
+        "sb": 4,
+        "avg": ".266",
+        "obp": ".297",
+        "slg": ".421",
+        "ops": ".718",
+        "ab": 361
+      },
+      {
+        "id": 572233,
+        "name": "Christian Walker",
+        "slug": "christian-walker-572233",
+        "pos": "1B",
+        "bats": "R",
+        "hr": 22,
+        "rbi": 68,
+        "sb": 2,
+        "avg": ".264",
+        "obp": ".346",
+        "slg": ".493",
+        "ops": ".839",
+        "ab": 371
+      },
+      {
+        "id": 545341,
+        "name": "Randal Grichuk",
+        "slug": "randal-grichuk-545341",
+        "pos": "DH",
+        "bats": "R",
+        "hr": 3,
+        "rbi": 22,
+        "sb": 0,
+        "avg": ".283",
+        "obp": ".335",
+        "slg": ".441",
+        "ops": ".776",
+        "ab": 152
+      },
+      {
+        "id": 553993,
+        "name": "Eugenio Suárez",
+        "slug": "eugenio-suarez-553993",
+        "pos": "3B",
+        "bats": "R",
+        "hr": 10,
+        "rbi": 48,
+        "sb": 2,
+        "avg": ".213",
+        "obp": ".299",
+        "slg": ".361",
+        "ops": ".660",
+        "ab": 324
+      },
+      {
+        "id": 682998,
+        "name": "Corbin Carroll",
+        "slug": "corbin-carroll-682998",
+        "pos": "RF",
+        "bats": "L",
+        "hr": 5,
+        "rbi": 33,
+        "sb": 19,
+        "avg": ".211",
+        "obp": ".300",
+        "slg": ".332",
+        "ops": ".632",
+        "ab": 355
+      },
+      {
+        "id": 672695,
+        "name": "Geraldo Perdomo",
+        "slug": "geraldo-perdomo-672695",
+        "pos": "SS",
+        "bats": "S",
+        "hr": 0,
+        "rbi": 11,
+        "sb": 1,
+        "avg": ".274",
+        "obp": ".333",
+        "slg": ".342",
+        "ops": ".675",
+        "ab": 117
+      },
+      {
+        "id": 677950,
+        "name": "Alek Thomas",
+        "slug": "alek-thomas-677950",
+        "pos": "CF",
+        "bats": "L",
+        "hr": 2,
+        "rbi": 11,
+        "sb": 1,
+        "avg": ".192",
+        "obp": ".222",
+        "slg": ".365",
+        "ops": ".587",
+        "ab": 52
+      }
+    ],
+    "bvp": {
+      "545341": {
+        "ab": 5,
+        "hr": 0,
+        "rbi": 1,
+        "avg": ".400",
+        "ops": "1.000"
+      },
+      "553993": {
+        "ab": 10,
+        "hr": 1,
+        "rbi": 1,
+        "avg": ".100",
+        "ops": ".582"
+      },
+      "572233": {
+        "ab": 11,
+        "hr": 0,
+        "rbi": 2,
+        "avg": ".182",
+        "ops": ".539"
+      },
+      "606466": {
+        "ab": 16,
+        "hr": 0,
+        "rbi": 0,
+        "avg": ".250",
+        "ops": ".607"
+      },
+      "666971": {
+        "ab": 12,
+        "hr": 1,
+        "rbi": 3,
+        "avg": ".333",
+        "ops": ".916"
+      },
+      "672515": {
+        "ab": 10,
+        "hr": 0,
+        "rbi": 2,
+        "avg": ".800",
+        "ops": "1.900"
+      },
+      "672695": {
+        "ab": 8,
+        "hr": 0,
+        "rbi": 1,
+        "avg": ".375",
+        "ops": ".750"
+      },
+      "677950": {
+        "ab": 9,
+        "hr": 1,
+        "rbi": 3,
+        "avg": ".111",
+        "ops": ".555"
+      },
+      "682998": {
+        "ab": 7,
+        "hr": 0,
+        "rbi": 1,
+        "avg": ".286",
+        "ops": ".741"
+      }
+    }
+  },
+  "home": {
+    "teamId": 112,
+    "abbr": "CHC",
+    "name": "Chicago Cubs",
+    "record": "47-52",
+    "standing": "3rd NL Central",
+    "pitcher": {
+      "id": 657006,
+      "name": "Justin Steele",
+      "slug": "justin-steele-657006",
+      "throws": "L",
+      "jersey": "35",
+      "w": 2,
+      "l": 4,
+      "era": "3.07",
+      "whip": "1.02",
+      "k": 87,
+      "arsenal": [
+        {
+          "code": "FF",
+          "name": "Four-seam FB",
+          "pct": 0.5967742,
+          "mph": 91.58046282227689
+        },
+        {
+          "code": "SL",
+          "name": "Slider",
+          "pct": 0.29716522,
+          "mph": 83.27282482894746
+        },
+        {
+          "code": "SI",
+          "name": "Sinker",
+          "pct": 0.052297164,
+          "mph": 91.52105040186915
+        },
+        {
+          "code": "CH",
+          "name": "Changeup",
+          "pct": 0.032258064,
+          "mph": 86.17007759090914
+        },
+        {
+          "code": "CU",
+          "name": "Curveball",
+          "pct": 0.021505376,
+          "mph": 79.89116768181817
+        }
+      ]
+    },
+    "lineup": [
+      {
+        "id": 663538,
+        "name": "Nico Hoerner",
+        "slug": "nico-hoerner-663538",
+        "pos": "2B",
+        "bats": "R",
+        "hr": 4,
+        "rbi": 29,
+        "sb": 14,
+        "avg": ".261",
+        "obp": ".339",
+        "slg": ".355",
+        "ops": ".694",
+        "ab": 341
+      },
+      {
+        "id": 683737,
+        "name": "Michael Busch",
+        "slug": "michael-busch-683737",
+        "pos": "1B",
+        "bats": "L",
+        "hr": 12,
+        "rbi": 36,
+        "sb": 1,
+        "avg": ".270",
+        "obp": ".358",
+        "slg": ".466",
+        "ops": ".824",
+        "ab": 296
+      },
+      {
+        "id": 673548,
+        "name": "Seiya Suzuki",
+        "slug": "seiya-suzuki-673548",
+        "pos": "RF",
+        "bats": "R",
+        "hr": 13,
+        "rbi": 45,
+        "sb": 9,
+        "avg": ".267",
+        "obp": ".335",
+        "slg": ".474",
+        "ops": ".809",
+        "ab": 285
+      },
+      {
+        "id": 664023,
+        "name": "Ian Happ",
+        "slug": "ian-happ-664023",
+        "pos": "LF",
+        "bats": "S",
+        "hr": 15,
+        "rbi": 58,
+        "sb": 7,
+        "avg": ".241",
+        "obp": ".348",
+        "slg": ".454",
+        "ops": ".802",
+        "ab": 328
+      },
+      {
+        "id": 666624,
+        "name": "Christopher Morel",
+        "slug": "christopher-morel-666624",
+        "pos": "DH",
+        "bats": "R",
+        "hr": 18,
+        "rbi": 51,
+        "sb": 7,
+        "avg": ".203",
+        "obp": ".305",
+        "slg": ".387",
+        "ops": ".692",
+        "ab": 344
+      },
+      {
+        "id": 621020,
+        "name": "Dansby Swanson",
+        "slug": "dansby-swanson-621020",
+        "pos": "SS",
+        "bats": "R",
+        "hr": 9,
+        "rbi": 31,
+        "sb": 5,
+        "avg": ".213",
+        "obp": ".282",
+        "slg": ".348",
+        "ops": ".630",
+        "ab": 310
+      },
+      {
+        "id": 670156,
+        "name": "Miles Mastrobuoni",
+        "slug": "miles-mastrobuoni-670156",
+        "pos": "3B",
+        "bats": "L",
+        "hr": 0,
+        "rbi": 3,
+        "sb": 1,
+        "avg": ".200",
+        "obp": ".261",
+        "slg": ".225",
+        "ops": ".486",
+        "ab": 80
+      },
+      {
+        "id": 643565,
+        "name": "Mike Tauchman",
+        "slug": "mike-tauchman-643565",
+        "pos": "CF",
+        "bats": "L",
+        "hr": 5,
+        "rbi": 19,
+        "sb": 5,
+        "avg": ".257",
+        "obp": ".357",
+        "slg": ".378",
+        "ops": ".735",
+        "ab": 222
+      },
+      {
+        "id": 665804,
+        "name": "Miguel Amaya",
+        "slug": "miguel-amaya-665804",
+        "pos": "C",
+        "bats": "R",
+        "hr": 3,
+        "rbi": 18,
+        "sb": 0,
+        "avg": ".205",
+        "obp": ".270",
+        "slg": ".292",
+        "ops": ".562",
+        "ab": 185
+      }
+    ],
+    "bvp": {
+      "621020": {
+        "ab": 10,
+        "hr": 0,
+        "rbi": 0,
+        "avg": ".200",
+        "ops": ".500"
+      },
+      "643565": {
+        "ab": 6,
+        "hr": 0,
+        "rbi": 1,
+        "avg": ".167",
+        "ops": ".542"
+      },
+      "663538": {
+        "ab": 10,
+        "hr": 0,
+        "rbi": 1,
+        "avg": ".400",
+        "ops": ".955"
+      },
+      "664023": {
+        "ab": 9,
+        "hr": 2,
+        "rbi": 5,
+        "avg": ".556",
+        "ops": "2.111"
+      },
+      "665804": {
+        "ab": 3,
+        "hr": 0,
+        "rbi": 3,
+        "avg": ".333",
+        "ops": "1.167"
+      },
+      "666624": {
+        "ab": 8,
+        "hr": 0,
+        "rbi": 0,
+        "avg": ".125",
+        "ops": ".425"
+      },
+      "670156": {
+        "ab": 2,
+        "hr": 0,
+        "rbi": 0,
+        "avg": ".500",
+        "ops": "1.000"
+      },
+      "673548": {
+        "ab": 11,
+        "hr": 0,
+        "rbi": 0,
+        "avg": ".182",
+        "ops": ".614"
+      },
+      "683737": {
+        "ab": 9,
+        "hr": 0,
+        "rbi": 1,
+        "avg": ".444",
+        "ops": "1.111"
+      }
+    }
+  }
+}

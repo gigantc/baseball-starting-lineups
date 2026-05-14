@@ -8,6 +8,11 @@ import { teamAbbreviations } from '../utils/teamMap.js';
 import { postToDiscord } from '../services/postToDiscord.js';
 import { enrichGamesWithOdds } from '../services/oddsFeed.js';
 import { fetchVenueDetails, enrichGamesWithWeather } from '../services/weather.js';
+import { buildAllSkeletons, enrichDetailWithLineup, loadBvpCache } from '../services/gameDetails.js';
+
+// Hydrate persisted BvP cache once at module load so the first call to
+// enrichDetailWithLineup benefits from prior runs.
+loadBvpCache();
 
 const APP_TIMEZONE = process.env.APP_TIMEZONE || 'America/Phoenix';
 
@@ -326,6 +331,11 @@ export const fetchMLBGames = async () => {
   await enrichGamesWithOdds(siteGames, today);
   await enrichGamesWithWeather(siteGames, rawGames);
   writeSiteJson(siteGames, today);
+
+  // Build per-game detail files (pre-lineup skeleton: venue, pitchers,
+  // arsenal, broadcasts, umpires, standings). Lineups + BvP fill in later
+  // via pollLineups.
+  await buildAllSkeletons(rawGames);
 };
 
 const refreshTBDPitchers = async (games, sitePayload) => {
@@ -402,6 +412,9 @@ export const pollLineups = async () => {
         game.awayPosted = true;
         game.awayLineup = awayLineup;
         await postLineups(game, awayLineup, 'away');
+        await enrichDetailWithLineup(game.gamePk, 'away', data).catch((err) =>
+          console.error(`[gameDetails] away enrichment failed for ${game.gamePk}:`, err.message)
+        );
       }
     }
 
@@ -412,6 +425,9 @@ export const pollLineups = async () => {
         game.homePosted = true;
         game.homeLineup = homeLineup;
         await postLineups(game, homeLineup, 'home');
+        await enrichDetailWithLineup(game.gamePk, 'home', data).catch((err) =>
+          console.error(`[gameDetails] home enrichment failed for ${game.gamePk}:`, err.message)
+        );
       }
     }
   }
@@ -471,6 +487,10 @@ export const refreshLineupFromAlert = async (teamLabel, postDateLabel) => {
   targetGame[postedKey] = true;
 
   fs.writeFileSync(MLB_GAMES_FILE, JSON.stringify(games, null, 2), 'utf8');
+
+  await enrichDetailWithLineup(targetGame.gamePk, teamType, data).catch((err) =>
+    console.error(`[gameDetails] ${teamType} enrichment via alert failed for ${targetGame.gamePk}:`, err.message)
+  );
 
   if (sitePayload?.games?.length) {
     const siteGame = sitePayload.games.find((game) => game.gamePk === targetGame.gamePk);
