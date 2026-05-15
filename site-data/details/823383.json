@@ -1,0 +1,172 @@
+{
+  "gamePk": 823383,
+  "updatedAt": "2026-05-14T23:47:54.078Z",
+  "venue": {
+    "name": "PNC Park",
+    "location": "Pittsburgh, PA",
+    "roof": "Open",
+    "capacity": 38753,
+    "dimensions": {
+      "lf": 325,
+      "cf": 399,
+      "rf": 320
+    }
+  },
+  "weather": {
+    "temp": "49°F",
+    "condition": "Partly Cloudy",
+    "wind": "12 mph, Out To CF"
+  },
+  "umpires": [
+    {
+      "role": "HP",
+      "name": "Paul Clemons"
+    },
+    {
+      "role": "1B",
+      "name": "Quinn Wolcott"
+    },
+    {
+      "role": "2B",
+      "name": "Brock Ballou"
+    },
+    {
+      "role": "3B",
+      "name": "Ramon De Jesus"
+    }
+  ],
+  "broadcasts": {
+    "tv": [
+      {
+        "team": "home",
+        "name": "SportsNet Pittsburgh"
+      },
+      {
+        "team": "away",
+        "name": "Rockies.TV"
+      }
+    ],
+    "radio": [
+      {
+        "team": "home",
+        "name": "100.1 FM/KDKA-AM 1020"
+      },
+      {
+        "team": "away",
+        "name": "KOA 850 AM/94.1 FM"
+      }
+    ]
+  },
+  "away": {
+    "teamId": 115,
+    "abbr": "COL",
+    "name": "Colorado Rockies",
+    "record": "17-27",
+    "standing": "5th NL West",
+    "pitcher": {
+      "id": 801403,
+      "name": "Chase Dollander",
+      "slug": "chase-dollander-801403",
+      "throws": "R",
+      "jersey": "32",
+      "w": 3,
+      "l": 3,
+      "era": "3.89",
+      "whip": "1.30",
+      "k": 47,
+      "arsenal": [
+        {
+          "code": "FF",
+          "name": "Four-seam FB",
+          "pct": 0.3768506,
+          "mph": 98.86891175000002
+        },
+        {
+          "code": "SI",
+          "name": "Sinker",
+          "pct": 0.2395693,
+          "mph": 98.22116832022472
+        },
+        {
+          "code": "SL",
+          "name": "Slider",
+          "pct": 0.14535666,
+          "mph": 87.61637581481483
+        },
+        {
+          "code": "CH",
+          "name": "Changeup",
+          "pct": 0.10497981,
+          "mph": 90.46459216666666
+        },
+        {
+          "code": "CU",
+          "name": "Curveball",
+          "pct": 0.0794078,
+          "mph": 79.79253394915253
+        },
+        {
+          "code": "ST",
+          "name": "Sweeper",
+          "pct": 0.0538358,
+          "mph": 85.715244275
+        }
+      ]
+    },
+    "lineup": [],
+    "bvp": {}
+  },
+  "home": {
+    "teamId": 134,
+    "abbr": "PIT",
+    "name": "Pittsburgh Pirates",
+    "record": "24-20",
+    "standing": "4th NL Central",
+    "pitcher": {
+      "id": 682254,
+      "name": "Mason Montgomery",
+      "slug": "mason-montgomery-682254",
+      "throws": "L",
+      "jersey": "46",
+      "w": 1,
+      "l": 0,
+      "era": "2.70",
+      "whip": "1.26",
+      "k": 26,
+      "arsenal": [
+        {
+          "code": "FF",
+          "name": "Four-seam FB",
+          "pct": 0.6607774,
+          "mph": 98.40456450802141
+        },
+        {
+          "code": "CU",
+          "name": "Curveball",
+          "pct": 0.17667845,
+          "mph": 87.24962778000001
+        },
+        {
+          "code": "SL",
+          "name": "Slider",
+          "pct": 0.14840989,
+          "mph": 89.80140016666665
+        },
+        {
+          "code": "CH",
+          "name": "Changeup",
+          "pct": 0.007067138,
+          "mph": 92.235744
+        },
+        {
+          "code": "SI",
+          "name": "Sinker",
+          "pct": 0.007067138,
+          "mph": 98.8898585
+        }
+      ]
+    },
+    "lineup": [],
+    "bvp": {}
+  }
+}

@@ -163,31 +163,22 @@ const teamStanding = (standings, teamId) => {
   return '';
 };
 
-const buildBroadcasts = (content, awayTeamId, homeTeamId) => {
+// MLB moved broadcast info from /game/{pk}/content?epg out of population
+// for current games; the live source is now /schedule?hydrate=broadcasts.
+// Each item has homeAway + type + name + callSign + isNational + language.
+const buildBroadcasts = (scheduleEntry) => {
   const tv = [];
   const radio = [];
-  const epg = content?.media?.epg || [];
-  for (const cat of epg) {
-    if (cat.title === 'MLBTV') {
-      for (const it of cat.items || []) {
-        if (!it.callLetters) continue;
-        const side = it.mediaFeedType === 'HOME' ? 'home'
-                   : it.mediaFeedType === 'AWAY' ? 'away'
-                   : null;
-        if (!side) continue;
-        tv.push({ team: side, name: it.callLetters.trim() });
-      }
-    } else if (cat.title === 'Audio') {
-      for (const it of cat.items || []) {
-        if (!it.callLetters) continue;
-        if (it.language && it.language !== 'en') continue;
-        const teamId = parseInt(it.mediaFeedSubType, 10);
-        const side = teamId === homeTeamId ? 'home'
-                   : teamId === awayTeamId ? 'away'
-                   : null;
-        if (!side) continue;
-        radio.push({ team: side, name: it.callLetters.trim() });
-      }
+  for (const b of scheduleEntry?.broadcasts || []) {
+    if (b.language && b.language !== 'en') continue;
+    const side = b.homeAway === 'home' ? 'home' : b.homeAway === 'away' ? 'away' : null;
+    if (!side) continue;
+    const name = (b.name || b.callSign || '').trim();
+    if (!name) continue;
+    if (b.type === 'TV') {
+      tv.push({ team: side, name });
+    } else if (b.type === 'AM' || b.type === 'FM' || b.type === 'Audio') {
+      radio.push({ team: side, name });
     }
   }
   return { tv, radio };
@@ -334,9 +325,10 @@ export const buildSkeletonForGame = async (game) => {
   const away = await buildTeamSkeleton(feed, 'away', standings, season);
   const home = await buildTeamSkeleton(feed, 'home', standings, season);
 
-  let content = null;
+  let scheduleEntry = null;
   try {
-    content = await fetchJson(`${STATS}/game/${gamePk}/content`);
+    const sched = await fetchJson(`${STATS}/schedule?sportId=1&gamePk=${gamePk}&hydrate=broadcasts`);
+    scheduleEntry = sched?.dates?.[0]?.games?.find((g) => g.gamePk === gamePk) || null;
   } catch {
     // broadcasts optional
   }
@@ -366,8 +358,8 @@ export const buildSkeletonForGame = async (game) => {
       role: OFFICIAL_ABBR[o.officialType] || o.officialType,
       name: o.official?.fullName || '',
     })),
-    broadcasts: content
-      ? buildBroadcasts(content, away.teamId, home.teamId)
+    broadcasts: scheduleEntry
+      ? buildBroadcasts(scheduleEntry)
       : { tv: [], radio: [] },
     away,
     home,
