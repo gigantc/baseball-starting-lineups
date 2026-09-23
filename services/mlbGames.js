@@ -30,7 +30,9 @@ const SITE_DATA_DIR = process.env.SITE_DATA_DIR
   ? path.resolve(process.env.SITE_DATA_DIR)
   : path.resolve('./site-data');
 const SITE_LATEST_FILE = path.resolve(SITE_DATA_DIR, 'latest.json');
+const SITE_DAYS_DIR = path.resolve(SITE_DATA_DIR, 'days');
 const LOCAL_FRONTEND_DATA_FILE = path.resolve('../mlb-lineup-site/public/data/latest.json');
+const LOCAL_FRONTEND_DAYS_DIR = path.resolve('../mlb-lineup-site/public/data/days');
 
 const ensureSiteDataDir = () => {
   if (!fs.existsSync(SITE_DATA_DIR)) {
@@ -47,6 +49,18 @@ const writeJsonAtomic = (filePath, payload) => {
   const tempFile = `${filePath}.tmp`;
   fs.writeFileSync(tempFile, JSON.stringify(payload, null, 2), 'utf8');
   fs.renameSync(tempFile, filePath);
+};
+
+// latest.json drives today's view; days/{date}.json keeps every slate for browsing past days.
+const writeSitePayload = (payload) => {
+  const dayFile = `${payload.date}.json`;
+  writeJsonAtomic(SITE_LATEST_FILE, payload);
+  writeJsonAtomic(path.resolve(SITE_DAYS_DIR, dayFile), payload);
+
+  if (!process.env.SITE_DATA_DIR) {
+    writeJsonAtomic(LOCAL_FRONTEND_DATA_FILE, payload);
+    writeJsonAtomic(path.resolve(LOCAL_FRONTEND_DAYS_DIR, dayFile), payload);
+  }
 };
 
 const buildVenueString = (game) => {
@@ -157,11 +171,7 @@ const writeSiteJson = (games, date) => {
     games,
   };
 
-  writeJsonAtomic(SITE_LATEST_FILE, payload);
-
-  if (!process.env.SITE_DATA_DIR) {
-    writeJsonAtomic(LOCAL_FRONTEND_DATA_FILE, payload);
-  }
+  writeSitePayload(payload);
 };
 
 const syncSiteLineup = (siteGames, lineup, teamType, gamePk) => {
@@ -443,11 +453,7 @@ export const pollLineups = async () => {
   if (sitePayload) {
     const syncedPayload = syncSitePayloadFromGames(sitePayload, games);
     syncedPayload.updatedAt = new Date().toISOString();
-    writeJsonAtomic(SITE_LATEST_FILE, syncedPayload);
-
-    if (!process.env.SITE_DATA_DIR) {
-      writeJsonAtomic(LOCAL_FRONTEND_DATA_FILE, syncedPayload);
-    }
+    writeSitePayload(syncedPayload);
   }
 };
 
@@ -503,11 +509,7 @@ export const refreshLineupFromAlert = async (teamLabel, postDateLabel) => {
     if (siteGame) {
       syncSiteLineup(sitePayload.games, freshLineup, teamType, targetGame.gamePk);
       sitePayload.updatedAt = new Date().toISOString();
-      writeJsonAtomic(SITE_LATEST_FILE, sitePayload);
-
-      if (!process.env.SITE_DATA_DIR) {
-        writeJsonAtomic(LOCAL_FRONTEND_DATA_FILE, sitePayload);
-      }
+      writeSitePayload(sitePayload);
     }
   }
 
