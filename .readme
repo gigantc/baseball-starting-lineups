@@ -24,3 +24,14 @@ sudo systemctl stop baseball-watcher
 
 Files located in:
 /opt
+
+Offseason: turn off all Discord posts (lineups + news alerts).
+The site (lineups.gigantc.com) keeps updating either way.
+In /opt/.env set:
+DISCORD_ENABLED=false
+then:
+sudo systemctl restart baseball-watcher
+
+New season: turn Discord back on.
+In /opt/.env change it to DISCORD_ENABLED=true (or delete the line), then:
+sudo systemctl restart baseball-watcher

@@ -40,11 +40,11 @@ There are no tests or linting configured.
 
 ## Environment Variables
 
-Configured in `.env` (gitignored): `DISCORD_WEBHOOK_URL`, `BSKY_IDENTIFIER`, `BSKY_APP_PASSWORD`, `ENVIRONMENT` (local/production), `APP_TIMEZONE`, `ODDS_API_KEY`, `SITE_DATA_DIR` (optional, overrides site-data output path).
+Configured in `.env` (gitignored): `DISCORD_WEBHOOK_URL`, `BSKY_IDENTIFIER`, `BSKY_APP_PASSWORD`, `ENVIRONMENT` (local/production), `DISCORD_ENABLED` (set `false` in the offseason to stop all Discord posts; unset = enabled), `APP_TIMEZONE`, `ODDS_API_KEY`, `SITE_DATA_DIR` (optional, overrides site-data output path).
 
 ## Key Patterns
 
 - **ES Modules** (`"type": "module"` in package.json) — use `import`/`export`, not `require`.
 - **Luxon for dates** — all timezone handling uses `luxon` `DateTime`, not native `Date`. Default timezone is `America/Phoenix`.
 - **Atomic file writes** — `writeJsonAtomic()` writes to `.tmp` then renames, preventing partial reads.
-- **Discord gating** — `postToDiscord()` only sends to Discord when `ENVIRONMENT=production`; otherwise logs to console. Safe to run locally.
+- **Discord gating** — `postToDiscord()` only sends to Discord when `ENVIRONMENT=production`; otherwise logs to console. Safe to run locally. `DISCORD_ENABLED=false` overrides this and suppresses every post (lineups, lineup updates, news alerts) while site data keeps updating.
