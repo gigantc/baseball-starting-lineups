@@ -8,7 +8,7 @@ import { teamAbbreviations } from '../utils/teamMap.js';
 import { postToDiscord } from '../services/postToDiscord.js';
 import { enrichGamesWithOdds } from '../services/oddsFeed.js';
 import { fetchVenueDetails, enrichGamesWithWeather } from '../services/weather.js';
-import { buildAllSkeletons, enrichDetailWithLineup, loadBvpCache } from '../services/gameDetails.js';
+import { buildAllSkeletons, detailNeedsLineup, enrichDetailWithLineup, loadBvpCache } from '../services/gameDetails.js';
 
 // Hydrate persisted BvP cache once at module load so the first call to
 // enrichDetailWithLineup benefits from prior runs.
@@ -413,13 +413,24 @@ export const pollLineups = async () => {
   await refreshTBDPitchers(games, sitePayload);
 
   for (const game of games) {
-    if (game.awayPosted && game.homePosted) {
+    const repairAway = game.awayPosted && detailNeedsLineup(game.gamePk, 'away');
+    const repairHome = game.homePosted && detailNeedsLineup(game.gamePk, 'home');
+
+    if (game.awayPosted && game.homePosted && !repairAway && !repairHome) {
       continue;
     }
 
     const boxscoreUrl = `https://statsapi.mlb.com/api/v1/game/${game.gamePk}/boxscore`;
     const res = await fetch(boxscoreUrl);
     const data = await res.json();
+
+    // Posted sides whose detail file lost its lineup: refill without re-posting.
+    for (const [side, repair] of [['away', repairAway], ['home', repairHome]]) {
+      if (!repair) continue;
+      await enrichDetailWithLineup(game.gamePk, side, data).catch((err) =>
+        console.error(`[gameDetails] ${side} repair failed for ${game.gamePk}:`, err.message)
+      );
+    }
 
     if (!game.awayPosted) {
       const awayLineup = buildLineup(data.teams?.away, data.teams.away.players);

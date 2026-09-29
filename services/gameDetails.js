@@ -325,6 +325,16 @@ export const buildSkeletonForGame = async (game) => {
   const away = await buildTeamSkeleton(feed, 'away', standings, season);
   const home = await buildTeamSkeleton(feed, 'home', standings, season);
 
+  // A watcher restart rebuilds skeletons mid-day; keep lineups already enriched
+  // so posted games don't lose them (pollLineups won't re-enrich posted sides).
+  const existing = readDetailFile(gamePk);
+  for (const [side, team] of [['away', away], ['home', home]]) {
+    if (existing?.[side]?.lineup?.length) {
+      team.lineup = existing[side].lineup;
+      team.bvp = existing[side].bvp || {};
+    }
+  }
+
   let scheduleEntry = null;
   try {
     const sched = await fetchJson(`${STATS}/schedule?sportId=1&gamePk=${gamePk}&hydrate=broadcasts`);
@@ -383,6 +393,13 @@ export const buildAllSkeletons = async (rawGames) => {
     }
   }
   console.log('[gameDetails] Skeleton build complete');
+};
+
+// True when a side is posted but its detail file lost the lineup (e.g. a
+// skeleton rebuild wiped it). No detail file means nothing to repair.
+export const detailNeedsLineup = (gamePk, side) => {
+  const detail = readDetailFile(gamePk);
+  return Boolean(detail) && !detail[side]?.lineup?.length;
 };
 
 // Enrich an existing detail file with one team's lineup + BvP. Called from
